@@ -777,6 +777,257 @@ theorem eem004_canonical_paper9_comparison_compatibility_closed :
   unfold eem004CanonicalPaper9ComparisonCompatibilityContract
   simp
 
+structure EEM005EvidenceStabilityCoarseGrainingContract where
+  eem001UpstreamBindingClosed : Prop
+  eem002FiniteExternalEvidenceRecordManifestClosed : Prop
+  eem003FiniteReproductionProtocolDescriptorClosed : Prop
+  eem004Paper9ComparisonCompatibilityClosed : Prop
+  finiteEvidenceRowStabilityWitness : Prop
+  finiteReproductionProtocolStabilityWitness : Prop
+  finiteToleranceChannelStabilityWitness : Prop
+  intrinsicCoarseGrainingMap : Prop
+  evidenceIdBound : Nat
+  coarseEvidenceIdBound : Nat
+  provenanceDescriptorBound : Nat
+  coarseProvenanceDescriptorBound : Nat
+  paper9LinkBound : Nat
+  coarsePaper9LinkBound : Nat
+  localEvidenceDomainBound : Nat
+  coarseLocalEvidenceDomainBound : Nat
+  protocolStepBound : Nat
+  coarseProtocolStepBound : Nat
+  transferBound : Nat
+  coarseTransferBound : Nat
+  paper9ComparisonStabilityCoarseGrainingCompatible : Prop
+  evidenceRowsStableUnderCoarseGraining : Prop
+  reproductionProtocolRowsStableUnderCoarseGraining : Prop
+  readoutBoundariesStableUnderCoarseGraining : Prop
+  causalConeNoSignalingStabilityPreserved : Prop
+  finiteCapacityPreserved : Prop
+  localityPreserved : Prop
+  boundedTransferPreserved : Prop
+  externalConservationLawImport : Prop
+  continuumCurrentImport : Prop
+  continuumLimitOracleImport : Prop
+  observedCatalogRecoveryImport : Prop
+  observedParticleCatalogRecoveryImport : Prop
+  physicalStandardModelContentImport : Prop
+  physicalParticleExcitationImport : Prop
+  physicalQuantumDynamicsImport : Prop
+  externalMatterFieldImport : Prop
+  externalGaugeFieldImport : Prop
+  continuumQFTImport : Prop
+  backgroundHilbertBundleImport : Prop
+  simulationOnlyPromotion : Prop
+  fitOnlyCalibration : Prop
+  physicalPromotion : Prop
+  unifiedFieldPromotion : Prop
+
+def EEM005EvidenceStabilityCoarseGrainingContract.closed
+    (c : EEM005EvidenceStabilityCoarseGrainingContract) : Prop :=
+  c.eem001UpstreamBindingClosed ∧
+  c.eem002FiniteExternalEvidenceRecordManifestClosed ∧
+  c.eem003FiniteReproductionProtocolDescriptorClosed ∧
+  c.eem004Paper9ComparisonCompatibilityClosed ∧
+  c.finiteEvidenceRowStabilityWitness ∧
+  c.finiteReproductionProtocolStabilityWitness ∧
+  c.finiteToleranceChannelStabilityWitness ∧
+  c.intrinsicCoarseGrainingMap ∧
+  0 < c.evidenceIdBound ∧
+  0 < c.coarseEvidenceIdBound ∧
+  c.coarseEvidenceIdBound ≤ c.evidenceIdBound ∧
+  0 < c.provenanceDescriptorBound ∧
+  0 < c.coarseProvenanceDescriptorBound ∧
+  c.coarseProvenanceDescriptorBound ≤ c.provenanceDescriptorBound ∧
+  0 < c.paper9LinkBound ∧
+  0 < c.coarsePaper9LinkBound ∧
+  c.coarsePaper9LinkBound ≤ c.paper9LinkBound ∧
+  0 < c.localEvidenceDomainBound ∧
+  0 < c.coarseLocalEvidenceDomainBound ∧
+  c.coarseLocalEvidenceDomainBound ≤ c.localEvidenceDomainBound ∧
+  0 < c.protocolStepBound ∧
+  0 < c.coarseProtocolStepBound ∧
+  c.coarseProtocolStepBound ≤ c.protocolStepBound ∧
+  0 < c.transferBound ∧
+  0 < c.coarseTransferBound ∧
+  c.coarseTransferBound ≤ c.transferBound ∧
+  c.paper9ComparisonStabilityCoarseGrainingCompatible ∧
+  c.evidenceRowsStableUnderCoarseGraining ∧
+  c.reproductionProtocolRowsStableUnderCoarseGraining ∧
+  c.readoutBoundariesStableUnderCoarseGraining ∧
+  c.causalConeNoSignalingStabilityPreserved ∧
+  c.finiteCapacityPreserved ∧
+  c.localityPreserved ∧
+  c.boundedTransferPreserved ∧
+  ¬ c.externalConservationLawImport ∧
+  ¬ c.continuumCurrentImport ∧
+  ¬ c.continuumLimitOracleImport ∧
+  ¬ c.observedCatalogRecoveryImport ∧
+  ¬ c.observedParticleCatalogRecoveryImport ∧
+  ¬ c.physicalStandardModelContentImport ∧
+  ¬ c.physicalParticleExcitationImport ∧
+  ¬ c.physicalQuantumDynamicsImport ∧
+  ¬ c.externalMatterFieldImport ∧
+  ¬ c.externalGaugeFieldImport ∧
+  ¬ c.continuumQFTImport ∧
+  ¬ c.backgroundHilbertBundleImport ∧
+  ¬ c.simulationOnlyPromotion ∧
+  ¬ c.fitOnlyCalibration ∧
+  ¬ c.physicalPromotion ∧
+  ¬ c.unifiedFieldPromotion
+
+theorem eem005_evidence_stability_coarse_graining_closed_from_fields
+    (c : EEM005EvidenceStabilityCoarseGrainingContract)
+    (hEEM001 : c.eem001UpstreamBindingClosed)
+    (hEEM002 : c.eem002FiniteExternalEvidenceRecordManifestClosed)
+    (hEEM003 : c.eem003FiniteReproductionProtocolDescriptorClosed)
+    (hEEM004 : c.eem004Paper9ComparisonCompatibilityClosed)
+    (hEvidenceStability : c.finiteEvidenceRowStabilityWitness)
+    (hProtocolStability : c.finiteReproductionProtocolStabilityWitness)
+    (hToleranceStability : c.finiteToleranceChannelStabilityWitness)
+    (hCoarseMap : c.intrinsicCoarseGrainingMap)
+    (hEvidenceBoundPositive : 0 < c.evidenceIdBound)
+    (hCoarseEvidenceBoundPositive : 0 < c.coarseEvidenceIdBound)
+    (hCoarseEvidenceLeBound : c.coarseEvidenceIdBound ≤ c.evidenceIdBound)
+    (hProvenanceBoundPositive : 0 < c.provenanceDescriptorBound)
+    (hCoarseProvenanceBoundPositive : 0 < c.coarseProvenanceDescriptorBound)
+    (hCoarseProvenanceLeBound :
+      c.coarseProvenanceDescriptorBound ≤ c.provenanceDescriptorBound)
+    (hPaper9LinkBoundPositive : 0 < c.paper9LinkBound)
+    (hCoarsePaper9LinkBoundPositive : 0 < c.coarsePaper9LinkBound)
+    (hCoarsePaper9LinkLeBound : c.coarsePaper9LinkBound ≤ c.paper9LinkBound)
+    (hDomainBoundPositive : 0 < c.localEvidenceDomainBound)
+    (hCoarseDomainBoundPositive : 0 < c.coarseLocalEvidenceDomainBound)
+    (hCoarseDomainLeBound :
+      c.coarseLocalEvidenceDomainBound ≤ c.localEvidenceDomainBound)
+    (hProtocolStepBoundPositive : 0 < c.protocolStepBound)
+    (hCoarseProtocolStepBoundPositive : 0 < c.coarseProtocolStepBound)
+    (hCoarseProtocolStepLeBound : c.coarseProtocolStepBound ≤ c.protocolStepBound)
+    (hTransferBoundPositive : 0 < c.transferBound)
+    (hCoarseTransferBoundPositive : 0 < c.coarseTransferBound)
+    (hCoarseTransferLeBound : c.coarseTransferBound ≤ c.transferBound)
+    (hPaper9Stability : c.paper9ComparisonStabilityCoarseGrainingCompatible)
+    (hEvidenceStable : c.evidenceRowsStableUnderCoarseGraining)
+    (hProtocolStable : c.reproductionProtocolRowsStableUnderCoarseGraining)
+    (hReadoutStable : c.readoutBoundariesStableUnderCoarseGraining)
+    (hNoSignaling : c.causalConeNoSignalingStabilityPreserved)
+    (hFiniteCapacity : c.finiteCapacityPreserved)
+    (hLocality : c.localityPreserved)
+    (hBoundedTransfer : c.boundedTransferPreserved)
+    (hNoExternalConservation : ¬ c.externalConservationLawImport)
+    (hNoContinuumCurrent : ¬ c.continuumCurrentImport)
+    (hNoContinuumOracle : ¬ c.continuumLimitOracleImport)
+    (hNoObservedCatalogRecovery : ¬ c.observedCatalogRecoveryImport)
+    (hNoObservedParticleRecovery : ¬ c.observedParticleCatalogRecoveryImport)
+    (hNoPhysicalSM : ¬ c.physicalStandardModelContentImport)
+    (hNoPhysicalParticle : ¬ c.physicalParticleExcitationImport)
+    (hNoPhysicalQuantum : ¬ c.physicalQuantumDynamicsImport)
+    (hNoMatter : ¬ c.externalMatterFieldImport)
+    (hNoGauge : ¬ c.externalGaugeFieldImport)
+    (hNoQFT : ¬ c.continuumQFTImport)
+    (hNoHilbert : ¬ c.backgroundHilbertBundleImport)
+    (hNoSimulation : ¬ c.simulationOnlyPromotion)
+    (hNoFit : ¬ c.fitOnlyCalibration)
+    (hNoPhysicalPromotion : ¬ c.physicalPromotion)
+    (hNoUnified : ¬ c.unifiedFieldPromotion) :
+    c.closed := by
+  exact ⟨hEEM001, hEEM002, hEEM003, hEEM004, hEvidenceStability,
+    hProtocolStability, hToleranceStability, hCoarseMap,
+    hEvidenceBoundPositive, hCoarseEvidenceBoundPositive,
+    hCoarseEvidenceLeBound, hProvenanceBoundPositive,
+    hCoarseProvenanceBoundPositive, hCoarseProvenanceLeBound,
+    hPaper9LinkBoundPositive, hCoarsePaper9LinkBoundPositive,
+    hCoarsePaper9LinkLeBound, hDomainBoundPositive,
+    hCoarseDomainBoundPositive, hCoarseDomainLeBound,
+    hProtocolStepBoundPositive, hCoarseProtocolStepBoundPositive,
+    hCoarseProtocolStepLeBound, hTransferBoundPositive,
+    hCoarseTransferBoundPositive, hCoarseTransferLeBound, hPaper9Stability,
+    hEvidenceStable, hProtocolStable, hReadoutStable, hNoSignaling,
+    hFiniteCapacity, hLocality, hBoundedTransfer, hNoExternalConservation,
+    hNoContinuumCurrent, hNoContinuumOracle, hNoObservedCatalogRecovery,
+    hNoObservedParticleRecovery, hNoPhysicalSM, hNoPhysicalParticle,
+    hNoPhysicalQuantum, hNoMatter, hNoGauge, hNoQFT, hNoHilbert,
+    hNoSimulation, hNoFit, hNoPhysicalPromotion, hNoUnified⟩
+
+theorem eem005_missing_eem004_compatibility_not_closed
+    (c : EEM005EvidenceStabilityCoarseGrainingContract)
+    (hClosed : c.closed)
+    (hMissingEEM004 : ¬ c.eem004Paper9ComparisonCompatibilityClosed) :
+    False := by
+  rcases hClosed with ⟨_, _, _, hEEM004, _⟩
+  exact hMissingEEM004 hEEM004
+
+theorem eem005_coarse_evidence_growth_not_closed
+    (c : EEM005EvidenceStabilityCoarseGrainingContract)
+    (hClosed : c.closed)
+    (hCoarseGrowth : ¬ c.coarseEvidenceIdBound ≤ c.evidenceIdBound) :
+    False := by
+  rcases hClosed with ⟨_, _, _, _, _, _, _, _, _, _, hCoarseLeBound, _⟩
+  exact hCoarseGrowth hCoarseLeBound
+
+theorem eem005_continuum_limit_oracle_import_not_closed
+    (c : EEM005EvidenceStabilityCoarseGrainingContract)
+    (hClosed : c.closed)
+    (hContinuumOracle : c.continuumLimitOracleImport) :
+    False := by
+  rcases hClosed with
+    ⟨_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _,
+      _, _, _, _, _, _, _, _, _, _, _, _, _, hNoContinuumOracle, _⟩
+  exact hNoContinuumOracle hContinuumOracle
+
+def eem005CanonicalEvidenceStabilityCoarseGrainingContract :
+    EEM005EvidenceStabilityCoarseGrainingContract :=
+  { eem001UpstreamBindingClosed := True,
+    eem002FiniteExternalEvidenceRecordManifestClosed := True,
+    eem003FiniteReproductionProtocolDescriptorClosed := True,
+    eem004Paper9ComparisonCompatibilityClosed := True,
+    finiteEvidenceRowStabilityWitness := True,
+    finiteReproductionProtocolStabilityWitness := True,
+    finiteToleranceChannelStabilityWitness := True,
+    intrinsicCoarseGrainingMap := True,
+    evidenceIdBound := 24,
+    coarseEvidenceIdBound := 12,
+    provenanceDescriptorBound := 16,
+    coarseProvenanceDescriptorBound := 8,
+    paper9LinkBound := 16,
+    coarsePaper9LinkBound := 8,
+    localEvidenceDomainBound := 8,
+    coarseLocalEvidenceDomainBound := 4,
+    protocolStepBound := 24,
+    coarseProtocolStepBound := 12,
+    transferBound := 4,
+    coarseTransferBound := 2,
+    paper9ComparisonStabilityCoarseGrainingCompatible := True,
+    evidenceRowsStableUnderCoarseGraining := True,
+    reproductionProtocolRowsStableUnderCoarseGraining := True,
+    readoutBoundariesStableUnderCoarseGraining := True,
+    causalConeNoSignalingStabilityPreserved := True,
+    finiteCapacityPreserved := True,
+    localityPreserved := True,
+    boundedTransferPreserved := True,
+    externalConservationLawImport := False,
+    continuumCurrentImport := False,
+    continuumLimitOracleImport := False,
+    observedCatalogRecoveryImport := False,
+    observedParticleCatalogRecoveryImport := False,
+    physicalStandardModelContentImport := False,
+    physicalParticleExcitationImport := False,
+    physicalQuantumDynamicsImport := False,
+    externalMatterFieldImport := False,
+    externalGaugeFieldImport := False,
+    continuumQFTImport := False,
+    backgroundHilbertBundleImport := False,
+    simulationOnlyPromotion := False,
+    fitOnlyCalibration := False,
+    physicalPromotion := False,
+    unifiedFieldPromotion := False }
+
+theorem eem005_canonical_evidence_stability_coarse_graining_closed :
+    eem005CanonicalEvidenceStabilityCoarseGrainingContract.closed := by
+  unfold EEM005EvidenceStabilityCoarseGrainingContract.closed
+  unfold eem005CanonicalEvidenceStabilityCoarseGrainingContract
+  simp
+
 structure Paper10ExternalEvidenceManifestTheoremContract where
   eem001UpstreamBindingClosed : Prop
   eem002FiniteExternalEvidenceRecordManifestClosed : Prop

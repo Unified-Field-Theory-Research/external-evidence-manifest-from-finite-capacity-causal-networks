@@ -1,12 +1,13 @@
 use cclab_accel::{
     eem002_finite_external_evidence_record_manifest_marker,
     eem003_finite_reproduction_protocol_descriptor_marker,
-    eem004_paper9_comparison_compatibility_marker, paper10_skeleton_marker,
-    FiniteExternalEvidenceRecordManifest, FiniteReproductionProtocolDescriptor,
-    Paper10SkeletonCertificate, Paper10UpstreamBinding, Paper9ComparisonCompatibility,
-    PAPER1_FROZEN_COMMIT, PAPER2_FROZEN_COMMIT, PAPER3_FROZEN_COMMIT, PAPER4_FROZEN_COMMIT,
-    PAPER5_FROZEN_COMMIT, PAPER6_FROZEN_COMMIT, PAPER7_FROZEN_COMMIT, PAPER8_FROZEN_COMMIT,
-    PAPER9_FINAL_CERTIFICATE, PAPER9_FROZEN_COMMIT,
+    eem004_paper9_comparison_compatibility_marker,
+    eem005_evidence_stability_coarse_graining_marker, paper10_skeleton_marker,
+    EvidenceStabilityCoarseGraining, FiniteExternalEvidenceRecordManifest,
+    FiniteReproductionProtocolDescriptor, Paper10SkeletonCertificate, Paper10UpstreamBinding,
+    Paper9ComparisonCompatibility, PAPER1_FROZEN_COMMIT, PAPER2_FROZEN_COMMIT,
+    PAPER3_FROZEN_COMMIT, PAPER4_FROZEN_COMMIT, PAPER5_FROZEN_COMMIT, PAPER6_FROZEN_COMMIT,
+    PAPER7_FROZEN_COMMIT, PAPER8_FROZEN_COMMIT, PAPER9_FINAL_CERTIFICATE, PAPER9_FROZEN_COMMIT,
 };
 use std::fs;
 use std::path::{Path, PathBuf};
@@ -357,6 +358,74 @@ fn eem004_paper9_compatibility_fails_closed_on_bypass_or_hidden_imports() {
 }
 
 #[test]
+fn eem005_evidence_stability_closes_only_stability_rows() {
+    let stability = EvidenceStabilityCoarseGraining::canonical_eem005();
+    assert!(stability.closes_eem005());
+    assert!(stability.eem004_paper9_comparison_compatibility_closed);
+    assert!(stability.coarse_evidence_id_bound <= stability.evidence_id_bound);
+    assert!(stability.coarse_provenance_descriptor_bound <= stability.provenance_descriptor_bound);
+    assert!(stability.coarse_paper9_link_bound <= stability.paper9_link_bound);
+    assert!(stability.coarse_transfer_bound <= stability.transfer_bound);
+    assert!(stability.causal_cone_no_signaling_stability_preserved);
+    assert_eq!(
+        eem005_evidence_stability_coarse_graining_marker(),
+        "eem005-evidence-stability-coarse-graining-closed"
+    );
+
+    let skeleton =
+        Paper10SkeletonCertificate::with_eem005_evidence_stability_coarse_graining_closed();
+    assert!(skeleton.eem001_upstream_binding_closed);
+    assert!(skeleton.eem002_finite_external_evidence_record_manifest_closed);
+    assert!(skeleton.eem003_finite_reproduction_protocol_descriptor_closed);
+    assert!(skeleton.eem004_paper9_comparison_compatibility_closed);
+    assert!(skeleton.eem005_evidence_stability_coarse_graining_closed);
+    assert!(!skeleton.eem006_paper9_regime_consistency_closed);
+    assert!(!skeleton.paper10_theorem_closed);
+    assert!(!skeleton.closes_paper10_theorem());
+}
+
+#[test]
+fn eem005_stability_fails_closed_on_growth_or_continuum_imports() {
+    let stability = EvidenceStabilityCoarseGraining::canonical_eem005();
+
+    let missing_eem004 = EvidenceStabilityCoarseGraining {
+        eem004_paper9_comparison_compatibility_closed: false,
+        ..stability
+    };
+    assert!(!missing_eem004.closes_eem005());
+
+    let evidence_growth = EvidenceStabilityCoarseGraining {
+        coarse_evidence_id_bound: stability.evidence_id_bound + 1,
+        ..stability
+    };
+    assert!(!evidence_growth.closes_eem005());
+
+    let transfer_growth = EvidenceStabilityCoarseGraining {
+        coarse_transfer_bound: stability.transfer_bound + 1,
+        ..stability
+    };
+    assert!(!transfer_growth.closes_eem005());
+
+    let external_conservation = EvidenceStabilityCoarseGraining {
+        external_conservation_law_import: true,
+        ..stability
+    };
+    assert!(!external_conservation.closes_eem005());
+
+    let continuum_current = EvidenceStabilityCoarseGraining {
+        continuum_current_import: true,
+        ..stability
+    };
+    assert!(!continuum_current.closes_eem005());
+
+    let continuum_oracle = EvidenceStabilityCoarseGraining {
+        continuum_limit_oracle_import: true,
+        ..stability
+    };
+    assert!(!continuum_oracle.closes_eem005());
+}
+
+#[test]
 fn upstream_json_records_paper9_certificate_and_nonpromotion() {
     let root = project_root();
     let upstream = read(&root, "UPSTREAM-PAPERS.json");
@@ -388,6 +457,11 @@ fn upstream_json_records_paper9_certificate_and_nonpromotion() {
     );
     assert_contains(
         &upstream,
+        "\"eem005_evidence_stability_coarse_graining_closed\": true",
+        "UPSTREAM-PAPERS.json",
+    );
+    assert_contains(
+        &upstream,
         "\"external_evidence_manifest_theorem_closed\": false",
         "UPSTREAM-PAPERS.json",
     );
@@ -409,7 +483,7 @@ fn upstream_json_records_paper9_certificate_and_nonpromotion() {
 }
 
 #[test]
-fn docs_keep_eem005_active_and_physical_claims_false() {
+fn docs_keep_eem006_active_and_physical_claims_false() {
     let root = project_root();
     let theorem = read(&root, "docs/external_evidence_manifest_theorem.md");
     let state = read(&root, "GPD/STATE.md");
@@ -425,6 +499,7 @@ fn docs_keep_eem005_active_and_physical_claims_false() {
         assert_contains(artifact.1, "EEM-003", artifact.0);
         assert_contains(artifact.1, "EEM-004", artifact.0);
         assert_contains(artifact.1, "EEM-005", artifact.0);
+        assert_contains(artifact.1, "EEM-006", artifact.0);
         assert_contains(artifact.1, "observed particle catalog recovery", artifact.0);
         assert_contains(artifact.1, "physical Standard Model", artifact.0);
         assert_contains(artifact.1, "simulation-only promotion", artifact.0);

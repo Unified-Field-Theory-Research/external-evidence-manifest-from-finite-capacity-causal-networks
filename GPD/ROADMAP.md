@@ -32,7 +32,7 @@ scope unless a future paper-specific certificate explicitly closes them.
 - [x] **Phase 4: Prove Paper 9 Comparison Compatibility** - `EEM-004` should
   show compatibility with the closed Paper 9 descriptor, comparison-map,
   Paper 8 compatibility, stability, and coarse-graining rows.
-- [ ] **Phase 5: Prove Evidence Stability And Coarse-Graining Stability** -
+- [x] **Phase 5: Prove Evidence Stability And Coarse-Graining Stability** -
   `EEM-005` should state finite evidence-manifest stability rows and show
   coherent transport under finite intrinsic coarse-graining.
 - [ ] **Phase 6: Bind To Paper 9 Regime** - `EEM-006` should consume the

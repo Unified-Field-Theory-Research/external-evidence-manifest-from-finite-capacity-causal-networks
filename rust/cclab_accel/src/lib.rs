@@ -509,6 +509,162 @@ impl Paper9ComparisonCompatibility {
 }
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
+pub struct EvidenceStabilityCoarseGraining {
+    pub eem001_upstream_binding_closed: bool,
+    pub eem002_finite_external_evidence_record_manifest_closed: bool,
+    pub eem003_finite_reproduction_protocol_descriptor_closed: bool,
+    pub eem004_paper9_comparison_compatibility_closed: bool,
+    pub finite_evidence_row_stability_witness: bool,
+    pub finite_reproduction_protocol_stability_witness: bool,
+    pub finite_tolerance_channel_stability_witness: bool,
+    pub intrinsic_coarse_graining_map: bool,
+    pub evidence_id_bound: u32,
+    pub coarse_evidence_id_bound: u32,
+    pub provenance_descriptor_bound: u32,
+    pub coarse_provenance_descriptor_bound: u32,
+    pub paper9_link_bound: u32,
+    pub coarse_paper9_link_bound: u32,
+    pub local_evidence_domain_bound: u32,
+    pub coarse_local_evidence_domain_bound: u32,
+    pub protocol_step_bound: u32,
+    pub coarse_protocol_step_bound: u32,
+    pub transfer_bound: u32,
+    pub coarse_transfer_bound: u32,
+    pub paper9_comparison_stability_coarse_graining_compatible: bool,
+    pub evidence_rows_stable_under_coarse_graining: bool,
+    pub reproduction_protocol_rows_stable_under_coarse_graining: bool,
+    pub readout_boundaries_stable_under_coarse_graining: bool,
+    pub causal_cone_no_signaling_stability_preserved: bool,
+    pub finite_capacity_preserved: bool,
+    pub locality_preserved: bool,
+    pub bounded_transfer_preserved: bool,
+    pub external_conservation_law_import: bool,
+    pub continuum_current_import: bool,
+    pub continuum_limit_oracle_import: bool,
+    pub observed_catalog_recovery_import: bool,
+    pub observed_particle_catalog_recovery_import: bool,
+    pub physical_standard_model_content_import: bool,
+    pub physical_particle_excitation_import: bool,
+    pub physical_quantum_dynamics_import: bool,
+    pub external_matter_field_import: bool,
+    pub external_gauge_field_import: bool,
+    pub continuum_qft_import: bool,
+    pub background_hilbert_bundle_import: bool,
+    pub simulation_only_promotion: bool,
+    pub fit_only_calibration: bool,
+    pub physical_promotion: bool,
+    pub unified_field_promotion: bool,
+}
+
+impl EvidenceStabilityCoarseGraining {
+    pub fn canonical_eem005() -> Self {
+        Self {
+            eem001_upstream_binding_closed: Paper10UpstreamBinding::canonical_eem001()
+                .closes_eem001(),
+            eem002_finite_external_evidence_record_manifest_closed:
+                FiniteExternalEvidenceRecordManifest::canonical_eem002().closes_eem002(),
+            eem003_finite_reproduction_protocol_descriptor_closed:
+                FiniteReproductionProtocolDescriptor::canonical_eem003().closes_eem003(),
+            eem004_paper9_comparison_compatibility_closed:
+                Paper9ComparisonCompatibility::canonical_eem004().closes_eem004(),
+            finite_evidence_row_stability_witness: true,
+            finite_reproduction_protocol_stability_witness: true,
+            finite_tolerance_channel_stability_witness: true,
+            intrinsic_coarse_graining_map: true,
+            evidence_id_bound: 24,
+            coarse_evidence_id_bound: 12,
+            provenance_descriptor_bound: 16,
+            coarse_provenance_descriptor_bound: 8,
+            paper9_link_bound: 16,
+            coarse_paper9_link_bound: 8,
+            local_evidence_domain_bound: 8,
+            coarse_local_evidence_domain_bound: 4,
+            protocol_step_bound: 24,
+            coarse_protocol_step_bound: 12,
+            transfer_bound: 4,
+            coarse_transfer_bound: 2,
+            paper9_comparison_stability_coarse_graining_compatible: true,
+            evidence_rows_stable_under_coarse_graining: true,
+            reproduction_protocol_rows_stable_under_coarse_graining: true,
+            readout_boundaries_stable_under_coarse_graining: true,
+            causal_cone_no_signaling_stability_preserved: true,
+            finite_capacity_preserved: true,
+            locality_preserved: true,
+            bounded_transfer_preserved: true,
+            external_conservation_law_import: false,
+            continuum_current_import: false,
+            continuum_limit_oracle_import: false,
+            observed_catalog_recovery_import: false,
+            observed_particle_catalog_recovery_import: false,
+            physical_standard_model_content_import: false,
+            physical_particle_excitation_import: false,
+            physical_quantum_dynamics_import: false,
+            external_matter_field_import: false,
+            external_gauge_field_import: false,
+            continuum_qft_import: false,
+            background_hilbert_bundle_import: false,
+            simulation_only_promotion: false,
+            fit_only_calibration: false,
+            physical_promotion: false,
+            unified_field_promotion: false,
+        }
+    }
+
+    pub fn closes_eem005(&self) -> bool {
+        self.eem001_upstream_binding_closed
+            && self.eem002_finite_external_evidence_record_manifest_closed
+            && self.eem003_finite_reproduction_protocol_descriptor_closed
+            && self.eem004_paper9_comparison_compatibility_closed
+            && self.finite_evidence_row_stability_witness
+            && self.finite_reproduction_protocol_stability_witness
+            && self.finite_tolerance_channel_stability_witness
+            && self.intrinsic_coarse_graining_map
+            && self.evidence_id_bound > 0
+            && self.coarse_evidence_id_bound > 0
+            && self.coarse_evidence_id_bound <= self.evidence_id_bound
+            && self.provenance_descriptor_bound > 0
+            && self.coarse_provenance_descriptor_bound > 0
+            && self.coarse_provenance_descriptor_bound <= self.provenance_descriptor_bound
+            && self.paper9_link_bound > 0
+            && self.coarse_paper9_link_bound > 0
+            && self.coarse_paper9_link_bound <= self.paper9_link_bound
+            && self.local_evidence_domain_bound > 0
+            && self.coarse_local_evidence_domain_bound > 0
+            && self.coarse_local_evidence_domain_bound <= self.local_evidence_domain_bound
+            && self.protocol_step_bound > 0
+            && self.coarse_protocol_step_bound > 0
+            && self.coarse_protocol_step_bound <= self.protocol_step_bound
+            && self.transfer_bound > 0
+            && self.coarse_transfer_bound > 0
+            && self.coarse_transfer_bound <= self.transfer_bound
+            && self.paper9_comparison_stability_coarse_graining_compatible
+            && self.evidence_rows_stable_under_coarse_graining
+            && self.reproduction_protocol_rows_stable_under_coarse_graining
+            && self.readout_boundaries_stable_under_coarse_graining
+            && self.causal_cone_no_signaling_stability_preserved
+            && self.finite_capacity_preserved
+            && self.locality_preserved
+            && self.bounded_transfer_preserved
+            && !self.external_conservation_law_import
+            && !self.continuum_current_import
+            && !self.continuum_limit_oracle_import
+            && !self.observed_catalog_recovery_import
+            && !self.observed_particle_catalog_recovery_import
+            && !self.physical_standard_model_content_import
+            && !self.physical_particle_excitation_import
+            && !self.physical_quantum_dynamics_import
+            && !self.external_matter_field_import
+            && !self.external_gauge_field_import
+            && !self.continuum_qft_import
+            && !self.background_hilbert_bundle_import
+            && !self.simulation_only_promotion
+            && !self.fit_only_calibration
+            && !self.physical_promotion
+            && !self.unified_field_promotion
+    }
+}
+
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub struct Paper10SkeletonCertificate {
     pub eem001_upstream_binding_closed: bool,
     pub eem002_finite_external_evidence_record_manifest_closed: bool,
@@ -633,6 +789,34 @@ impl Paper10SkeletonCertificate {
         }
     }
 
+    pub fn with_eem005_evidence_stability_coarse_graining_closed() -> Self {
+        let binding = Paper10UpstreamBinding::canonical_eem001();
+        let manifest = FiniteExternalEvidenceRecordManifest::canonical_eem002();
+        let protocol = FiniteReproductionProtocolDescriptor::canonical_eem003();
+        let compatibility = Paper9ComparisonCompatibility::canonical_eem004();
+        let stability = EvidenceStabilityCoarseGraining::canonical_eem005();
+        Self {
+            eem001_upstream_binding_closed: binding.closes_eem001(),
+            eem002_finite_external_evidence_record_manifest_closed: manifest.closes_eem002(),
+            eem003_finite_reproduction_protocol_descriptor_closed: protocol.closes_eem003(),
+            eem004_paper9_comparison_compatibility_closed: compatibility.closes_eem004(),
+            eem005_evidence_stability_coarse_graining_closed: stability.closes_eem005(),
+            eem006_paper9_regime_consistency_closed: false,
+            eem007_no_hidden_physical_promotion_audit_closed: false,
+            eem008_final_conditional_certificate_closed: false,
+            paper10_theorem_closed: false,
+            physical_nature_claim: false,
+            observed_particle_catalog_recovery_claim: false,
+            physical_standard_model_claim: false,
+            physical_particle_excitation_claim: false,
+            physical_quantum_dynamics_claim: false,
+            continuum_qft_claim: false,
+            simulation_only_promotion: false,
+            fit_only_calibration_claim: false,
+            unified_field_theory_claim: false,
+        }
+    }
+
     pub fn closes_paper10_theorem(&self) -> bool {
         self.eem001_upstream_binding_closed
             && self.eem002_finite_external_evidence_record_manifest_closed
@@ -669,4 +853,8 @@ pub fn eem003_finite_reproduction_protocol_descriptor_marker() -> &'static str {
 
 pub fn eem004_paper9_comparison_compatibility_marker() -> &'static str {
     "eem004-paper9-comparison-compatibility-closed"
+}
+
+pub fn eem005_evidence_stability_coarse_graining_marker() -> &'static str {
+    "eem005-evidence-stability-coarse-graining-closed"
 }

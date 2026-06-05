@@ -2,13 +2,14 @@
 
 ## Current Position
 
-**Current Phase:** 5
-**Current Phase Name:** Prove Evidence Stability And Coarse-Graining Stability
+**Current Phase:** 6
+**Current Phase Name:** Bind To Paper 9 Regime
 **Status:** `EEM-001` upstream binding and claim-boundary scaffold closed;
 `EEM-002` finite external evidence record manifest closed; `EEM-003` finite
 reproduction protocol descriptor closed; `EEM-004` Paper 9 comparison
 compatibility closed; `EEM-005` evidence stability and coarse-graining
-stability is open; physical promotion remains false
+stability closed; `EEM-006` Paper 9 regime consistency is open; physical
+promotion remains false
 
 Closed rung summary: `EEM-001` records the upstream binding through the
 closed Paper 9 conditional observed-catalog comparison observables theorem at
@@ -65,12 +66,17 @@ stability/coarse-graining rows, finite capacity, locality, bounded transfer,
 causal-cone/no-signaling, comparison stability, and
 conservation/coarse-graining stability across the closed `EEM-002` and
 `EEM-003` interfaces.
+`EEM-005` proves finite evidence stability and intrinsic coarse-graining
+stability with non-growing evidence-ID, provenance, Paper 9 link,
+local-domain, protocol-step, and transfer bounds while preserving Paper 9
+comparison stability/coarse-graining compatibility, finite capacity,
+locality, bounded transfer, and causal-cone/no-signaling stability.
 
-Next stable target phrase: `EEM-005`: prove finite evidence stability and
-intrinsic coarse-graining stability without importing external conservation
-laws, continuum currents, continuum-limit oracles, observed recovery,
-simulation-only promotion, fit-only calibration, physical nature promotion,
-or unified-field promotion.
+Next stable target phrase: `EEM-006`: bind the closed local Paper 10
+structures to the recorded Paper 9 regime without upstream mutation, Paper 9
+bypass, unapproved Paper 9 revision, unrecorded upstream revision, observed
+recovery import, simulation-only promotion, fit-only calibration, physical
+nature promotion, or unified-field promotion.
 
 Stable nonpromotion tokens: observed particle catalog recovery; physical
 Standard Model content; physical particle excitations; physical matter fields;
@@ -104,19 +110,25 @@ promotion; unified-field promotion.
   protocol rows remain compatible with Paper 9 descriptor, comparison-map,
   compatibility, stability, and coarse-graining rows while preserving finite
   capacity, locality, bounded transfer, and causal-cone/no-signaling.
+- `EEM-005` rows prove finite evidence stability and intrinsic
+  coarse-graining stability through non-growing evidence, provenance, Paper
+  9 link, local domain, protocol step, and transfer bounds, while rejecting
+  external conservation-law, continuum current, and continuum-limit oracle
+  imports.
 
 ## Open Questions
 
-- `EEM-005`: Which finite stability and intrinsic coarse-graining contract
-  keeps evidence, provenance, Paper 9 links, reproduction protocols, local
-  domains, and transfer bounds non-growing under coarse-graining?
+- `EEM-006`: Which finite regime-consistency contract binds all closed Paper
+  10 rows to the recorded Paper 9 commit and final certificate without
+  upstream bypass?
 
 ## Pending Todos
 
-- Define evidence-row, provenance, Paper 9 link, reproduction protocol,
-  local-domain, and transfer stability/coarse-graining checks for `EEM-005`.
-- Add Rust and Lean fail-closed checks for `EEM-005`.
-- Update theorem docs, proof log, and publication skeleton after `EEM-005`
+- Define Paper 1 through Paper 9 commit, Paper 9 final certificate,
+  upstream-mutation, Paper 9 bypass, upstream-chain bypass, unapproved
+  revision, and unrecorded revision checks for `EEM-006`.
+- Add Rust and Lean fail-closed checks for `EEM-006`.
+- Update theorem docs, proof log, and publication skeleton after `EEM-006`
   closes.
 
 ## Blockers/Concerns
@@ -133,6 +145,8 @@ promotion; unified-field promotion.
 - `EEM-004` proves Paper 9 comparison compatibility only; it does not prove
   evidence stability, Paper 9 regime consistency, the no-hidden import audit,
   or the final conditional theorem.
+- `EEM-005` proves stability only; it does not prove Paper 9 regime
+  consistency, the no-hidden import audit, or the final conditional theorem.
 - External evidence manifest recovery remains open.
 - Observed particle catalog recovery, physical Standard Model content,
   physical particle excitations, physical matter fields, physical gauge

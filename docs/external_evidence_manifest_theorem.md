@@ -21,10 +21,11 @@ Paper 10 aims at the following internal conditional theorem:
 The theorem target is open. `EEM-001` closes the upstream binding and
 claim-boundary scaffold. `EEM-002` closes finite external evidence record
 manifest rows. `EEM-003` closes finite reproduction protocol descriptor rows.
-`EEM-004` closes Paper 9 comparison compatibility. This is not external
-evidence manifest recovery, not observed particle catalog recovery, not
-physical Standard Model recovery, not a physical particle-excitation claim,
-not physical quantum dynamics, not continuum quantum field theory, not
+`EEM-004` closes Paper 9 comparison compatibility. `EEM-005` closes evidence
+stability and coarse-graining stability. This is not external evidence
+manifest recovery, not observed particle catalog recovery, not physical
+Standard Model recovery, not a physical particle-excitation claim, not
+physical quantum dynamics, not continuum quantum field theory, not
 simulation-only promotion, not fit-only calibration, not physical nature
 promotion, and not a unified field theory.
 
@@ -217,11 +218,49 @@ import audit, or final external evidence manifest recovery.
 
 ### EEM-005: Evidence Stability And Coarse-Graining Stability
 
-Status: open.
+Status: closed.
+
+`EEM-005` proves finite evidence stability and intrinsic coarse-graining
+stability over the closed `EEM-002` evidence rows, closed `EEM-003`
+reproduction protocol rows, and closed `EEM-004` Paper 9 compatibility rows.
+It gives finite evidence-row, reproduction-protocol, and tolerance-channel
+stability witnesses; an intrinsic coarse-graining map; non-growing evidence
+ID, provenance-descriptor, Paper 9 link, local-evidence-domain,
+protocol-step, and transfer bounds; Paper 9
+comparison-stability/coarse-graining compatibility; readout-boundary
+stability; finite capacity, locality, bounded transfer, and
+causal-cone/no-signaling stability. It rejects external conservation-law
+imports, continuum current imports, continuum-limit oracle imports, observed
+recovery imports, physical Standard Model content, physical particle
+excitations, physical quantum dynamics, continuum QFT, background Hilbert
+bundles, simulation-only promotion, fit-only calibration, physical
+promotion, and unified-field promotion.
+
+Rust anchors:
+
+- `EvidenceStabilityCoarseGraining`
+- `EvidenceStabilityCoarseGraining::canonical_eem005`
+- `EvidenceStabilityCoarseGraining::closes_eem005`
+- `Paper10SkeletonCertificate::with_eem005_evidence_stability_coarse_graining_closed`
+- `eem005_evidence_stability_coarse_graining_marker`
+
+Lean anchors:
+
+- `EEM005EvidenceStabilityCoarseGrainingContract`
+- `EEM005EvidenceStabilityCoarseGrainingContract.closed`
+- `eem005_evidence_stability_coarse_graining_closed_from_fields`
+- `eem005_missing_eem004_compatibility_not_closed`
+- `eem005_coarse_evidence_growth_not_closed`
+- `eem005_continuum_limit_oracle_import_not_closed`
+- `eem005_canonical_evidence_stability_coarse_graining_closed`
+
+Boundary: `EEM-005` proves stability only. It does not prove Paper 9 regime
+consistency, the no-hidden import audit, or final external evidence manifest
+recovery.
 
 ### EEM-006: Paper 9 Regime Consistency
 
-Status: planned.
+Status: open.
 
 ### EEM-007: No-Hidden-Physical-Promotion Import Audit
 

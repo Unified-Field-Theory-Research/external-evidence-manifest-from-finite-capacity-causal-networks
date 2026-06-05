@@ -100,7 +100,7 @@
     "eem002_finite_external_evidence_record_manifest_closed": true,
     "eem003_finite_reproduction_protocol_descriptor_closed": true,
     "eem004_paper9_comparison_compatibility_closed": true,
-    "eem005_evidence_stability_coarse_graining_closed": false,
+    "eem005_evidence_stability_coarse_graining_closed": true,
     "eem006_paper9_regime_consistency_closed": false,
     "eem007_no_hidden_physical_promotion_audit_closed": false,
     "eem008_final_conditional_certificate_closed": false,

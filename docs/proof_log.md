@@ -215,9 +215,61 @@ dynamics, continuum quantum field theory, simulation-only promotion,
 fit-only calibration, a physical nature-level claim, or a unified field
 theory.
 
+## EEM-005: Evidence Stability And Coarse-Graining Stability
+
+Status: closed as an evidence stability and intrinsic coarse-graining
+contract.
+
+Artifacts:
+
+- `docs/external_evidence_manifest_theorem.md`
+- `docs/open_proof_obligations.md`
+- `docs/proof_log.md`
+- `GPD/STATE.md`
+- `GPD/ROADMAP.md`
+- `GPD/state.json`
+- `GPD/formal/FiniteCapacity/ExternalEvidenceManifest.lean`
+- `rust/cclab_accel/src/lib.rs`
+- `rust/cclab_accel/tests/external_evidence_manifest_gate.rs`
+
+Rust anchors:
+
+- `EvidenceStabilityCoarseGraining`
+- `EvidenceStabilityCoarseGraining::canonical_eem005`
+- `EvidenceStabilityCoarseGraining::closes_eem005`
+- `Paper10SkeletonCertificate::with_eem005_evidence_stability_coarse_graining_closed`
+- `eem005_evidence_stability_coarse_graining_marker`
+
+Lean anchors:
+
+- `EEM005EvidenceStabilityCoarseGrainingContract`
+- `EEM005EvidenceStabilityCoarseGrainingContract.closed`
+- `eem005_evidence_stability_coarse_graining_closed_from_fields`
+- `eem005_missing_eem004_compatibility_not_closed`
+- `eem005_coarse_evidence_growth_not_closed`
+- `eem005_continuum_limit_oracle_import_not_closed`
+- `eem005_canonical_evidence_stability_coarse_graining_closed`
+
+Verification:
+
+- `make test-fast`
+- `make lean-build`
+
+Boundary:
+
+`EEM-005` proves finite evidence stability and intrinsic coarse-graining
+stability with non-growing evidence-ID, provenance, Paper 9 link, local
+domain, protocol-step, and transfer bounds. It consumes closed `EEM-004`
+Paper 9 compatibility and preserves finite capacity, locality, bounded
+transfer, and causal-cone/no-signaling stability. It does not prove Paper 9
+regime consistency, no-hidden import audit closure, final external evidence
+manifest recovery, observed particle catalog recovery, physical Standard
+Model content, physical particle excitations, physical quantum dynamics,
+continuum quantum field theory, simulation-only promotion, fit-only
+calibration, a physical nature-level claim, or a unified field theory.
+
 ## Active Next Obligation
 
-`EEM-005`: prove finite evidence stability and intrinsic coarse-graining
-stability without importing external conservation laws, continuum currents,
-continuum-limit oracles, observed recovery, simulation-only promotion,
-fit-only calibration, physical nature promotion, or unified-field promotion.
+`EEM-006`: bind the closed local Paper 10 structures to the recorded Paper 9
+regime without upstream mutation, Paper 9 bypass, unapproved Paper 9
+revision, or unrecorded upstream revision.
