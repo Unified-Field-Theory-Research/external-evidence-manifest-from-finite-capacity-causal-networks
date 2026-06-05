@@ -1028,6 +1028,234 @@ theorem eem005_canonical_evidence_stability_coarse_graining_closed :
   unfold eem005CanonicalEvidenceStabilityCoarseGrainingContract
   simp
 
+structure EEM006Paper9RegimeConsistencyContract where
+  eem001UpstreamBindingClosed : Prop
+  eem002FiniteExternalEvidenceRecordManifestClosed : Prop
+  eem003FiniteReproductionProtocolDescriptorClosed : Prop
+  eem004Paper9ComparisonCompatibilityClosed : Prop
+  eem005EvidenceStabilityCoarseGrainingClosed : Prop
+  paper1RecordedCommitMatches : Prop
+  paper2RecordedCommitMatches : Prop
+  paper3RecordedCommitMatches : Prop
+  paper4RecordedCommitMatches : Prop
+  paper5RecordedCommitMatches : Prop
+  paper6RecordedCommitMatches : Prop
+  paper7RecordedCommitMatches : Prop
+  paper8RecordedCommitMatches : Prop
+  paper9RecordedCommitMatches : Prop
+  paper9FinalCertificateMatches : Prop
+  paper1InternalConditionalClosed : Prop
+  paper2HigherDimGeometryClosed : Prop
+  paper3CurvatureClosed : Prop
+  paper4DynamicsClosed : Prop
+  paper5QuantumCompatibleLocalDynamicsClosed : Prop
+  paper6MatterGaugeObservablesClosed : Prop
+  paper7ParticleExcitationObservablesClosed : Prop
+  paper8StandardModelCandidateObservablesClosed : Prop
+  paper9ObservedCatalogComparisonObservablesClosed : Prop
+  paper9FinalCertificateConsumed : Prop
+  upstreamMutationAttempt : Prop
+  paper9BypassAttempt : Prop
+  upstreamChainBypassAttempt : Prop
+  unapprovedPaper9Revision : Prop
+  unrecordedUpstreamRevision : Prop
+  observedCatalogRecoveryImport : Prop
+  observedParticleCatalogRecoveryImport : Prop
+  physicalStandardModelContentImport : Prop
+  physicalParticleExcitationImport : Prop
+  physicalQuantumDynamicsImport : Prop
+  externalMatterFieldImport : Prop
+  externalGaugeFieldImport : Prop
+  continuumQFTImport : Prop
+  backgroundHilbertBundleImport : Prop
+  simulationOnlyPromotion : Prop
+  fitOnlyCalibration : Prop
+  physicalPromotion : Prop
+  unifiedFieldPromotion : Prop
+
+def EEM006Paper9RegimeConsistencyContract.closed
+    (c : EEM006Paper9RegimeConsistencyContract) : Prop :=
+  c.eem001UpstreamBindingClosed ∧
+  c.eem002FiniteExternalEvidenceRecordManifestClosed ∧
+  c.eem003FiniteReproductionProtocolDescriptorClosed ∧
+  c.eem004Paper9ComparisonCompatibilityClosed ∧
+  c.eem005EvidenceStabilityCoarseGrainingClosed ∧
+  c.paper1RecordedCommitMatches ∧
+  c.paper2RecordedCommitMatches ∧
+  c.paper3RecordedCommitMatches ∧
+  c.paper4RecordedCommitMatches ∧
+  c.paper5RecordedCommitMatches ∧
+  c.paper6RecordedCommitMatches ∧
+  c.paper7RecordedCommitMatches ∧
+  c.paper8RecordedCommitMatches ∧
+  c.paper9RecordedCommitMatches ∧
+  c.paper9FinalCertificateMatches ∧
+  c.paper1InternalConditionalClosed ∧
+  c.paper2HigherDimGeometryClosed ∧
+  c.paper3CurvatureClosed ∧
+  c.paper4DynamicsClosed ∧
+  c.paper5QuantumCompatibleLocalDynamicsClosed ∧
+  c.paper6MatterGaugeObservablesClosed ∧
+  c.paper7ParticleExcitationObservablesClosed ∧
+  c.paper8StandardModelCandidateObservablesClosed ∧
+  c.paper9ObservedCatalogComparisonObservablesClosed ∧
+  c.paper9FinalCertificateConsumed ∧
+  ¬ c.upstreamMutationAttempt ∧
+  ¬ c.paper9BypassAttempt ∧
+  ¬ c.upstreamChainBypassAttempt ∧
+  ¬ c.unapprovedPaper9Revision ∧
+  ¬ c.unrecordedUpstreamRevision ∧
+  ¬ c.observedCatalogRecoveryImport ∧
+  ¬ c.observedParticleCatalogRecoveryImport ∧
+  ¬ c.physicalStandardModelContentImport ∧
+  ¬ c.physicalParticleExcitationImport ∧
+  ¬ c.physicalQuantumDynamicsImport ∧
+  ¬ c.externalMatterFieldImport ∧
+  ¬ c.externalGaugeFieldImport ∧
+  ¬ c.continuumQFTImport ∧
+  ¬ c.backgroundHilbertBundleImport ∧
+  ¬ c.simulationOnlyPromotion ∧
+  ¬ c.fitOnlyCalibration ∧
+  ¬ c.physicalPromotion ∧
+  ¬ c.unifiedFieldPromotion
+
+theorem eem006_paper9_regime_consistency_closed_from_fields
+    (c : EEM006Paper9RegimeConsistencyContract)
+    (hEEM001 : c.eem001UpstreamBindingClosed)
+    (hEEM002 : c.eem002FiniteExternalEvidenceRecordManifestClosed)
+    (hEEM003 : c.eem003FiniteReproductionProtocolDescriptorClosed)
+    (hEEM004 : c.eem004Paper9ComparisonCompatibilityClosed)
+    (hEEM005 : c.eem005EvidenceStabilityCoarseGrainingClosed)
+    (hPaper1Commit : c.paper1RecordedCommitMatches)
+    (hPaper2Commit : c.paper2RecordedCommitMatches)
+    (hPaper3Commit : c.paper3RecordedCommitMatches)
+    (hPaper4Commit : c.paper4RecordedCommitMatches)
+    (hPaper5Commit : c.paper5RecordedCommitMatches)
+    (hPaper6Commit : c.paper6RecordedCommitMatches)
+    (hPaper7Commit : c.paper7RecordedCommitMatches)
+    (hPaper8Commit : c.paper8RecordedCommitMatches)
+    (hPaper9Commit : c.paper9RecordedCommitMatches)
+    (hPaper9CertMatch : c.paper9FinalCertificateMatches)
+    (hPaper1 : c.paper1InternalConditionalClosed)
+    (hPaper2 : c.paper2HigherDimGeometryClosed)
+    (hPaper3 : c.paper3CurvatureClosed)
+    (hPaper4 : c.paper4DynamicsClosed)
+    (hPaper5 : c.paper5QuantumCompatibleLocalDynamicsClosed)
+    (hPaper6 : c.paper6MatterGaugeObservablesClosed)
+    (hPaper7 : c.paper7ParticleExcitationObservablesClosed)
+    (hPaper8 : c.paper8StandardModelCandidateObservablesClosed)
+    (hPaper9 : c.paper9ObservedCatalogComparisonObservablesClosed)
+    (hPaper9Cert : c.paper9FinalCertificateConsumed)
+    (hNoUpstreamMutation : ¬ c.upstreamMutationAttempt)
+    (hNoPaper9Bypass : ¬ c.paper9BypassAttempt)
+    (hNoUpstreamBypass : ¬ c.upstreamChainBypassAttempt)
+    (hNoUnapprovedPaper9 : ¬ c.unapprovedPaper9Revision)
+    (hNoUnrecordedUpstream : ¬ c.unrecordedUpstreamRevision)
+    (hNoObservedCatalogRecovery : ¬ c.observedCatalogRecoveryImport)
+    (hNoObservedParticleRecovery : ¬ c.observedParticleCatalogRecoveryImport)
+    (hNoPhysicalSM : ¬ c.physicalStandardModelContentImport)
+    (hNoPhysicalParticle : ¬ c.physicalParticleExcitationImport)
+    (hNoPhysicalQuantum : ¬ c.physicalQuantumDynamicsImport)
+    (hNoMatter : ¬ c.externalMatterFieldImport)
+    (hNoGauge : ¬ c.externalGaugeFieldImport)
+    (hNoQFT : ¬ c.continuumQFTImport)
+    (hNoHilbert : ¬ c.backgroundHilbertBundleImport)
+    (hNoSimulation : ¬ c.simulationOnlyPromotion)
+    (hNoFit : ¬ c.fitOnlyCalibration)
+    (hNoPhysicalPromotion : ¬ c.physicalPromotion)
+    (hNoUnified : ¬ c.unifiedFieldPromotion) :
+    c.closed := by
+  exact ⟨hEEM001, hEEM002, hEEM003, hEEM004, hEEM005, hPaper1Commit,
+    hPaper2Commit, hPaper3Commit, hPaper4Commit, hPaper5Commit,
+    hPaper6Commit, hPaper7Commit, hPaper8Commit, hPaper9Commit,
+    hPaper9CertMatch, hPaper1, hPaper2, hPaper3, hPaper4, hPaper5, hPaper6,
+    hPaper7, hPaper8, hPaper9, hPaper9Cert, hNoUpstreamMutation,
+    hNoPaper9Bypass, hNoUpstreamBypass, hNoUnapprovedPaper9,
+    hNoUnrecordedUpstream, hNoObservedCatalogRecovery,
+    hNoObservedParticleRecovery, hNoPhysicalSM, hNoPhysicalParticle,
+    hNoPhysicalQuantum, hNoMatter, hNoGauge, hNoQFT, hNoHilbert,
+    hNoSimulation, hNoFit, hNoPhysicalPromotion, hNoUnified⟩
+
+theorem eem006_missing_eem005_stability_not_closed
+    (c : EEM006Paper9RegimeConsistencyContract)
+    (hClosed : c.closed)
+    (hMissingEEM005 : ¬ c.eem005EvidenceStabilityCoarseGrainingClosed) :
+    False := by
+  rcases hClosed with ⟨_, _, _, _, hEEM005, _⟩
+  exact hMissingEEM005 hEEM005
+
+theorem eem006_paper9_bypass_not_closed
+    (c : EEM006Paper9RegimeConsistencyContract)
+    (hClosed : c.closed)
+    (hPaper9Bypass : c.paper9BypassAttempt) :
+    False := by
+  rcases hClosed with
+    ⟨_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _,
+      _, _, _, hNoPaper9Bypass, _⟩
+  exact hNoPaper9Bypass hPaper9Bypass
+
+theorem eem006_unapproved_paper9_revision_not_closed
+    (c : EEM006Paper9RegimeConsistencyContract)
+    (hClosed : c.closed)
+    (hUnapprovedPaper9 : c.unapprovedPaper9Revision) :
+    False := by
+  rcases hClosed with
+    ⟨_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _,
+      _, _, _, _, _, hNoUnapprovedPaper9, _⟩
+  exact hNoUnapprovedPaper9 hUnapprovedPaper9
+
+def eem006CanonicalPaper9RegimeConsistencyContract :
+    EEM006Paper9RegimeConsistencyContract :=
+  { eem001UpstreamBindingClosed := True,
+    eem002FiniteExternalEvidenceRecordManifestClosed := True,
+    eem003FiniteReproductionProtocolDescriptorClosed := True,
+    eem004Paper9ComparisonCompatibilityClosed := True,
+    eem005EvidenceStabilityCoarseGrainingClosed := True,
+    paper1RecordedCommitMatches := True,
+    paper2RecordedCommitMatches := True,
+    paper3RecordedCommitMatches := True,
+    paper4RecordedCommitMatches := True,
+    paper5RecordedCommitMatches := True,
+    paper6RecordedCommitMatches := True,
+    paper7RecordedCommitMatches := True,
+    paper8RecordedCommitMatches := True,
+    paper9RecordedCommitMatches := True,
+    paper9FinalCertificateMatches := True,
+    paper1InternalConditionalClosed := True,
+    paper2HigherDimGeometryClosed := True,
+    paper3CurvatureClosed := True,
+    paper4DynamicsClosed := True,
+    paper5QuantumCompatibleLocalDynamicsClosed := True,
+    paper6MatterGaugeObservablesClosed := True,
+    paper7ParticleExcitationObservablesClosed := True,
+    paper8StandardModelCandidateObservablesClosed := True,
+    paper9ObservedCatalogComparisonObservablesClosed := True,
+    paper9FinalCertificateConsumed := True,
+    upstreamMutationAttempt := False,
+    paper9BypassAttempt := False,
+    upstreamChainBypassAttempt := False,
+    unapprovedPaper9Revision := False,
+    unrecordedUpstreamRevision := False,
+    observedCatalogRecoveryImport := False,
+    observedParticleCatalogRecoveryImport := False,
+    physicalStandardModelContentImport := False,
+    physicalParticleExcitationImport := False,
+    physicalQuantumDynamicsImport := False,
+    externalMatterFieldImport := False,
+    externalGaugeFieldImport := False,
+    continuumQFTImport := False,
+    backgroundHilbertBundleImport := False,
+    simulationOnlyPromotion := False,
+    fitOnlyCalibration := False,
+    physicalPromotion := False,
+    unifiedFieldPromotion := False }
+
+theorem eem006_canonical_paper9_regime_consistency_closed :
+    eem006CanonicalPaper9RegimeConsistencyContract.closed := by
+  unfold EEM006Paper9RegimeConsistencyContract.closed
+  unfold eem006CanonicalPaper9RegimeConsistencyContract
+  simp
+
 structure Paper10ExternalEvidenceManifestTheoremContract where
   eem001UpstreamBindingClosed : Prop
   eem002FiniteExternalEvidenceRecordManifestClosed : Prop

@@ -665,6 +665,154 @@ impl EvidenceStabilityCoarseGraining {
 }
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
+pub struct Paper9RegimeConsistency {
+    pub eem001_upstream_binding_closed: bool,
+    pub eem002_finite_external_evidence_record_manifest_closed: bool,
+    pub eem003_finite_reproduction_protocol_descriptor_closed: bool,
+    pub eem004_paper9_comparison_compatibility_closed: bool,
+    pub eem005_evidence_stability_coarse_graining_closed: bool,
+    pub paper1_commit: &'static str,
+    pub paper2_commit: &'static str,
+    pub paper3_commit: &'static str,
+    pub paper4_commit: &'static str,
+    pub paper5_commit: &'static str,
+    pub paper6_commit: &'static str,
+    pub paper7_commit: &'static str,
+    pub paper8_commit: &'static str,
+    pub paper9_commit: &'static str,
+    pub paper9_final_certificate: &'static str,
+    pub paper1_internal_conditional_closed: bool,
+    pub paper2_geometry_closed: bool,
+    pub paper3_curvature_closed: bool,
+    pub paper4_dynamics_closed: bool,
+    pub paper5_quantum_compatible_local_dynamics_closed: bool,
+    pub paper6_matter_gauge_observables_closed: bool,
+    pub paper7_particle_excitation_observables_closed: bool,
+    pub paper8_standard_model_candidate_observables_closed: bool,
+    pub paper9_observed_catalog_comparison_observables_closed: bool,
+    pub paper9_final_certificate_consumed: bool,
+    pub upstream_mutation_attempt: bool,
+    pub paper9_bypass_attempt: bool,
+    pub upstream_chain_bypass_attempt: bool,
+    pub unapproved_paper9_revision: bool,
+    pub unrecorded_upstream_revision: bool,
+    pub observed_catalog_recovery_import: bool,
+    pub observed_particle_catalog_recovery_import: bool,
+    pub physical_standard_model_content_import: bool,
+    pub physical_particle_excitation_import: bool,
+    pub physical_quantum_dynamics_import: bool,
+    pub external_matter_field_import: bool,
+    pub external_gauge_field_import: bool,
+    pub continuum_qft_import: bool,
+    pub background_hilbert_bundle_import: bool,
+    pub simulation_only_promotion: bool,
+    pub fit_only_calibration: bool,
+    pub physical_promotion: bool,
+    pub unified_field_promotion: bool,
+}
+
+impl Paper9RegimeConsistency {
+    pub fn canonical_eem006() -> Self {
+        Self {
+            eem001_upstream_binding_closed: Paper10UpstreamBinding::canonical_eem001()
+                .closes_eem001(),
+            eem002_finite_external_evidence_record_manifest_closed:
+                FiniteExternalEvidenceRecordManifest::canonical_eem002().closes_eem002(),
+            eem003_finite_reproduction_protocol_descriptor_closed:
+                FiniteReproductionProtocolDescriptor::canonical_eem003().closes_eem003(),
+            eem004_paper9_comparison_compatibility_closed:
+                Paper9ComparisonCompatibility::canonical_eem004().closes_eem004(),
+            eem005_evidence_stability_coarse_graining_closed:
+                EvidenceStabilityCoarseGraining::canonical_eem005().closes_eem005(),
+            paper1_commit: PAPER1_FROZEN_COMMIT,
+            paper2_commit: PAPER2_FROZEN_COMMIT,
+            paper3_commit: PAPER3_FROZEN_COMMIT,
+            paper4_commit: PAPER4_FROZEN_COMMIT,
+            paper5_commit: PAPER5_FROZEN_COMMIT,
+            paper6_commit: PAPER6_FROZEN_COMMIT,
+            paper7_commit: PAPER7_FROZEN_COMMIT,
+            paper8_commit: PAPER8_FROZEN_COMMIT,
+            paper9_commit: PAPER9_FROZEN_COMMIT,
+            paper9_final_certificate: PAPER9_FINAL_CERTIFICATE,
+            paper1_internal_conditional_closed: true,
+            paper2_geometry_closed: true,
+            paper3_curvature_closed: true,
+            paper4_dynamics_closed: true,
+            paper5_quantum_compatible_local_dynamics_closed: true,
+            paper6_matter_gauge_observables_closed: true,
+            paper7_particle_excitation_observables_closed: true,
+            paper8_standard_model_candidate_observables_closed: true,
+            paper9_observed_catalog_comparison_observables_closed: true,
+            paper9_final_certificate_consumed: true,
+            upstream_mutation_attempt: false,
+            paper9_bypass_attempt: false,
+            upstream_chain_bypass_attempt: false,
+            unapproved_paper9_revision: false,
+            unrecorded_upstream_revision: false,
+            observed_catalog_recovery_import: false,
+            observed_particle_catalog_recovery_import: false,
+            physical_standard_model_content_import: false,
+            physical_particle_excitation_import: false,
+            physical_quantum_dynamics_import: false,
+            external_matter_field_import: false,
+            external_gauge_field_import: false,
+            continuum_qft_import: false,
+            background_hilbert_bundle_import: false,
+            simulation_only_promotion: false,
+            fit_only_calibration: false,
+            physical_promotion: false,
+            unified_field_promotion: false,
+        }
+    }
+
+    pub fn closes_eem006(&self) -> bool {
+        self.eem001_upstream_binding_closed
+            && self.eem002_finite_external_evidence_record_manifest_closed
+            && self.eem003_finite_reproduction_protocol_descriptor_closed
+            && self.eem004_paper9_comparison_compatibility_closed
+            && self.eem005_evidence_stability_coarse_graining_closed
+            && self.paper1_commit == PAPER1_FROZEN_COMMIT
+            && self.paper2_commit == PAPER2_FROZEN_COMMIT
+            && self.paper3_commit == PAPER3_FROZEN_COMMIT
+            && self.paper4_commit == PAPER4_FROZEN_COMMIT
+            && self.paper5_commit == PAPER5_FROZEN_COMMIT
+            && self.paper6_commit == PAPER6_FROZEN_COMMIT
+            && self.paper7_commit == PAPER7_FROZEN_COMMIT
+            && self.paper8_commit == PAPER8_FROZEN_COMMIT
+            && self.paper9_commit == PAPER9_FROZEN_COMMIT
+            && self.paper9_final_certificate == PAPER9_FINAL_CERTIFICATE
+            && self.paper1_internal_conditional_closed
+            && self.paper2_geometry_closed
+            && self.paper3_curvature_closed
+            && self.paper4_dynamics_closed
+            && self.paper5_quantum_compatible_local_dynamics_closed
+            && self.paper6_matter_gauge_observables_closed
+            && self.paper7_particle_excitation_observables_closed
+            && self.paper8_standard_model_candidate_observables_closed
+            && self.paper9_observed_catalog_comparison_observables_closed
+            && self.paper9_final_certificate_consumed
+            && !self.upstream_mutation_attempt
+            && !self.paper9_bypass_attempt
+            && !self.upstream_chain_bypass_attempt
+            && !self.unapproved_paper9_revision
+            && !self.unrecorded_upstream_revision
+            && !self.observed_catalog_recovery_import
+            && !self.observed_particle_catalog_recovery_import
+            && !self.physical_standard_model_content_import
+            && !self.physical_particle_excitation_import
+            && !self.physical_quantum_dynamics_import
+            && !self.external_matter_field_import
+            && !self.external_gauge_field_import
+            && !self.continuum_qft_import
+            && !self.background_hilbert_bundle_import
+            && !self.simulation_only_promotion
+            && !self.fit_only_calibration
+            && !self.physical_promotion
+            && !self.unified_field_promotion
+    }
+}
+
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub struct Paper10SkeletonCertificate {
     pub eem001_upstream_binding_closed: bool,
     pub eem002_finite_external_evidence_record_manifest_closed: bool,
@@ -817,6 +965,35 @@ impl Paper10SkeletonCertificate {
         }
     }
 
+    pub fn with_eem006_paper9_regime_consistency_closed() -> Self {
+        let binding = Paper10UpstreamBinding::canonical_eem001();
+        let manifest = FiniteExternalEvidenceRecordManifest::canonical_eem002();
+        let protocol = FiniteReproductionProtocolDescriptor::canonical_eem003();
+        let compatibility = Paper9ComparisonCompatibility::canonical_eem004();
+        let stability = EvidenceStabilityCoarseGraining::canonical_eem005();
+        let regime = Paper9RegimeConsistency::canonical_eem006();
+        Self {
+            eem001_upstream_binding_closed: binding.closes_eem001(),
+            eem002_finite_external_evidence_record_manifest_closed: manifest.closes_eem002(),
+            eem003_finite_reproduction_protocol_descriptor_closed: protocol.closes_eem003(),
+            eem004_paper9_comparison_compatibility_closed: compatibility.closes_eem004(),
+            eem005_evidence_stability_coarse_graining_closed: stability.closes_eem005(),
+            eem006_paper9_regime_consistency_closed: regime.closes_eem006(),
+            eem007_no_hidden_physical_promotion_audit_closed: false,
+            eem008_final_conditional_certificate_closed: false,
+            paper10_theorem_closed: false,
+            physical_nature_claim: false,
+            observed_particle_catalog_recovery_claim: false,
+            physical_standard_model_claim: false,
+            physical_particle_excitation_claim: false,
+            physical_quantum_dynamics_claim: false,
+            continuum_qft_claim: false,
+            simulation_only_promotion: false,
+            fit_only_calibration_claim: false,
+            unified_field_theory_claim: false,
+        }
+    }
+
     pub fn closes_paper10_theorem(&self) -> bool {
         self.eem001_upstream_binding_closed
             && self.eem002_finite_external_evidence_record_manifest_closed
@@ -857,4 +1034,8 @@ pub fn eem004_paper9_comparison_compatibility_marker() -> &'static str {
 
 pub fn eem005_evidence_stability_coarse_graining_marker() -> &'static str {
     "eem005-evidence-stability-coarse-graining-closed"
+}
+
+pub fn eem006_paper9_regime_consistency_marker() -> &'static str {
+    "eem006-paper9-regime-consistency-no-upstream-bypass-closed"
 }

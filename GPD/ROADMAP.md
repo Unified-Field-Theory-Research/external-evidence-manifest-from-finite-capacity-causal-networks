@@ -35,7 +35,7 @@ scope unless a future paper-specific certificate explicitly closes them.
 - [x] **Phase 5: Prove Evidence Stability And Coarse-Graining Stability** -
   `EEM-005` should state finite evidence-manifest stability rows and show
   coherent transport under finite intrinsic coarse-graining.
-- [ ] **Phase 6: Bind To Paper 9 Regime** - `EEM-006` should consume the
+- [x] **Phase 6: Bind To Paper 9 Regime** - `EEM-006` should consume the
   recorded Paper 9 final conditional certificate and reject bypasses of Paper
   9 or any upstream assumption.
 - [ ] **Phase 7: Close No-Hidden-Physical-Promotion Import Audit** -

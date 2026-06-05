@@ -13,5 +13,5 @@ The current closed rungs are `EEM-001`: upstream binding and claim boundary,
 `EEM-002`: finite external evidence record manifest, `EEM-003`: finite
 reproduction protocol descriptor, and `EEM-004`: Paper 9 comparison
 compatibility, and `EEM-005`: evidence stability and coarse-graining
-stability. The current active obligation is `EEM-006`: bind to the Paper 9
-regime.
+stability, and `EEM-006`: Paper 9 regime consistency. The current active
+obligation is `EEM-007`: close the no-hidden import audit.

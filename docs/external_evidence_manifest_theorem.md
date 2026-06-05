@@ -22,12 +22,12 @@ The theorem target is open. `EEM-001` closes the upstream binding and
 claim-boundary scaffold. `EEM-002` closes finite external evidence record
 manifest rows. `EEM-003` closes finite reproduction protocol descriptor rows.
 `EEM-004` closes Paper 9 comparison compatibility. `EEM-005` closes evidence
-stability and coarse-graining stability. This is not external evidence
-manifest recovery, not observed particle catalog recovery, not physical
-Standard Model recovery, not a physical particle-excitation claim, not
-physical quantum dynamics, not continuum quantum field theory, not
-simulation-only promotion, not fit-only calibration, not physical nature
-promotion, and not a unified field theory.
+stability and coarse-graining stability. `EEM-006` closes Paper 9 regime
+consistency. This is not external evidence manifest recovery, not observed
+particle catalog recovery, not physical Standard Model recovery, not a
+physical particle-excitation claim, not physical quantum dynamics, not
+continuum quantum field theory, not simulation-only promotion, not fit-only
+calibration, not physical nature promotion, and not a unified field theory.
 
 ## Upstream Binding
 
@@ -260,11 +260,44 @@ recovery.
 
 ### EEM-006: Paper 9 Regime Consistency
 
-Status: open.
+Status: closed.
+
+`EEM-006` binds the closed local Paper 10 structures to the recorded Paper 9
+regime by checking closed `EEM-001` through `EEM-005`, the recorded Paper 1
+through Paper 9 commits, the recorded Paper 9 final certificate, the closed
+Paper 1 through Paper 9 theorem chain, and explicit absence of upstream
+mutation, Paper 9 bypass, upstream-chain bypass, unapproved Paper 9 revision,
+and unrecorded upstream revision. It rejects observed-catalog recovery
+imports, observed particle catalog recovery, physical Standard Model content,
+physical particle excitations, physical quantum dynamics, continuum QFT,
+background Hilbert bundles, simulation-only promotion, fit-only calibration,
+physical promotion, and unified-field promotion.
+
+Rust anchors:
+
+- `Paper9RegimeConsistency`
+- `Paper9RegimeConsistency::canonical_eem006`
+- `Paper9RegimeConsistency::closes_eem006`
+- `Paper10SkeletonCertificate::with_eem006_paper9_regime_consistency_closed`
+- `eem006_paper9_regime_consistency_marker`
+
+Lean anchors:
+
+- `EEM006Paper9RegimeConsistencyContract`
+- `EEM006Paper9RegimeConsistencyContract.closed`
+- `eem006_paper9_regime_consistency_closed_from_fields`
+- `eem006_missing_eem005_stability_not_closed`
+- `eem006_paper9_bypass_not_closed`
+- `eem006_unapproved_paper9_revision_not_closed`
+- `eem006_canonical_paper9_regime_consistency_closed`
+
+Boundary: `EEM-006` proves Paper 9 regime consistency only. It does not
+prove the no-hidden import audit or final external evidence manifest
+recovery.
 
 ### EEM-007: No-Hidden-Physical-Promotion Import Audit
 
-Status: planned.
+Status: open.
 
 ### EEM-008: Final Conditional External Evidence Manifest Certificate
 

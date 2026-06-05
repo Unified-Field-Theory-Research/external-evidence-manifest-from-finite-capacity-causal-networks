@@ -2,14 +2,14 @@
 
 ## Current Position
 
-**Current Phase:** 6
-**Current Phase Name:** Bind To Paper 9 Regime
+**Current Phase:** 7
+**Current Phase Name:** Close No-Hidden-Physical-Promotion Import Audit
 **Status:** `EEM-001` upstream binding and claim-boundary scaffold closed;
 `EEM-002` finite external evidence record manifest closed; `EEM-003` finite
 reproduction protocol descriptor closed; `EEM-004` Paper 9 comparison
 compatibility closed; `EEM-005` evidence stability and coarse-graining
-stability closed; `EEM-006` Paper 9 regime consistency is open; physical
-promotion remains false
+stability closed; `EEM-006` Paper 9 regime consistency closed; `EEM-007`
+no-hidden import audit is open; physical promotion remains false
 
 Closed rung summary: `EEM-001` records the upstream binding through the
 closed Paper 9 conditional observed-catalog comparison observables theorem at
@@ -71,12 +71,15 @@ stability with non-growing evidence-ID, provenance, Paper 9 link,
 local-domain, protocol-step, and transfer bounds while preserving Paper 9
 comparison stability/coarse-graining compatibility, finite capacity,
 locality, bounded transfer, and causal-cone/no-signaling stability.
+`EEM-006` binds the closed local Paper 10 structures to the recorded Paper 9
+commit and final certificate and rejects upstream mutation, Paper 9 bypass,
+upstream-chain bypass, unapproved Paper 9 revisions, and unrecorded upstream
+revisions.
 
-Next stable target phrase: `EEM-006`: bind the closed local Paper 10
-structures to the recorded Paper 9 regime without upstream mutation, Paper 9
-bypass, unapproved Paper 9 revision, unrecorded upstream revision, observed
-recovery import, simulation-only promotion, fit-only calibration, physical
-nature promotion, or unified-field promotion.
+Next stable target phrase: `EEM-007`: close the no-hidden-physical-promotion,
+simulation-only, fit-only, generated-prose, external-catalog-as-proof, and
+review-status-as-proof import audit across docs, state, upstream manifest,
+Lean, Rust, and publication artifacts.
 
 Stable nonpromotion tokens: observed particle catalog recovery; physical
 Standard Model content; physical particle excitations; physical matter fields;
@@ -115,20 +118,24 @@ promotion; unified-field promotion.
   9 link, local domain, protocol step, and transfer bounds, while rejecting
   external conservation-law, continuum current, and continuum-limit oracle
   imports.
+- `EEM-006` rows bind all closed Paper 10 local structures to the recorded
+  Paper 9 regime and recorded Paper 1 through Paper 9 commit chain while
+  rejecting upstream mutation, bypasses, and unapproved or unrecorded
+  upstream revisions.
 
 ## Open Questions
 
-- `EEM-006`: Which finite regime-consistency contract binds all closed Paper
-  10 rows to the recorded Paper 9 commit and final certificate without
-  upstream bypass?
+- `EEM-007`: Which finite fail-closed audit contract covers docs, proof log,
+  state, upstream manifest, Lean, Rust, and publication artifacts without
+  hidden promotion imports?
 
 ## Pending Todos
 
-- Define Paper 1 through Paper 9 commit, Paper 9 final certificate,
-  upstream-mutation, Paper 9 bypass, upstream-chain bypass, unapproved
-  revision, and unrecorded revision checks for `EEM-006`.
-- Add Rust and Lean fail-closed checks for `EEM-006`.
-- Update theorem docs, proof log, and publication skeleton after `EEM-006`
+- Define audit coverage, Rust-only runtime, fail-closed audit certificate,
+  physical-promotion, simulation-only, fit-only, generated-prose,
+  external-catalog-as-proof, and review-status-as-proof checks for `EEM-007`.
+- Add Rust and Lean fail-closed checks for `EEM-007`.
+- Update theorem docs, proof log, and publication skeleton after `EEM-007`
   closes.
 
 ## Blockers/Concerns
@@ -147,6 +154,8 @@ promotion; unified-field promotion.
   or the final conditional theorem.
 - `EEM-005` proves stability only; it does not prove Paper 9 regime
   consistency, the no-hidden import audit, or the final conditional theorem.
+- `EEM-006` proves regime consistency only; it does not prove the no-hidden
+  import audit or the final conditional theorem.
 - External evidence manifest recovery remains open.
 - Observed particle catalog recovery, physical Standard Model content,
   physical particle excitations, physical matter fields, physical gauge

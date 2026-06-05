@@ -268,8 +268,60 @@ Model content, physical particle excitations, physical quantum dynamics,
 continuum quantum field theory, simulation-only promotion, fit-only
 calibration, a physical nature-level claim, or a unified field theory.
 
+## EEM-006: Paper 9 Regime Consistency
+
+Status: closed as a Paper 9 regime-consistency and no-upstream-bypass
+contract.
+
+Artifacts:
+
+- `docs/external_evidence_manifest_theorem.md`
+- `docs/open_proof_obligations.md`
+- `docs/proof_log.md`
+- `GPD/STATE.md`
+- `GPD/ROADMAP.md`
+- `GPD/state.json`
+- `GPD/formal/FiniteCapacity/ExternalEvidenceManifest.lean`
+- `rust/cclab_accel/src/lib.rs`
+- `rust/cclab_accel/tests/external_evidence_manifest_gate.rs`
+
+Rust anchors:
+
+- `Paper9RegimeConsistency`
+- `Paper9RegimeConsistency::canonical_eem006`
+- `Paper9RegimeConsistency::closes_eem006`
+- `Paper10SkeletonCertificate::with_eem006_paper9_regime_consistency_closed`
+- `eem006_paper9_regime_consistency_marker`
+
+Lean anchors:
+
+- `EEM006Paper9RegimeConsistencyContract`
+- `EEM006Paper9RegimeConsistencyContract.closed`
+- `eem006_paper9_regime_consistency_closed_from_fields`
+- `eem006_missing_eem005_stability_not_closed`
+- `eem006_paper9_bypass_not_closed`
+- `eem006_unapproved_paper9_revision_not_closed`
+- `eem006_canonical_paper9_regime_consistency_closed`
+
+Verification:
+
+- `make test-fast`
+- `make lean-build`
+
+Boundary:
+
+`EEM-006` binds the closed local Paper 10 structures to the recorded Paper 9
+commit and final certificate, and through Paper 9 to the recorded Paper 1
+through Paper 8 chain. It rejects upstream mutation, Paper 9 bypass,
+upstream-chain bypass, unapproved Paper 9 revisions, unrecorded upstream
+revisions, observed recovery imports, physical Standard Model content,
+physical particle excitations, physical quantum dynamics, continuum quantum
+field theory, simulation-only promotion, fit-only calibration, physical
+promotion, and unified-field promotion. It does not prove the no-hidden
+import audit or final external evidence manifest recovery.
+
 ## Active Next Obligation
 
-`EEM-006`: bind the closed local Paper 10 structures to the recorded Paper 9
-regime without upstream mutation, Paper 9 bypass, unapproved Paper 9
-revision, or unrecorded upstream revision.
+`EEM-007`: close the no-hidden-physical-promotion/simulation-only/fit-only
+import audit across docs, state, upstream manifest, Lean, Rust, and the
+publication skeleton.

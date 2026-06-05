@@ -109,11 +109,11 @@ Closed row shape:
   promotion, fit-only calibration, physical nature promotion, or
   unified-field promotion.
 
-## Active Obligation
+## Closed Dependencies: EEM-006
 
-`EEM-006` is open: Paper 9 regime consistency and no upstream bypass.
+`EEM-006` closes Paper 9 regime consistency and no upstream bypass.
 
-Required row shape:
+Closed row shape:
 
 - closed `EEM-001` through `EEM-005`;
 - recorded Paper 1 through Paper 9 commits match `UPSTREAM-PAPERS.json`;
@@ -130,10 +130,33 @@ Required row shape:
   simulation-only promotion, fit-only calibration, physical nature
   promotion, or unified-field promotion.
 
+## Active Obligation
+
+`EEM-007` is open: no-hidden-physical-promotion/simulation-only/fit-only
+import audit.
+
+Required row shape:
+
+- closed `EEM-001` through `EEM-006`;
+- theorem docs audited;
+- proof log audited;
+- state files audited;
+- upstream manifest audited;
+- Lean gate audited;
+- Rust gate audited;
+- publication skeleton audited;
+- Rust-only runtime verified;
+- fail-closed audit certificate emitted;
+- no observed-catalog recovery import, observed particle catalog recovery
+  import, physical Standard Model content, physical particle content,
+  physical quantum dynamics, continuum QFT, background Hilbert bundles,
+  external matter or gauge field import, simulation-only promotion, fit-only
+  calibration, generated-prose proof import, external-catalog-as-proof
+  import, review-status-as-proof import, physical nature promotion, or
+  unified-field promotion.
+
 ## Future Obligations
 
-- `EEM-007`: no-hidden-physical-promotion/simulation-only/fit-only import
-  audit.
 - `EEM-008`: final internal conditional certificate, if all prior obligations
   close.
 
