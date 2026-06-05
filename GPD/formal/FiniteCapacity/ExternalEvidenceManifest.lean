@@ -105,6 +105,241 @@ theorem eem001_canonical_upstream_binding_closed :
   unfold eem001CanonicalUpstreamBindingContract
   simp
 
+structure EEM002FiniteExternalEvidenceRecordManifestContract where
+  eem001UpstreamBindingClosed : Prop
+  evidenceIdBound : Nat
+  occupiedEvidenceIdCount : Nat
+  sourceProvenanceDescriptorBound : Nat
+  occupiedSourceProvenanceDescriptorCount : Nat
+  paper9DescriptorLinkBound : Nat
+  occupiedPaper9DescriptorLinkCount : Nat
+  paper9ComparisonMapLinkBound : Nat
+  occupiedPaper9ComparisonMapLinkCount : Nat
+  uncertaintyToleranceMetadataBound : Nat
+  occupiedUncertaintyToleranceMetadataCount : Nat
+  reproductionStatusFlagBound : Nat
+  occupiedReproductionStatusFlagCount : Nat
+  reviewStatusFlagBound : Nat
+  occupiedReviewStatusFlagCount : Nat
+  localEvidenceDomainSize : Nat
+  evidenceReadoutBoundarySize : Nat
+  finiteCapacityBound : Nat
+  boundedTransferBound : Nat
+  paper9DescriptorRowsCompatible : Prop
+  paper9ComparisonMapRowsCompatible : Prop
+  finiteLocalCapacityCompatible : Prop
+  boundedTransferCompatible : Prop
+  observedParticleCatalogRecoveryImport : Prop
+  physicalStandardModelContentImport : Prop
+  physicalParticleExcitationImport : Prop
+  physicalQuantumDynamicsImport : Prop
+  externalMatterFieldImport : Prop
+  externalGaugeFieldImport : Prop
+  continuumQFTImport : Prop
+  backgroundHilbertBundleImport : Prop
+  simulationOnlyPromotion : Prop
+  fitOnlyCalibration : Prop
+  physicalPromotion : Prop
+  unifiedFieldPromotion : Prop
+
+def EEM002FiniteExternalEvidenceRecordManifestContract.closed
+    (c : EEM002FiniteExternalEvidenceRecordManifestContract) : Prop :=
+  c.eem001UpstreamBindingClosed ∧
+  0 < c.evidenceIdBound ∧
+  0 < c.occupiedEvidenceIdCount ∧
+  c.occupiedEvidenceIdCount ≤ c.evidenceIdBound ∧
+  0 < c.sourceProvenanceDescriptorBound ∧
+  0 < c.occupiedSourceProvenanceDescriptorCount ∧
+  c.occupiedSourceProvenanceDescriptorCount ≤ c.sourceProvenanceDescriptorBound ∧
+  0 < c.paper9DescriptorLinkBound ∧
+  0 < c.occupiedPaper9DescriptorLinkCount ∧
+  c.occupiedPaper9DescriptorLinkCount ≤ c.paper9DescriptorLinkBound ∧
+  0 < c.paper9ComparisonMapLinkBound ∧
+  0 < c.occupiedPaper9ComparisonMapLinkCount ∧
+  c.occupiedPaper9ComparisonMapLinkCount ≤ c.paper9ComparisonMapLinkBound ∧
+  0 < c.uncertaintyToleranceMetadataBound ∧
+  0 < c.occupiedUncertaintyToleranceMetadataCount ∧
+  c.occupiedUncertaintyToleranceMetadataCount ≤ c.uncertaintyToleranceMetadataBound ∧
+  0 < c.reproductionStatusFlagBound ∧
+  0 < c.occupiedReproductionStatusFlagCount ∧
+  c.occupiedReproductionStatusFlagCount ≤ c.reproductionStatusFlagBound ∧
+  0 < c.reviewStatusFlagBound ∧
+  0 < c.occupiedReviewStatusFlagCount ∧
+  c.occupiedReviewStatusFlagCount ≤ c.reviewStatusFlagBound ∧
+  0 < c.localEvidenceDomainSize ∧
+  c.localEvidenceDomainSize ≤ c.finiteCapacityBound ∧
+  0 < c.evidenceReadoutBoundarySize ∧
+  c.evidenceReadoutBoundarySize ≤ c.localEvidenceDomainSize ∧
+  0 < c.boundedTransferBound ∧
+  c.boundedTransferBound ≤ c.finiteCapacityBound ∧
+  c.paper9DescriptorRowsCompatible ∧
+  c.paper9ComparisonMapRowsCompatible ∧
+  c.finiteLocalCapacityCompatible ∧
+  c.boundedTransferCompatible ∧
+  ¬ c.observedParticleCatalogRecoveryImport ∧
+  ¬ c.physicalStandardModelContentImport ∧
+  ¬ c.physicalParticleExcitationImport ∧
+  ¬ c.physicalQuantumDynamicsImport ∧
+  ¬ c.externalMatterFieldImport ∧
+  ¬ c.externalGaugeFieldImport ∧
+  ¬ c.continuumQFTImport ∧
+  ¬ c.backgroundHilbertBundleImport ∧
+  ¬ c.simulationOnlyPromotion ∧
+  ¬ c.fitOnlyCalibration ∧
+  ¬ c.physicalPromotion ∧
+  ¬ c.unifiedFieldPromotion
+
+theorem eem002_finite_external_evidence_record_manifest_closed_from_fields
+    (c : EEM002FiniteExternalEvidenceRecordManifestContract)
+    (hEEM001 : c.eem001UpstreamBindingClosed)
+    (hEvidenceBoundPositive : 0 < c.evidenceIdBound)
+    (hEvidenceCountPositive : 0 < c.occupiedEvidenceIdCount)
+    (hEvidenceCountLeBound : c.occupiedEvidenceIdCount ≤ c.evidenceIdBound)
+    (hProvenanceBoundPositive : 0 < c.sourceProvenanceDescriptorBound)
+    (hProvenanceCountPositive : 0 < c.occupiedSourceProvenanceDescriptorCount)
+    (hProvenanceCountLeBound :
+      c.occupiedSourceProvenanceDescriptorCount ≤ c.sourceProvenanceDescriptorBound)
+    (hDescriptorLinkBoundPositive : 0 < c.paper9DescriptorLinkBound)
+    (hDescriptorLinkCountPositive : 0 < c.occupiedPaper9DescriptorLinkCount)
+    (hDescriptorLinkCountLeBound :
+      c.occupiedPaper9DescriptorLinkCount ≤ c.paper9DescriptorLinkBound)
+    (hComparisonLinkBoundPositive : 0 < c.paper9ComparisonMapLinkBound)
+    (hComparisonLinkCountPositive : 0 < c.occupiedPaper9ComparisonMapLinkCount)
+    (hComparisonLinkCountLeBound :
+      c.occupiedPaper9ComparisonMapLinkCount ≤ c.paper9ComparisonMapLinkBound)
+    (hToleranceBoundPositive : 0 < c.uncertaintyToleranceMetadataBound)
+    (hToleranceCountPositive : 0 < c.occupiedUncertaintyToleranceMetadataCount)
+    (hToleranceCountLeBound :
+      c.occupiedUncertaintyToleranceMetadataCount ≤ c.uncertaintyToleranceMetadataBound)
+    (hReproductionBoundPositive : 0 < c.reproductionStatusFlagBound)
+    (hReproductionCountPositive : 0 < c.occupiedReproductionStatusFlagCount)
+    (hReproductionCountLeBound :
+      c.occupiedReproductionStatusFlagCount ≤ c.reproductionStatusFlagBound)
+    (hReviewBoundPositive : 0 < c.reviewStatusFlagBound)
+    (hReviewCountPositive : 0 < c.occupiedReviewStatusFlagCount)
+    (hReviewCountLeBound :
+      c.occupiedReviewStatusFlagCount ≤ c.reviewStatusFlagBound)
+    (hDomainPositive : 0 < c.localEvidenceDomainSize)
+    (hDomainLeCapacity : c.localEvidenceDomainSize ≤ c.finiteCapacityBound)
+    (hReadoutPositive : 0 < c.evidenceReadoutBoundarySize)
+    (hReadoutLeDomain : c.evidenceReadoutBoundarySize ≤ c.localEvidenceDomainSize)
+    (hTransferPositive : 0 < c.boundedTransferBound)
+    (hTransferLeCapacity : c.boundedTransferBound ≤ c.finiteCapacityBound)
+    (hPaper9Descriptor : c.paper9DescriptorRowsCompatible)
+    (hPaper9Comparison : c.paper9ComparisonMapRowsCompatible)
+    (hFiniteCapacity : c.finiteLocalCapacityCompatible)
+    (hBoundedTransfer : c.boundedTransferCompatible)
+    (hNoObservedRecovery : ¬ c.observedParticleCatalogRecoveryImport)
+    (hNoPhysicalSM : ¬ c.physicalStandardModelContentImport)
+    (hNoPhysicalParticle : ¬ c.physicalParticleExcitationImport)
+    (hNoPhysicalQuantum : ¬ c.physicalQuantumDynamicsImport)
+    (hNoMatter : ¬ c.externalMatterFieldImport)
+    (hNoGauge : ¬ c.externalGaugeFieldImport)
+    (hNoQFT : ¬ c.continuumQFTImport)
+    (hNoHilbert : ¬ c.backgroundHilbertBundleImport)
+    (hNoSimulation : ¬ c.simulationOnlyPromotion)
+    (hNoFit : ¬ c.fitOnlyCalibration)
+    (hNoPhysicalPromotion : ¬ c.physicalPromotion)
+    (hNoUnified : ¬ c.unifiedFieldPromotion) :
+    c.closed := by
+  exact ⟨hEEM001, hEvidenceBoundPositive, hEvidenceCountPositive,
+    hEvidenceCountLeBound, hProvenanceBoundPositive,
+    hProvenanceCountPositive, hProvenanceCountLeBound,
+    hDescriptorLinkBoundPositive, hDescriptorLinkCountPositive,
+    hDescriptorLinkCountLeBound, hComparisonLinkBoundPositive,
+    hComparisonLinkCountPositive, hComparisonLinkCountLeBound,
+    hToleranceBoundPositive, hToleranceCountPositive, hToleranceCountLeBound,
+    hReproductionBoundPositive, hReproductionCountPositive,
+    hReproductionCountLeBound, hReviewBoundPositive, hReviewCountPositive,
+    hReviewCountLeBound, hDomainPositive, hDomainLeCapacity,
+    hReadoutPositive, hReadoutLeDomain, hTransferPositive,
+    hTransferLeCapacity, hPaper9Descriptor, hPaper9Comparison,
+    hFiniteCapacity, hBoundedTransfer, hNoObservedRecovery, hNoPhysicalSM,
+    hNoPhysicalParticle, hNoPhysicalQuantum, hNoMatter, hNoGauge, hNoQFT,
+    hNoHilbert, hNoSimulation, hNoFit, hNoPhysicalPromotion, hNoUnified⟩
+
+theorem eem002_missing_evidence_id_bound_not_closed
+    (c : EEM002FiniteExternalEvidenceRecordManifestContract)
+    (hClosed : c.closed)
+    (hMissingEvidenceBound : ¬ 0 < c.evidenceIdBound) :
+    False := by
+  rcases hClosed with ⟨_, hEvidenceBound, _⟩
+  exact hMissingEvidenceBound hEvidenceBound
+
+theorem eem002_missing_paper9_descriptor_rows_not_closed
+    (c : EEM002FiniteExternalEvidenceRecordManifestContract)
+    (hClosed : c.closed)
+    (hMissingPaper9Descriptor : ¬ c.paper9DescriptorRowsCompatible) :
+    False := by
+  rcases hClosed with
+    ⟨_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _,
+      _, _, _, _, _, hPaper9Descriptor, _⟩
+  exact hMissingPaper9Descriptor hPaper9Descriptor
+
+theorem eem002_observed_particle_catalog_recovery_import_not_closed
+    (c : EEM002FiniteExternalEvidenceRecordManifestContract)
+    (hClosed : c.closed)
+    (hObservedRecovery : c.observedParticleCatalogRecoveryImport) :
+    False := by
+  rcases hClosed with
+    ⟨_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _,
+      _, _, _, _, _, _, _, _, _, hNoObservedRecovery, _⟩
+  exact hNoObservedRecovery hObservedRecovery
+
+theorem eem002_fit_only_calibration_not_closed
+    (c : EEM002FiniteExternalEvidenceRecordManifestContract)
+    (hClosed : c.closed)
+    (hFitOnly : c.fitOnlyCalibration) :
+    False := by
+  rcases hClosed with
+    ⟨_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _,
+      _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, hNoFit, _⟩
+  exact hNoFit hFitOnly
+
+def eem002CanonicalFiniteExternalEvidenceRecordManifestContract :
+    EEM002FiniteExternalEvidenceRecordManifestContract :=
+  { eem001UpstreamBindingClosed := True,
+    evidenceIdBound := 24,
+    occupiedEvidenceIdCount := 6,
+    sourceProvenanceDescriptorBound := 16,
+    occupiedSourceProvenanceDescriptorCount := 6,
+    paper9DescriptorLinkBound := 16,
+    occupiedPaper9DescriptorLinkCount := 4,
+    paper9ComparisonMapLinkBound := 16,
+    occupiedPaper9ComparisonMapLinkCount := 4,
+    uncertaintyToleranceMetadataBound := 12,
+    occupiedUncertaintyToleranceMetadataCount := 4,
+    reproductionStatusFlagBound := 8,
+    occupiedReproductionStatusFlagCount := 3,
+    reviewStatusFlagBound := 8,
+    occupiedReviewStatusFlagCount := 3,
+    localEvidenceDomainSize := 8,
+    evidenceReadoutBoundarySize := 2,
+    finiteCapacityBound := 24,
+    boundedTransferBound := 4,
+    paper9DescriptorRowsCompatible := True,
+    paper9ComparisonMapRowsCompatible := True,
+    finiteLocalCapacityCompatible := True,
+    boundedTransferCompatible := True,
+    observedParticleCatalogRecoveryImport := False,
+    physicalStandardModelContentImport := False,
+    physicalParticleExcitationImport := False,
+    physicalQuantumDynamicsImport := False,
+    externalMatterFieldImport := False,
+    externalGaugeFieldImport := False,
+    continuumQFTImport := False,
+    backgroundHilbertBundleImport := False,
+    simulationOnlyPromotion := False,
+    fitOnlyCalibration := False,
+    physicalPromotion := False,
+    unifiedFieldPromotion := False }
+
+theorem eem002_canonical_finite_external_evidence_record_manifest_closed :
+    eem002CanonicalFiniteExternalEvidenceRecordManifestContract.closed := by
+  unfold EEM002FiniteExternalEvidenceRecordManifestContract.closed
+  unfold eem002CanonicalFiniteExternalEvidenceRecordManifestContract
+  simp
+
 structure Paper10ExternalEvidenceManifestTheoremContract where
   eem001UpstreamBindingClosed : Prop
   eem002FiniteExternalEvidenceRecordManifestClosed : Prop

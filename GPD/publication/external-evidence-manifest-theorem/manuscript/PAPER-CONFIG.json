@@ -2,9 +2,10 @@
   "schema_version": 1,
   "paper": 10,
   "title": "External Evidence Manifest From Finite-Capacity Causal Networks",
-  "active_rung": "EEM-002",
+  "active_rung": "EEM-003",
   "closed_rungs": [
-    "EEM-001"
+    "EEM-001",
+    "EEM-002"
   ],
-  "claim_boundary": "Initial upstream-binding scaffold only; no external evidence manifest recovery, observed particle catalog recovery, physical Standard Model, simulation-only, fit-only, physical nature, or unified-field promotion."
+  "claim_boundary": "EEM-001 upstream binding and EEM-002 finite evidence rows are closed; no external evidence manifest recovery, observed particle catalog recovery, physical Standard Model, simulation-only, fit-only, physical nature, or unified-field promotion."
 }

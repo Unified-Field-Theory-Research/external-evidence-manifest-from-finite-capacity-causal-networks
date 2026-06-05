@@ -19,7 +19,7 @@ scope unless a future paper-specific certificate explicitly closes them.
   isolated repo, manuscript skeleton, upstream binding, Lean scaffold, and
   Rust nonpromotion gate. `EEM-001` records the upstream binding and claim
   boundary through the closed Paper 9 result.
-- [ ] **Phase 2: Define Finite External Evidence Record Manifest** -
+- [x] **Phase 2: Define Finite External Evidence Record Manifest** -
   `EEM-002` should define finite external evidence rows with finite evidence
   IDs, finite source/provenance descriptors, finite observable links, finite
   uncertainty/tolerance metadata, reproduction-status flags, and no observed

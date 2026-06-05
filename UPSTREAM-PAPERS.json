@@ -97,7 +97,7 @@
   "paper10_dependency_policy": "Paper 10 depends on the recorded Paper 9 commit and its recorded Paper 8/Paper 7/Paper 6/Paper 5/Paper 4/Paper 3/Paper 2/Paper 1 upstream bindings unless an explicit upstream revision is approved and recorded.",
   "paper10_current_claims": {
     "eem001_upstream_binding_closed": true,
-    "eem002_finite_external_evidence_record_manifest_closed": false,
+    "eem002_finite_external_evidence_record_manifest_closed": true,
     "eem003_finite_reproduction_protocol_descriptor_closed": false,
     "eem004_paper9_comparison_compatibility_closed": false,
     "eem005_evidence_stability_coarse_graining_closed": false,

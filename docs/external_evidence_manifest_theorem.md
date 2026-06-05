@@ -18,12 +18,13 @@ Paper 10 aims at the following internal conditional theorem:
 
 ## Claim Boundary
 
-The theorem target is open. `EEM-001` closes only the upstream binding and
-claim-boundary scaffold. This is not observed particle catalog recovery, not
-physical Standard Model recovery, not a physical particle-excitation claim,
-not physical quantum dynamics, not continuum quantum field theory, not
-simulation-only promotion, not fit-only calibration, not physical nature
-promotion, and not a unified field theory.
+The theorem target is open. `EEM-001` closes the upstream binding and
+claim-boundary scaffold. `EEM-002` closes finite external evidence record
+manifest rows. This is not external evidence manifest recovery, not observed
+particle catalog recovery, not physical Standard Model recovery, not a
+physical particle-excitation claim, not physical quantum dynamics, not
+continuum quantum field theory, not simulation-only promotion, not fit-only
+calibration, not physical nature promotion, and not a unified field theory.
 
 ## Upstream Binding
 
@@ -92,20 +93,47 @@ claim, or a unified field theory.
 
 ### EEM-002: Finite External Evidence Record Manifest
 
-Status: open.
+Status: closed.
 
-Target: define finite external evidence rows with finite evidence IDs, finite
-source/provenance descriptors, finite observable links to Paper 9 comparison
-rows, finite uncertainty/tolerance metadata, finite reproduction-status flags,
-finite review-status flags, finite local evidence domains, and explicit
-rejection of observed recovery, physical Standard Model content, physical
-particle excitations, continuum QFT, external matter fields, external gauge
+`EEM-002` defines finite external evidence rows with finite evidence IDs,
+finite source/provenance descriptors, finite links to Paper 9 descriptor and
+comparison-map rows, finite uncertainty/tolerance metadata, finite
+reproduction-status flags, finite review-status flags, finite local evidence
+domains, finite evidence readout boundaries, finite-capacity and
+bounded-transfer compatibility, and explicit rejection of observed recovery,
+physical Standard Model content, physical particle excitations, physical
+quantum dynamics, continuum QFT, external matter fields, external gauge
 fields, background Hilbert bundles, simulation-only promotion, fit-only
 calibration, physical nature promotion, and unified-field promotion.
 
+Rust anchors:
+
+- `FiniteExternalEvidenceRecordManifest`
+- `FiniteExternalEvidenceRecordManifest::canonical_eem002`
+- `FiniteExternalEvidenceRecordManifest::closes_eem002`
+- `Paper10SkeletonCertificate::with_eem002_finite_external_evidence_record_manifest_closed`
+- `eem002_finite_external_evidence_record_manifest_marker`
+
+Lean anchors:
+
+- `EEM002FiniteExternalEvidenceRecordManifestContract`
+- `EEM002FiniteExternalEvidenceRecordManifestContract.closed`
+- `eem002_finite_external_evidence_record_manifest_closed_from_fields`
+- `eem002_missing_evidence_id_bound_not_closed`
+- `eem002_missing_paper9_descriptor_rows_not_closed`
+- `eem002_observed_particle_catalog_recovery_import_not_closed`
+- `eem002_fit_only_calibration_not_closed`
+- `eem002_canonical_finite_external_evidence_record_manifest_closed`
+
+Boundary: `EEM-002` defines finite external evidence record rows only. It
+does not define reproduction protocol descriptors, prove Paper 9 comparison
+compatibility, prove evidence stability, close Paper 9 regime consistency,
+close the no-hidden import audit, or prove external evidence manifest
+recovery.
+
 ### EEM-003: Finite Reproduction Protocol Descriptor
 
-Status: planned.
+Status: open.
 
 ### EEM-004: Paper 9 Comparison Compatibility
 

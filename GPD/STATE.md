@@ -2,11 +2,11 @@
 
 ## Current Position
 
-**Current Phase:** 2
-**Current Phase Name:** Define Finite External Evidence Record Manifest
+**Current Phase:** 3
+**Current Phase Name:** Define Finite Reproduction Protocol Descriptor
 **Status:** `EEM-001` upstream binding and claim-boundary scaffold closed;
-`EEM-002` finite external evidence record manifest is open; physical
-promotion remains false
+`EEM-002` finite external evidence record manifest closed; `EEM-003` finite
+reproduction protocol descriptor is open; physical promotion remains false
 
 Closed rung summary: `EEM-001` records the upstream binding through the
 closed Paper 9 conditional observed-catalog comparison observables theorem at
@@ -43,14 +43,21 @@ higher-dimensional geometry theorem at commit
 conditional theorem commit `3a9637c65f783ca35e77118f83560290f42f3085`.
 
 The repo is non-promoting. `EEM-001` records the upstream binding and claim
-boundary only.
+boundary. `EEM-002` defines finite external evidence record manifest rows by
+finite evidence IDs, source/provenance descriptor support, Paper 9 descriptor
+links, Paper 9 comparison-map links, uncertainty/tolerance metadata,
+reproduction-status flags, review-status flags, local evidence domains,
+finite evidence readout boundaries, Paper 9 row compatibility, finite local
+capacity, bounded transfer, and explicit non-import guards.
 
-Next stable target phrase: `EEM-002`: define a finite external evidence
-record manifest without importing observed particle catalog recovery,
-physical Standard Model content, physical particle excitations, continuum
-quantum field theory, external Hilbert bundles, physical matter fields,
-physical gauge fields, physical quantum dynamics, simulation-only promotion,
-fit-only calibration, physical nature promotion, or unified-field promotion.
+Next stable target phrase: `EEM-003`: define a finite reproduction protocol
+descriptor without treating simulation, fit, generated prose, external
+catalogs, or review status as proof, and without importing observed particle
+catalog recovery, physical Standard Model content, physical particle
+excitations, continuum quantum field theory, external Hilbert bundles,
+physical matter fields, physical gauge fields, physical quantum dynamics,
+simulation-only promotion, fit-only calibration, physical nature promotion,
+or unified-field promotion.
 
 Stable nonpromotion tokens: observed particle catalog recovery; physical
 Standard Model content; physical particle excitations; physical matter fields;
@@ -65,26 +72,36 @@ promotion; unified-field promotion.
   mutation, and keep all observed-recovery, physical Standard Model,
   physical-particle, QFT, simulation-only, fit-only, physical-nature, and
   unified-field promotion flags false.
+- `EEM-002` rows define finite external evidence record manifests by
+  bounded evidence IDs, provenance descriptors, Paper 9 descriptor links,
+  Paper 9 comparison-map links, uncertainty/tolerance metadata,
+  reproduction and review status flags, local evidence domains, readout
+  boundaries, finite capacity, bounded transfer, Paper 9 row compatibility,
+  and explicit rejection of hidden observed-recovery, physical,
+  simulation-only, fit-only, nature-level, and unified-field imports.
 
 ## Open Questions
 
-- `EEM-002`: What finite external evidence record manifest can be defined
-  using only Paper 9 comparison observables plus explicit finite
-  source/provenance/reproduction metadata, without importing observed
-  recovery, physical Standard Model content, continuum QFT, simulation-only
-  promotion, fit-only calibration, or physical-promotion premises?
+- `EEM-003`: What finite reproduction protocol descriptor can be defined
+  over closed `EEM-002` evidence rows without treating simulations, fits,
+  generated prose, external catalogs, or review status as proof?
 
 ## Pending Todos
 
-- Define finite evidence-ID, provenance, observable-link,
-  uncertainty/tolerance, and reproduction-status data for `EEM-002`.
-- Add Rust and Lean fail-closed checks for `EEM-002`.
-- Update theorem docs, proof log, and publication skeleton after `EEM-002`
+- Define finite protocol-ID, protocol-step, independent reproduction attempt,
+  input artifact, output artifact, acceptance/tolerance, local execution
+  domain, and reproduction readout-boundary data for `EEM-003`.
+- Add Rust and Lean fail-closed checks for `EEM-003`.
+- Update theorem docs, proof log, and publication skeleton after `EEM-003`
   closes.
 
 ## Blockers/Concerns
 
 - `EEM-001` is an upstream-binding and claim-boundary contract only.
+- `EEM-002` defines finite external evidence record rows only; it does not
+  prove reproduction protocol descriptors, Paper 9 comparison compatibility,
+  evidence stability, Paper 9 regime consistency, the no-hidden import audit,
+  or the final conditional theorem.
 - External evidence manifest recovery remains open.
 - Observed particle catalog recovery, physical Standard Model content,
   physical particle excitations, physical matter fields, physical gauge

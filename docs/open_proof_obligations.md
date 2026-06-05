@@ -7,11 +7,11 @@ recorded Paper 9 final conditional observed-catalog comparison observables
 certificate. It does not prove any Paper 10 external evidence manifest
 theorem.
 
-## Active Obligation
+## Closed Dependencies: EEM-002
 
-`EEM-002` is open.
+`EEM-002` closes the finite external evidence record manifest rung.
 
-Required row shape:
+Closed row shape:
 
 - closed `EEM-001` upstream binding;
 - finite evidence ID bound;
@@ -34,11 +34,35 @@ Required row shape:
 - no physical nature promotion;
 - no unified-field promotion.
 
+## Active Obligation
+
+`EEM-003` is open: finite reproduction protocol descriptor without treating
+simulation, fit, generated prose, external catalog, or review status as
+proof.
+
+Required row shape:
+
+- closed `EEM-001` upstream binding;
+- closed `EEM-002` finite external evidence record manifest;
+- finite protocol IDs;
+- finite protocol step descriptors;
+- finite independent reproduction attempt descriptors;
+- finite input artifact descriptors;
+- finite output artifact descriptors;
+- finite acceptance/tolerance gates;
+- finite local execution domains;
+- finite reproduction readout boundaries;
+- Paper 9 comparison-link preservation;
+- no simulation-only proof import;
+- no fit-only proof import;
+- no generated-prose proof import;
+- no external-catalog-as-proof import;
+- no review-status-as-proof import;
+- no physical Standard Model, physical particle, physical quantum dynamics,
+  continuum QFT, physical nature, or unified-field promotion.
+
 ## Future Obligations
 
-- `EEM-003`: finite reproduction protocol descriptor without treating
-  simulation, fit, generated prose, external catalog, or review status as
-  proof.
 - `EEM-004`: compatibility with closed Paper 9 observed-catalog comparison
   rows.
 - `EEM-005`: evidence stability and intrinsic coarse-graining stability.

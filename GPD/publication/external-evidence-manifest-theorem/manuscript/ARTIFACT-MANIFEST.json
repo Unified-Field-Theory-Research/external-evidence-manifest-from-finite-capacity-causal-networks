@@ -10,6 +10,7 @@
     "docs/open_proof_obligations.md",
     "docs/proof_log.md",
     "GPD/formal/FiniteCapacity/ExternalEvidenceManifest.lean",
+    "rust/cclab_accel/src/lib.rs",
     "rust/cclab_accel/tests/external_evidence_manifest_gate.rs"
   ]
 }

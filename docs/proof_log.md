@@ -50,10 +50,66 @@ excitations, physical quantum dynamics, continuum quantum field theory,
 simulation-only promotion, fit-only calibration, a physical nature-level
 claim, or a unified field theory.
 
+## EEM-002: Finite External Evidence Record Manifest
+
+Status: closed as a finite external evidence record-row contract.
+
+Artifacts:
+
+- `docs/external_evidence_manifest_theorem.md`
+- `docs/open_proof_obligations.md`
+- `docs/proof_log.md`
+- `GPD/STATE.md`
+- `GPD/ROADMAP.md`
+- `GPD/state.json`
+- `GPD/formal/FiniteCapacity/ExternalEvidenceManifest.lean`
+- `rust/cclab_accel/src/lib.rs`
+- `rust/cclab_accel/tests/external_evidence_manifest_gate.rs`
+
+Rust anchors:
+
+- `FiniteExternalEvidenceRecordManifest`
+- `FiniteExternalEvidenceRecordManifest::canonical_eem002`
+- `FiniteExternalEvidenceRecordManifest::closes_eem002`
+- `Paper10SkeletonCertificate::with_eem002_finite_external_evidence_record_manifest_closed`
+- `eem002_finite_external_evidence_record_manifest_marker`
+
+Lean anchors:
+
+- `EEM002FiniteExternalEvidenceRecordManifestContract`
+- `EEM002FiniteExternalEvidenceRecordManifestContract.closed`
+- `eem002_finite_external_evidence_record_manifest_closed_from_fields`
+- `eem002_missing_evidence_id_bound_not_closed`
+- `eem002_missing_paper9_descriptor_rows_not_closed`
+- `eem002_observed_particle_catalog_recovery_import_not_closed`
+- `eem002_fit_only_calibration_not_closed`
+- `eem002_canonical_finite_external_evidence_record_manifest_closed`
+
+Verification:
+
+- `make test-fast`
+- `make lean-build`
+
+Boundary:
+
+`EEM-002` defines finite external evidence record manifest rows with finite
+evidence IDs, source/provenance descriptors, Paper 9 descriptor links, Paper
+9 comparison-map links, uncertainty/tolerance metadata,
+reproduction-status flags, review-status flags, local evidence domains,
+evidence readout boundaries, finite-capacity compatibility, and
+bounded-transfer compatibility. It does not prove reproduction protocols,
+Paper 9 comparison compatibility, evidence stability, Paper 9 regime
+consistency, no-hidden import audit closure, final external evidence
+manifest recovery, observed particle catalog recovery, physical Standard
+Model content, physical particle excitations, physical quantum dynamics,
+continuum quantum field theory, simulation-only promotion, fit-only
+calibration, a physical nature-level claim, or a unified field theory.
+
 ## Active Next Obligation
 
-`EEM-002`: define a finite external evidence record manifest without
-importing observed particle catalog recovery, physical Standard Model content,
-physical particle excitations, continuum QFT, external Hilbert bundles,
-simulation-only promotion, fit-only calibration, physical quantum dynamics,
-physical nature promotion, or unified-field promotion.
+`EEM-003`: define a finite reproduction protocol descriptor without treating
+simulation, fit, generated prose, external catalogs, or review status as
+proof, and without importing observed particle catalog recovery, physical
+Standard Model content, physical particle excitations, continuum QFT,
+external Hilbert bundles, physical quantum dynamics, physical nature
+promotion, or unified-field promotion.

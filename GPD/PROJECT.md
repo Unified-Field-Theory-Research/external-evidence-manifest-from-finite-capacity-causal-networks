@@ -9,6 +9,6 @@ physical matter fields, physical gauge fields, continuum QFT, physical quantum
 dynamics, simulation-only promotion, fit-only calibration, physical nature
 promotion, or unified-field promotion.
 
-The current closed rung is `EEM-001`: upstream binding and claim boundary.
-The current active obligation is `EEM-002`: define a finite external evidence
-record manifest.
+The current closed rungs are `EEM-001`: upstream binding and claim boundary,
+and `EEM-002`: finite external evidence record manifest. The current active
+obligation is `EEM-003`: define a finite reproduction protocol descriptor.

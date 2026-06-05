@@ -37,10 +37,11 @@ This repo is intentionally separate from the upstream theorem repositories:
   and `../observed-catalog-comparison-observables-from-finite-capacity-causal-networks`
 - Upstream binding file: `UPSTREAM-PAPERS.json`
 
-The current theorem package is an initial scaffold only. `EEM-001` records
-the upstream binding and claim boundary through the closed Paper 9 result. The
-next active obligation is `EEM-002`: define a finite external evidence record
-manifest. This does not prove external evidence manifest recovery, observed
+The current theorem package is still conditional and non-promoting. `EEM-001`
+records the upstream binding and claim boundary through the closed Paper 9
+result. `EEM-002` closes finite external evidence record manifest rows. The
+next active obligation is `EEM-003`: define a finite reproduction protocol
+descriptor. This does not prove external evidence manifest recovery, observed
 particle catalog recovery, physical Standard Model content, physical particle
 excitations, physical matter fields, physical gauge fields, physical quantum
 dynamics, continuum quantum field theory, simulation-only promotion, fit-only

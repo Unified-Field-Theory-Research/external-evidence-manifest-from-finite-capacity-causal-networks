@@ -1,5 +1,6 @@
 use cclab_accel::{
-    paper10_skeleton_marker, Paper10SkeletonCertificate, Paper10UpstreamBinding,
+    eem002_finite_external_evidence_record_manifest_marker, paper10_skeleton_marker,
+    FiniteExternalEvidenceRecordManifest, Paper10SkeletonCertificate, Paper10UpstreamBinding,
     PAPER1_FROZEN_COMMIT, PAPER2_FROZEN_COMMIT, PAPER3_FROZEN_COMMIT, PAPER4_FROZEN_COMMIT,
     PAPER5_FROZEN_COMMIT, PAPER6_FROZEN_COMMIT, PAPER7_FROZEN_COMMIT, PAPER8_FROZEN_COMMIT,
     PAPER9_FINAL_CERTIFICATE, PAPER9_FROZEN_COMMIT,
@@ -147,6 +148,69 @@ fn initial_skeleton_does_not_close_paper10_theorem() {
 }
 
 #[test]
+fn eem002_finite_external_evidence_record_manifest_closes_only_record_rows() {
+    let manifest = FiniteExternalEvidenceRecordManifest::canonical_eem002();
+    assert!(manifest.closes_eem002());
+    assert!(manifest.eem001_upstream_binding_closed);
+    assert!(manifest.paper9_descriptor_rows_compatible);
+    assert!(manifest.paper9_comparison_map_rows_compatible);
+    assert_eq!(
+        eem002_finite_external_evidence_record_manifest_marker(),
+        "eem002-finite-external-evidence-record-manifest-closed"
+    );
+
+    let skeleton =
+        Paper10SkeletonCertificate::with_eem002_finite_external_evidence_record_manifest_closed();
+    assert!(skeleton.eem001_upstream_binding_closed);
+    assert!(skeleton.eem002_finite_external_evidence_record_manifest_closed);
+    assert!(!skeleton.eem003_finite_reproduction_protocol_descriptor_closed);
+    assert!(!skeleton.paper10_theorem_closed);
+    assert!(!skeleton.closes_paper10_theorem());
+}
+
+#[test]
+fn eem002_record_manifest_fails_closed_on_missing_bounds_or_hidden_imports() {
+    let manifest = FiniteExternalEvidenceRecordManifest::canonical_eem002();
+
+    let missing_evidence_bound = FiniteExternalEvidenceRecordManifest {
+        evidence_id_bound: 0,
+        ..manifest
+    };
+    assert!(!missing_evidence_bound.closes_eem002());
+
+    let overfull_provenance = FiniteExternalEvidenceRecordManifest {
+        occupied_source_provenance_descriptor_count: manifest.source_provenance_descriptor_bound
+            + 1,
+        ..manifest
+    };
+    assert!(!overfull_provenance.closes_eem002());
+
+    let missing_paper9_descriptor_compatibility = FiniteExternalEvidenceRecordManifest {
+        paper9_descriptor_rows_compatible: false,
+        ..manifest
+    };
+    assert!(!missing_paper9_descriptor_compatibility.closes_eem002());
+
+    let observed_recovery_import = FiniteExternalEvidenceRecordManifest {
+        observed_particle_catalog_recovery_import: true,
+        ..manifest
+    };
+    assert!(!observed_recovery_import.closes_eem002());
+
+    let physical_standard_model_import = FiniteExternalEvidenceRecordManifest {
+        physical_standard_model_content_import: true,
+        ..manifest
+    };
+    assert!(!physical_standard_model_import.closes_eem002());
+
+    let fit_only = FiniteExternalEvidenceRecordManifest {
+        fit_only_calibration: true,
+        ..manifest
+    };
+    assert!(!fit_only.closes_eem002());
+}
+
+#[test]
 fn upstream_json_records_paper9_certificate_and_nonpromotion() {
     let root = project_root();
     let upstream = read(&root, "UPSTREAM-PAPERS.json");
@@ -161,6 +225,11 @@ fn upstream_json_records_paper9_certificate_and_nonpromotion() {
     assert_contains(&upstream, PAPER8_FROZEN_COMMIT, "UPSTREAM-PAPERS.json");
     assert_contains(&upstream, PAPER9_FROZEN_COMMIT, "UPSTREAM-PAPERS.json");
     assert_contains(&upstream, PAPER9_FINAL_CERTIFICATE, "UPSTREAM-PAPERS.json");
+    assert_contains(
+        &upstream,
+        "\"eem002_finite_external_evidence_record_manifest_closed\": true",
+        "UPSTREAM-PAPERS.json",
+    );
     assert_contains(
         &upstream,
         "\"external_evidence_manifest_theorem_closed\": false",
@@ -184,7 +253,7 @@ fn upstream_json_records_paper9_certificate_and_nonpromotion() {
 }
 
 #[test]
-fn docs_keep_eem002_active_and_physical_claims_false() {
+fn docs_keep_eem003_active_and_physical_claims_false() {
     let root = project_root();
     let theorem = read(&root, "docs/external_evidence_manifest_theorem.md");
     let state = read(&root, "GPD/STATE.md");
@@ -197,6 +266,7 @@ fn docs_keep_eem002_active_and_physical_claims_false() {
     ] {
         assert_contains(artifact.1, "EEM-001", artifact.0);
         assert_contains(artifact.1, "EEM-002", artifact.0);
+        assert_contains(artifact.1, "EEM-003", artifact.0);
         assert_contains(artifact.1, "observed particle catalog recovery", artifact.0);
         assert_contains(artifact.1, "physical Standard Model", artifact.0);
         assert_contains(artifact.1, "simulation-only promotion", artifact.0);
