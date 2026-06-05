@@ -813,6 +813,125 @@ impl Paper9RegimeConsistency {
 }
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
+pub struct NoHiddenPhysicalPromotionAudit {
+    pub eem001_upstream_binding_closed: bool,
+    pub eem002_finite_external_evidence_record_manifest_closed: bool,
+    pub eem003_finite_reproduction_protocol_descriptor_closed: bool,
+    pub eem004_paper9_comparison_compatibility_closed: bool,
+    pub eem005_evidence_stability_coarse_graining_closed: bool,
+    pub eem006_paper9_regime_consistency_closed: bool,
+    pub audited_eem_rung_count: u32,
+    pub required_eem_rung_count: u32,
+    pub theorem_docs_audited: bool,
+    pub proof_log_audited: bool,
+    pub state_files_audited: bool,
+    pub upstream_manifest_audited: bool,
+    pub lean_gate_audited: bool,
+    pub rust_gate_audited: bool,
+    pub publication_skeleton_audited: bool,
+    pub rust_only_runtime_verified: bool,
+    pub fail_closed_audit_certificate_emitted: bool,
+    pub observed_catalog_recovery_import: bool,
+    pub observed_particle_catalog_recovery_import: bool,
+    pub physical_standard_model_content_import: bool,
+    pub physical_particle_excitation_import: bool,
+    pub physical_quantum_dynamics_import: bool,
+    pub external_matter_field_import: bool,
+    pub external_gauge_field_import: bool,
+    pub continuum_qft_import: bool,
+    pub background_hilbert_bundle_import: bool,
+    pub simulation_only_promotion: bool,
+    pub fit_only_calibration: bool,
+    pub generated_prose_proof_import: bool,
+    pub external_catalog_as_proof_import: bool,
+    pub review_status_as_proof_import: bool,
+    pub physical_promotion: bool,
+    pub unified_field_promotion: bool,
+}
+
+impl NoHiddenPhysicalPromotionAudit {
+    pub fn canonical_eem007() -> Self {
+        Self {
+            eem001_upstream_binding_closed: Paper10UpstreamBinding::canonical_eem001()
+                .closes_eem001(),
+            eem002_finite_external_evidence_record_manifest_closed:
+                FiniteExternalEvidenceRecordManifest::canonical_eem002().closes_eem002(),
+            eem003_finite_reproduction_protocol_descriptor_closed:
+                FiniteReproductionProtocolDescriptor::canonical_eem003().closes_eem003(),
+            eem004_paper9_comparison_compatibility_closed:
+                Paper9ComparisonCompatibility::canonical_eem004().closes_eem004(),
+            eem005_evidence_stability_coarse_graining_closed:
+                EvidenceStabilityCoarseGraining::canonical_eem005().closes_eem005(),
+            eem006_paper9_regime_consistency_closed: Paper9RegimeConsistency::canonical_eem006()
+                .closes_eem006(),
+            audited_eem_rung_count: 6,
+            required_eem_rung_count: 6,
+            theorem_docs_audited: true,
+            proof_log_audited: true,
+            state_files_audited: true,
+            upstream_manifest_audited: true,
+            lean_gate_audited: true,
+            rust_gate_audited: true,
+            publication_skeleton_audited: true,
+            rust_only_runtime_verified: true,
+            fail_closed_audit_certificate_emitted: true,
+            observed_catalog_recovery_import: false,
+            observed_particle_catalog_recovery_import: false,
+            physical_standard_model_content_import: false,
+            physical_particle_excitation_import: false,
+            physical_quantum_dynamics_import: false,
+            external_matter_field_import: false,
+            external_gauge_field_import: false,
+            continuum_qft_import: false,
+            background_hilbert_bundle_import: false,
+            simulation_only_promotion: false,
+            fit_only_calibration: false,
+            generated_prose_proof_import: false,
+            external_catalog_as_proof_import: false,
+            review_status_as_proof_import: false,
+            physical_promotion: false,
+            unified_field_promotion: false,
+        }
+    }
+
+    pub fn closes_eem007(&self) -> bool {
+        self.eem001_upstream_binding_closed
+            && self.eem002_finite_external_evidence_record_manifest_closed
+            && self.eem003_finite_reproduction_protocol_descriptor_closed
+            && self.eem004_paper9_comparison_compatibility_closed
+            && self.eem005_evidence_stability_coarse_graining_closed
+            && self.eem006_paper9_regime_consistency_closed
+            && self.required_eem_rung_count >= 6
+            && self.audited_eem_rung_count >= self.required_eem_rung_count
+            && self.theorem_docs_audited
+            && self.proof_log_audited
+            && self.state_files_audited
+            && self.upstream_manifest_audited
+            && self.lean_gate_audited
+            && self.rust_gate_audited
+            && self.publication_skeleton_audited
+            && self.rust_only_runtime_verified
+            && self.fail_closed_audit_certificate_emitted
+            && !self.observed_catalog_recovery_import
+            && !self.observed_particle_catalog_recovery_import
+            && !self.physical_standard_model_content_import
+            && !self.physical_particle_excitation_import
+            && !self.physical_quantum_dynamics_import
+            && !self.external_matter_field_import
+            && !self.external_gauge_field_import
+            && !self.continuum_qft_import
+            && !self.background_hilbert_bundle_import
+            && !self.simulation_only_promotion
+            && !self.fit_only_calibration
+            && !self.generated_prose_proof_import
+            && !self.external_catalog_as_proof_import
+            && !self.review_status_as_proof_import
+            && !self.physical_promotion
+            && !self.unified_field_promotion
+    }
+}
+
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub struct Paper10SkeletonCertificate {
     pub eem001_upstream_binding_closed: bool,
     pub eem002_finite_external_evidence_record_manifest_closed: bool,
@@ -994,6 +1113,36 @@ impl Paper10SkeletonCertificate {
         }
     }
 
+    pub fn with_eem007_no_hidden_physical_promotion_audit_closed() -> Self {
+        let binding = Paper10UpstreamBinding::canonical_eem001();
+        let manifest = FiniteExternalEvidenceRecordManifest::canonical_eem002();
+        let protocol = FiniteReproductionProtocolDescriptor::canonical_eem003();
+        let compatibility = Paper9ComparisonCompatibility::canonical_eem004();
+        let stability = EvidenceStabilityCoarseGraining::canonical_eem005();
+        let regime = Paper9RegimeConsistency::canonical_eem006();
+        let audit = NoHiddenPhysicalPromotionAudit::canonical_eem007();
+        Self {
+            eem001_upstream_binding_closed: binding.closes_eem001(),
+            eem002_finite_external_evidence_record_manifest_closed: manifest.closes_eem002(),
+            eem003_finite_reproduction_protocol_descriptor_closed: protocol.closes_eem003(),
+            eem004_paper9_comparison_compatibility_closed: compatibility.closes_eem004(),
+            eem005_evidence_stability_coarse_graining_closed: stability.closes_eem005(),
+            eem006_paper9_regime_consistency_closed: regime.closes_eem006(),
+            eem007_no_hidden_physical_promotion_audit_closed: audit.closes_eem007(),
+            eem008_final_conditional_certificate_closed: false,
+            paper10_theorem_closed: false,
+            physical_nature_claim: false,
+            observed_particle_catalog_recovery_claim: false,
+            physical_standard_model_claim: false,
+            physical_particle_excitation_claim: false,
+            physical_quantum_dynamics_claim: false,
+            continuum_qft_claim: false,
+            simulation_only_promotion: false,
+            fit_only_calibration_claim: false,
+            unified_field_theory_claim: false,
+        }
+    }
+
     pub fn closes_paper10_theorem(&self) -> bool {
         self.eem001_upstream_binding_closed
             && self.eem002_finite_external_evidence_record_manifest_closed
@@ -1038,4 +1187,8 @@ pub fn eem005_evidence_stability_coarse_graining_marker() -> &'static str {
 
 pub fn eem006_paper9_regime_consistency_marker() -> &'static str {
     "eem006-paper9-regime-consistency-no-upstream-bypass-closed"
+}
+
+pub fn eem007_no_hidden_physical_promotion_audit_marker() -> &'static str {
+    "eem007-no-hidden-physical-promotion-import-audit-closed"
 }

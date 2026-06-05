@@ -43,8 +43,8 @@ result. `EEM-002` closes finite external evidence record manifest rows.
 `EEM-003` closes finite reproduction protocol descriptor rows. `EEM-004`
 closes Paper 9 comparison compatibility. `EEM-005` closes evidence stability
 and coarse-graining stability. `EEM-006` closes Paper 9 regime consistency.
-The next active obligation is `EEM-007`: close the no-hidden import audit.
-This does
+`EEM-007` closes the no-hidden import audit. The next active obligation is
+`EEM-008`: close the final conditional certificate. This does
 not prove external evidence manifest recovery, observed particle catalog
 recovery, physical Standard Model content, physical particle
 excitations, physical matter fields, physical gauge fields, physical quantum

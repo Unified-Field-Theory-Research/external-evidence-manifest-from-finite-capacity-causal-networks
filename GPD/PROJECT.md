@@ -11,7 +11,8 @@ promotion, or unified-field promotion.
 
 The current closed rungs are `EEM-001`: upstream binding and claim boundary,
 `EEM-002`: finite external evidence record manifest, `EEM-003`: finite
-reproduction protocol descriptor, and `EEM-004`: Paper 9 comparison
-compatibility, and `EEM-005`: evidence stability and coarse-graining
-stability, and `EEM-006`: Paper 9 regime consistency. The current active
-obligation is `EEM-007`: close the no-hidden import audit.
+reproduction protocol descriptor, `EEM-004`: Paper 9 comparison
+compatibility, `EEM-005`: evidence stability and coarse-graining stability,
+`EEM-006`: Paper 9 regime consistency, and `EEM-007`: no-hidden import audit.
+The current active obligation is `EEM-008`: close the final conditional
+certificate.

@@ -38,7 +38,7 @@ scope unless a future paper-specific certificate explicitly closes them.
 - [x] **Phase 6: Bind To Paper 9 Regime** - `EEM-006` should consume the
   recorded Paper 9 final conditional certificate and reject bypasses of Paper
   9 or any upstream assumption.
-- [ ] **Phase 7: Close No-Hidden-Physical-Promotion Import Audit** -
+- [x] **Phase 7: Close No-Hidden-Physical-Promotion Import Audit** -
   `EEM-007` should fail closed when the construction assumes observed
   particle catalog recovery, physical Standard Model content, physical
   particles, continuum QFT, background Hilbert bundles, external matter or

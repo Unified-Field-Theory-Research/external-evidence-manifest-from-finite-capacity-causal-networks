@@ -3,12 +3,13 @@ use cclab_accel::{
     eem003_finite_reproduction_protocol_descriptor_marker,
     eem004_paper9_comparison_compatibility_marker,
     eem005_evidence_stability_coarse_graining_marker, eem006_paper9_regime_consistency_marker,
-    paper10_skeleton_marker, EvidenceStabilityCoarseGraining, FiniteExternalEvidenceRecordManifest,
-    FiniteReproductionProtocolDescriptor, Paper10SkeletonCertificate, Paper10UpstreamBinding,
-    Paper9ComparisonCompatibility, Paper9RegimeConsistency, PAPER1_FROZEN_COMMIT,
-    PAPER2_FROZEN_COMMIT, PAPER3_FROZEN_COMMIT, PAPER4_FROZEN_COMMIT, PAPER5_FROZEN_COMMIT,
-    PAPER6_FROZEN_COMMIT, PAPER7_FROZEN_COMMIT, PAPER8_FROZEN_COMMIT, PAPER9_FINAL_CERTIFICATE,
-    PAPER9_FROZEN_COMMIT,
+    eem007_no_hidden_physical_promotion_audit_marker, paper10_skeleton_marker,
+    EvidenceStabilityCoarseGraining, FiniteExternalEvidenceRecordManifest,
+    FiniteReproductionProtocolDescriptor, NoHiddenPhysicalPromotionAudit,
+    Paper10SkeletonCertificate, Paper10UpstreamBinding, Paper9ComparisonCompatibility,
+    Paper9RegimeConsistency, PAPER1_FROZEN_COMMIT, PAPER2_FROZEN_COMMIT, PAPER3_FROZEN_COMMIT,
+    PAPER4_FROZEN_COMMIT, PAPER5_FROZEN_COMMIT, PAPER6_FROZEN_COMMIT, PAPER7_FROZEN_COMMIT,
+    PAPER8_FROZEN_COMMIT, PAPER9_FINAL_CERTIFICATE, PAPER9_FROZEN_COMMIT,
 };
 use std::fs;
 use std::path::{Path, PathBuf};
@@ -506,6 +507,93 @@ fn eem006_regime_consistency_fails_closed_on_bypass_or_unrecorded_revision() {
 }
 
 #[test]
+fn eem007_no_hidden_import_audit_closes_only_audit_rows() {
+    let audit = NoHiddenPhysicalPromotionAudit::canonical_eem007();
+    assert!(audit.closes_eem007());
+    assert!(audit.eem006_paper9_regime_consistency_closed);
+    assert!(audit.audited_eem_rung_count >= audit.required_eem_rung_count);
+    assert!(audit.theorem_docs_audited);
+    assert!(audit.proof_log_audited);
+    assert!(audit.state_files_audited);
+    assert!(audit.upstream_manifest_audited);
+    assert!(audit.lean_gate_audited);
+    assert!(audit.rust_gate_audited);
+    assert!(audit.publication_skeleton_audited);
+    assert!(audit.rust_only_runtime_verified);
+    assert!(audit.fail_closed_audit_certificate_emitted);
+    assert_eq!(
+        eem007_no_hidden_physical_promotion_audit_marker(),
+        "eem007-no-hidden-physical-promotion-import-audit-closed"
+    );
+
+    let skeleton =
+        Paper10SkeletonCertificate::with_eem007_no_hidden_physical_promotion_audit_closed();
+    assert!(skeleton.eem001_upstream_binding_closed);
+    assert!(skeleton.eem002_finite_external_evidence_record_manifest_closed);
+    assert!(skeleton.eem003_finite_reproduction_protocol_descriptor_closed);
+    assert!(skeleton.eem004_paper9_comparison_compatibility_closed);
+    assert!(skeleton.eem005_evidence_stability_coarse_graining_closed);
+    assert!(skeleton.eem006_paper9_regime_consistency_closed);
+    assert!(skeleton.eem007_no_hidden_physical_promotion_audit_closed);
+    assert!(!skeleton.eem008_final_conditional_certificate_closed);
+    assert!(!skeleton.paper10_theorem_closed);
+    assert!(!skeleton.closes_paper10_theorem());
+}
+
+#[test]
+fn eem007_no_hidden_import_audit_fails_closed_on_missing_coverage_or_imports() {
+    let audit = NoHiddenPhysicalPromotionAudit::canonical_eem007();
+
+    let missing_eem006 = NoHiddenPhysicalPromotionAudit {
+        eem006_paper9_regime_consistency_closed: false,
+        ..audit
+    };
+    assert!(!missing_eem006.closes_eem007());
+
+    let insufficient_coverage = NoHiddenPhysicalPromotionAudit {
+        audited_eem_rung_count: audit.required_eem_rung_count - 1,
+        ..audit
+    };
+    assert!(!insufficient_coverage.closes_eem007());
+
+    let missing_rust_only = NoHiddenPhysicalPromotionAudit {
+        rust_only_runtime_verified: false,
+        ..audit
+    };
+    assert!(!missing_rust_only.closes_eem007());
+
+    let simulation_only = NoHiddenPhysicalPromotionAudit {
+        simulation_only_promotion: true,
+        ..audit
+    };
+    assert!(!simulation_only.closes_eem007());
+
+    let fit_only = NoHiddenPhysicalPromotionAudit {
+        fit_only_calibration: true,
+        ..audit
+    };
+    assert!(!fit_only.closes_eem007());
+
+    let generated_prose = NoHiddenPhysicalPromotionAudit {
+        generated_prose_proof_import: true,
+        ..audit
+    };
+    assert!(!generated_prose.closes_eem007());
+
+    let external_catalog_as_proof = NoHiddenPhysicalPromotionAudit {
+        external_catalog_as_proof_import: true,
+        ..audit
+    };
+    assert!(!external_catalog_as_proof.closes_eem007());
+
+    let physical_promotion = NoHiddenPhysicalPromotionAudit {
+        physical_promotion: true,
+        ..audit
+    };
+    assert!(!physical_promotion.closes_eem007());
+}
+
+#[test]
 fn upstream_json_records_paper9_certificate_and_nonpromotion() {
     let root = project_root();
     let upstream = read(&root, "UPSTREAM-PAPERS.json");
@@ -547,6 +635,11 @@ fn upstream_json_records_paper9_certificate_and_nonpromotion() {
     );
     assert_contains(
         &upstream,
+        "\"eem007_no_hidden_physical_promotion_audit_closed\": true",
+        "UPSTREAM-PAPERS.json",
+    );
+    assert_contains(
+        &upstream,
         "\"external_evidence_manifest_theorem_closed\": false",
         "UPSTREAM-PAPERS.json",
     );
@@ -568,7 +661,7 @@ fn upstream_json_records_paper9_certificate_and_nonpromotion() {
 }
 
 #[test]
-fn docs_keep_eem007_active_and_physical_claims_false() {
+fn docs_keep_eem008_active_and_physical_claims_false() {
     let root = project_root();
     let theorem = read(&root, "docs/external_evidence_manifest_theorem.md");
     let state = read(&root, "GPD/STATE.md");
@@ -586,6 +679,7 @@ fn docs_keep_eem007_active_and_physical_claims_false() {
         assert_contains(artifact.1, "EEM-005", artifact.0);
         assert_contains(artifact.1, "EEM-006", artifact.0);
         assert_contains(artifact.1, "EEM-007", artifact.0);
+        assert_contains(artifact.1, "EEM-008", artifact.0);
         assert_contains(artifact.1, "observed particle catalog recovery", artifact.0);
         assert_contains(artifact.1, "physical Standard Model", artifact.0);
         assert_contains(artifact.1, "simulation-only promotion", artifact.0);

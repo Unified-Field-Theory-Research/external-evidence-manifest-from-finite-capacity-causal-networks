@@ -320,8 +320,59 @@ field theory, simulation-only promotion, fit-only calibration, physical
 promotion, and unified-field promotion. It does not prove the no-hidden
 import audit or final external evidence manifest recovery.
 
+## EEM-007: No-Hidden-Physical-Promotion Import Audit
+
+Status: closed as a fail-closed no-hidden import audit contract.
+
+Artifacts:
+
+- `docs/external_evidence_manifest_theorem.md`
+- `docs/open_proof_obligations.md`
+- `docs/proof_log.md`
+- `GPD/STATE.md`
+- `GPD/ROADMAP.md`
+- `GPD/state.json`
+- `GPD/formal/FiniteCapacity/ExternalEvidenceManifest.lean`
+- `rust/cclab_accel/src/lib.rs`
+- `rust/cclab_accel/tests/external_evidence_manifest_gate.rs`
+
+Rust anchors:
+
+- `NoHiddenPhysicalPromotionAudit`
+- `NoHiddenPhysicalPromotionAudit::canonical_eem007`
+- `NoHiddenPhysicalPromotionAudit::closes_eem007`
+- `Paper10SkeletonCertificate::with_eem007_no_hidden_physical_promotion_audit_closed`
+- `eem007_no_hidden_physical_promotion_audit_marker`
+
+Lean anchors:
+
+- `EEM007NoHiddenPhysicalPromotionAuditContract`
+- `EEM007NoHiddenPhysicalPromotionAuditContract.closed`
+- `eem007_no_hidden_physical_promotion_audit_closed_from_fields`
+- `eem007_missing_eem006_regime_not_closed`
+- `eem007_missing_rust_only_runtime_not_closed`
+- `eem007_simulation_only_promotion_not_closed`
+- `eem007_canonical_no_hidden_physical_promotion_audit_closed`
+
+Verification:
+
+- `make test-fast`
+- `make lean-build`
+
+Boundary:
+
+`EEM-007` audits theorem docs, proof log, state files, upstream manifest,
+Lean gate, Rust gate, publication skeleton, Rust-only runtime policy, and a
+fail-closed certificate. It rejects observed recovery, physical Standard
+Model content, physical particle excitations, physical quantum dynamics,
+external matter/gauge fields, continuum quantum field theory, simulation-only
+promotion, fit-only calibration, generated-prose proof imports,
+external-catalog-as-proof imports, review-status-as-proof imports, physical
+promotion, and unified-field promotion. It does not prove the final external
+evidence manifest theorem by itself.
+
 ## Active Next Obligation
 
-`EEM-007`: close the no-hidden-physical-promotion/simulation-only/fit-only
-import audit across docs, state, upstream manifest, Lean, Rust, and the
-publication skeleton.
+`EEM-008`: consume `EEM-001` through `EEM-007` and close the final internal
+conditional external evidence manifest certificate without physical or
+unified-field promotion.

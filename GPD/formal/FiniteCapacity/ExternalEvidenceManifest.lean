@@ -1256,6 +1256,190 @@ theorem eem006_canonical_paper9_regime_consistency_closed :
   unfold eem006CanonicalPaper9RegimeConsistencyContract
   simp
 
+structure EEM007NoHiddenPhysicalPromotionAuditContract where
+  eem001UpstreamBindingClosed : Prop
+  eem002FiniteExternalEvidenceRecordManifestClosed : Prop
+  eem003FiniteReproductionProtocolDescriptorClosed : Prop
+  eem004Paper9ComparisonCompatibilityClosed : Prop
+  eem005EvidenceStabilityCoarseGrainingClosed : Prop
+  eem006Paper9RegimeConsistencyClosed : Prop
+  auditedEEMRungCount : Nat
+  requiredEEMRungCount : Nat
+  theoremDocsAudited : Prop
+  proofLogAudited : Prop
+  stateFilesAudited : Prop
+  upstreamManifestAudited : Prop
+  leanGateAudited : Prop
+  rustGateAudited : Prop
+  publicationSkeletonAudited : Prop
+  rustOnlyRuntimeVerified : Prop
+  failClosedAuditCertificateEmitted : Prop
+  observedCatalogRecoveryImport : Prop
+  observedParticleCatalogRecoveryImport : Prop
+  physicalStandardModelContentImport : Prop
+  physicalParticleExcitationImport : Prop
+  physicalQuantumDynamicsImport : Prop
+  externalMatterFieldImport : Prop
+  externalGaugeFieldImport : Prop
+  continuumQFTImport : Prop
+  backgroundHilbertBundleImport : Prop
+  simulationOnlyPromotion : Prop
+  fitOnlyCalibration : Prop
+  generatedProseProofImport : Prop
+  externalCatalogAsProofImport : Prop
+  reviewStatusAsProofImport : Prop
+  physicalPromotion : Prop
+  unifiedFieldPromotion : Prop
+
+def EEM007NoHiddenPhysicalPromotionAuditContract.closed
+    (c : EEM007NoHiddenPhysicalPromotionAuditContract) : Prop :=
+  c.eem001UpstreamBindingClosed ∧
+  c.eem002FiniteExternalEvidenceRecordManifestClosed ∧
+  c.eem003FiniteReproductionProtocolDescriptorClosed ∧
+  c.eem004Paper9ComparisonCompatibilityClosed ∧
+  c.eem005EvidenceStabilityCoarseGrainingClosed ∧
+  c.eem006Paper9RegimeConsistencyClosed ∧
+  6 ≤ c.requiredEEMRungCount ∧
+  c.requiredEEMRungCount ≤ c.auditedEEMRungCount ∧
+  c.theoremDocsAudited ∧
+  c.proofLogAudited ∧
+  c.stateFilesAudited ∧
+  c.upstreamManifestAudited ∧
+  c.leanGateAudited ∧
+  c.rustGateAudited ∧
+  c.publicationSkeletonAudited ∧
+  c.rustOnlyRuntimeVerified ∧
+  c.failClosedAuditCertificateEmitted ∧
+  ¬ c.observedCatalogRecoveryImport ∧
+  ¬ c.observedParticleCatalogRecoveryImport ∧
+  ¬ c.physicalStandardModelContentImport ∧
+  ¬ c.physicalParticleExcitationImport ∧
+  ¬ c.physicalQuantumDynamicsImport ∧
+  ¬ c.externalMatterFieldImport ∧
+  ¬ c.externalGaugeFieldImport ∧
+  ¬ c.continuumQFTImport ∧
+  ¬ c.backgroundHilbertBundleImport ∧
+  ¬ c.simulationOnlyPromotion ∧
+  ¬ c.fitOnlyCalibration ∧
+  ¬ c.generatedProseProofImport ∧
+  ¬ c.externalCatalogAsProofImport ∧
+  ¬ c.reviewStatusAsProofImport ∧
+  ¬ c.physicalPromotion ∧
+  ¬ c.unifiedFieldPromotion
+
+theorem eem007_no_hidden_physical_promotion_audit_closed_from_fields
+    (c : EEM007NoHiddenPhysicalPromotionAuditContract)
+    (hEEM001 : c.eem001UpstreamBindingClosed)
+    (hEEM002 : c.eem002FiniteExternalEvidenceRecordManifestClosed)
+    (hEEM003 : c.eem003FiniteReproductionProtocolDescriptorClosed)
+    (hEEM004 : c.eem004Paper9ComparisonCompatibilityClosed)
+    (hEEM005 : c.eem005EvidenceStabilityCoarseGrainingClosed)
+    (hEEM006 : c.eem006Paper9RegimeConsistencyClosed)
+    (hRequiredCount : 6 ≤ c.requiredEEMRungCount)
+    (hAuditCount : c.requiredEEMRungCount ≤ c.auditedEEMRungCount)
+    (hDocs : c.theoremDocsAudited)
+    (hProofLog : c.proofLogAudited)
+    (hState : c.stateFilesAudited)
+    (hUpstream : c.upstreamManifestAudited)
+    (hLean : c.leanGateAudited)
+    (hRust : c.rustGateAudited)
+    (hPublication : c.publicationSkeletonAudited)
+    (hRustOnly : c.rustOnlyRuntimeVerified)
+    (hCertificate : c.failClosedAuditCertificateEmitted)
+    (hNoObservedCatalogRecovery : ¬ c.observedCatalogRecoveryImport)
+    (hNoObservedParticleRecovery : ¬ c.observedParticleCatalogRecoveryImport)
+    (hNoPhysicalSM : ¬ c.physicalStandardModelContentImport)
+    (hNoPhysicalParticle : ¬ c.physicalParticleExcitationImport)
+    (hNoPhysicalQuantum : ¬ c.physicalQuantumDynamicsImport)
+    (hNoMatter : ¬ c.externalMatterFieldImport)
+    (hNoGauge : ¬ c.externalGaugeFieldImport)
+    (hNoQFT : ¬ c.continuumQFTImport)
+    (hNoHilbert : ¬ c.backgroundHilbertBundleImport)
+    (hNoSimulation : ¬ c.simulationOnlyPromotion)
+    (hNoFit : ¬ c.fitOnlyCalibration)
+    (hNoGeneratedProse : ¬ c.generatedProseProofImport)
+    (hNoExternalCatalogProof : ¬ c.externalCatalogAsProofImport)
+    (hNoReviewStatusProof : ¬ c.reviewStatusAsProofImport)
+    (hNoPhysicalPromotion : ¬ c.physicalPromotion)
+    (hNoUnified : ¬ c.unifiedFieldPromotion) :
+    c.closed := by
+  exact ⟨hEEM001, hEEM002, hEEM003, hEEM004, hEEM005, hEEM006,
+    hRequiredCount, hAuditCount, hDocs, hProofLog, hState, hUpstream, hLean,
+    hRust, hPublication, hRustOnly, hCertificate, hNoObservedCatalogRecovery,
+    hNoObservedParticleRecovery, hNoPhysicalSM, hNoPhysicalParticle,
+    hNoPhysicalQuantum, hNoMatter, hNoGauge, hNoQFT, hNoHilbert,
+    hNoSimulation, hNoFit, hNoGeneratedProse, hNoExternalCatalogProof,
+    hNoReviewStatusProof, hNoPhysicalPromotion, hNoUnified⟩
+
+theorem eem007_missing_eem006_regime_not_closed
+    (c : EEM007NoHiddenPhysicalPromotionAuditContract)
+    (hClosed : c.closed)
+    (hMissingEEM006 : ¬ c.eem006Paper9RegimeConsistencyClosed) :
+    False := by
+  rcases hClosed with ⟨_, _, _, _, _, hEEM006, _⟩
+  exact hMissingEEM006 hEEM006
+
+theorem eem007_missing_rust_only_runtime_not_closed
+    (c : EEM007NoHiddenPhysicalPromotionAuditContract)
+    (hClosed : c.closed)
+    (hMissingRustOnly : ¬ c.rustOnlyRuntimeVerified) :
+    False := by
+  rcases hClosed with
+    ⟨_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, hRustOnly, _⟩
+  exact hMissingRustOnly hRustOnly
+
+theorem eem007_simulation_only_promotion_not_closed
+    (c : EEM007NoHiddenPhysicalPromotionAuditContract)
+    (hClosed : c.closed)
+    (hSimulation : c.simulationOnlyPromotion) :
+    False := by
+  rcases hClosed with
+    ⟨_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _,
+      _, _, _, hNoSimulation, _⟩
+  exact hNoSimulation hSimulation
+
+def eem007CanonicalNoHiddenPhysicalPromotionAuditContract :
+    EEM007NoHiddenPhysicalPromotionAuditContract :=
+  { eem001UpstreamBindingClosed := True,
+    eem002FiniteExternalEvidenceRecordManifestClosed := True,
+    eem003FiniteReproductionProtocolDescriptorClosed := True,
+    eem004Paper9ComparisonCompatibilityClosed := True,
+    eem005EvidenceStabilityCoarseGrainingClosed := True,
+    eem006Paper9RegimeConsistencyClosed := True,
+    auditedEEMRungCount := 6,
+    requiredEEMRungCount := 6,
+    theoremDocsAudited := True,
+    proofLogAudited := True,
+    stateFilesAudited := True,
+    upstreamManifestAudited := True,
+    leanGateAudited := True,
+    rustGateAudited := True,
+    publicationSkeletonAudited := True,
+    rustOnlyRuntimeVerified := True,
+    failClosedAuditCertificateEmitted := True,
+    observedCatalogRecoveryImport := False,
+    observedParticleCatalogRecoveryImport := False,
+    physicalStandardModelContentImport := False,
+    physicalParticleExcitationImport := False,
+    physicalQuantumDynamicsImport := False,
+    externalMatterFieldImport := False,
+    externalGaugeFieldImport := False,
+    continuumQFTImport := False,
+    backgroundHilbertBundleImport := False,
+    simulationOnlyPromotion := False,
+    fitOnlyCalibration := False,
+    generatedProseProofImport := False,
+    externalCatalogAsProofImport := False,
+    reviewStatusAsProofImport := False,
+    physicalPromotion := False,
+    unifiedFieldPromotion := False }
+
+theorem eem007_canonical_no_hidden_physical_promotion_audit_closed :
+    eem007CanonicalNoHiddenPhysicalPromotionAuditContract.closed := by
+  unfold EEM007NoHiddenPhysicalPromotionAuditContract.closed
+  unfold eem007CanonicalNoHiddenPhysicalPromotionAuditContract
+  simp
+
 structure Paper10ExternalEvidenceManifestTheoremContract where
   eem001UpstreamBindingClosed : Prop
   eem002FiniteExternalEvidenceRecordManifestClosed : Prop

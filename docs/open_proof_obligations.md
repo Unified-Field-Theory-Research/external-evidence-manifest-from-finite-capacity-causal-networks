@@ -130,12 +130,12 @@ Closed row shape:
   simulation-only promotion, fit-only calibration, physical nature
   promotion, or unified-field promotion.
 
-## Active Obligation
+## Closed Dependencies: EEM-007
 
-`EEM-007` is open: no-hidden-physical-promotion/simulation-only/fit-only
+`EEM-007` closes the no-hidden-physical-promotion/simulation-only/fit-only
 import audit.
 
-Required row shape:
+Closed row shape:
 
 - closed `EEM-001` through `EEM-006`;
 - theorem docs audited;
@@ -155,10 +155,27 @@ Required row shape:
   import, review-status-as-proof import, physical nature promotion, or
   unified-field promotion.
 
-## Future Obligations
+## Active Obligation
 
-- `EEM-008`: final internal conditional certificate, if all prior obligations
-  close.
+`EEM-008` is open: final internal conditional certificate.
+
+Required row shape:
+
+- closed `EEM-001` through `EEM-007`;
+- finite evidence record manifest package emitted;
+- finite reproduction protocol descriptor package emitted;
+- Paper 9 comparison compatibility consumed;
+- evidence stability/coarse-graining consumed;
+- Paper 9 regime consistency consumed;
+- no-hidden import audit consumed;
+- finite capacity, locality, bounded transfer, causal-cone/no-signaling,
+  comparison stability, and conservation/coarse-graining stability preserved;
+- final conditional certificate emitted;
+- Paper 10 theorem closed internally;
+- no physical nature claim, observed particle catalog recovery claim,
+  physical Standard Model claim, physical particle claim, physical quantum
+  dynamics claim, continuum QFT claim, simulation-only promotion, fit-only
+  calibration claim, or unified-field-theory claim.
 
 Observed particle catalog recovery, physical Standard Model content, physical
 particle excitations, physical quantum dynamics, continuum QFT,

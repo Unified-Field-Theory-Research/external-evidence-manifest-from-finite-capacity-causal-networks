@@ -23,11 +23,12 @@ claim-boundary scaffold. `EEM-002` closes finite external evidence record
 manifest rows. `EEM-003` closes finite reproduction protocol descriptor rows.
 `EEM-004` closes Paper 9 comparison compatibility. `EEM-005` closes evidence
 stability and coarse-graining stability. `EEM-006` closes Paper 9 regime
-consistency. This is not external evidence manifest recovery, not observed
-particle catalog recovery, not physical Standard Model recovery, not a
-physical particle-excitation claim, not physical quantum dynamics, not
-continuum quantum field theory, not simulation-only promotion, not fit-only
-calibration, not physical nature promotion, and not a unified field theory.
+consistency. `EEM-007` closes the no-hidden import audit. This is not
+external evidence manifest recovery, not observed particle catalog recovery,
+not physical Standard Model recovery, not a physical particle-excitation
+claim, not physical quantum dynamics, not continuum quantum field theory, not
+simulation-only promotion, not fit-only calibration, not physical nature
+promotion, and not a unified field theory.
 
 ## Upstream Binding
 
@@ -297,8 +298,41 @@ recovery.
 
 ### EEM-007: No-Hidden-Physical-Promotion Import Audit
 
-Status: open.
+Status: closed.
+
+`EEM-007` closes the no-hidden-physical-promotion import audit over closed
+`EEM-001` through `EEM-006`. It audits theorem docs, proof log, state files,
+the upstream manifest, Lean gate, Rust gate, publication skeleton, Rust-only
+runtime policy, and a fail-closed audit certificate. It rejects
+observed-catalog recovery imports, observed particle catalog recovery,
+physical Standard Model content, physical particle excitations, physical
+quantum dynamics, external matter fields, external gauge fields, continuum
+QFT, background Hilbert bundles, simulation-only promotion, fit-only
+calibration, generated-prose proof imports, external-catalog-as-proof
+imports, review-status-as-proof imports, physical promotion, and
+unified-field promotion.
+
+Rust anchors:
+
+- `NoHiddenPhysicalPromotionAudit`
+- `NoHiddenPhysicalPromotionAudit::canonical_eem007`
+- `NoHiddenPhysicalPromotionAudit::closes_eem007`
+- `Paper10SkeletonCertificate::with_eem007_no_hidden_physical_promotion_audit_closed`
+- `eem007_no_hidden_physical_promotion_audit_marker`
+
+Lean anchors:
+
+- `EEM007NoHiddenPhysicalPromotionAuditContract`
+- `EEM007NoHiddenPhysicalPromotionAuditContract.closed`
+- `eem007_no_hidden_physical_promotion_audit_closed_from_fields`
+- `eem007_missing_eem006_regime_not_closed`
+- `eem007_missing_rust_only_runtime_not_closed`
+- `eem007_simulation_only_promotion_not_closed`
+- `eem007_canonical_no_hidden_physical_promotion_audit_closed`
+
+Boundary: `EEM-007` proves audit coverage only. It does not prove the final
+external evidence manifest recovery theorem.
 
 ### EEM-008: Final Conditional External Evidence Manifest Certificate
 
-Status: planned.
+Status: open.
