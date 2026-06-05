@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use this repository, cite it as a Paper 10 research scaffold."
+title: "External Evidence Manifest From Finite-Capacity Causal Networks"
+authors:
+  - family-names: "Greenman"
+    given-names: "Abraham"
+license: "MIT AND CC-BY-4.0"
+repository-code: "https://github.com/Unified-Field-Theory-Research/external-evidence-manifest-from-finite-capacity-causal-networks"
+version: "0.1.0"
