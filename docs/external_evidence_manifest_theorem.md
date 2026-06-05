@@ -18,17 +18,18 @@ Paper 10 aims at the following internal conditional theorem:
 
 ## Claim Boundary
 
-The theorem target is open. `EEM-001` closes the upstream binding and
+The internal conditional theorem target is closed by `EEM-008`. `EEM-001` closes the upstream binding and
 claim-boundary scaffold. `EEM-002` closes finite external evidence record
 manifest rows. `EEM-003` closes finite reproduction protocol descriptor rows.
 `EEM-004` closes Paper 9 comparison compatibility. `EEM-005` closes evidence
 stability and coarse-graining stability. `EEM-006` closes Paper 9 regime
-consistency. `EEM-007` closes the no-hidden import audit. This is not
-external evidence manifest recovery, not observed particle catalog recovery,
-not physical Standard Model recovery, not a physical particle-excitation
-claim, not physical quantum dynamics, not continuum quantum field theory, not
-simulation-only promotion, not fit-only calibration, not physical nature
-promotion, and not a unified field theory.
+consistency. `EEM-007` closes the no-hidden import audit. `EEM-008` closes
+the final internal conditional external evidence manifest certificate. This
+is not observed particle catalog recovery, not physical Standard Model
+recovery, not a physical particle-excitation claim, not physical quantum
+dynamics, not continuum quantum field theory, not simulation-only promotion,
+not fit-only calibration, not physical nature promotion, and not a unified
+field theory.
 
 ## Upstream Binding
 
@@ -335,4 +336,42 @@ external evidence manifest recovery theorem.
 
 ### EEM-008: Final Conditional External Evidence Manifest Certificate
 
-Status: open.
+Status: closed.
+
+`EEM-008` consumes `EEM-001` through `EEM-007`, emits the finite evidence
+record manifest package and finite reproduction protocol descriptor package,
+consumes Paper 9 comparison compatibility, evidence stability/coarse-graining,
+Paper 9 regime consistency, and the no-hidden import audit, preserves finite
+capacity, locality, bounded transfer, causal-cone/no-signaling, comparison
+stability, and conservation/coarse-graining stability, emits the final
+conditional certificate, and closes the internal conditional Paper 10
+external evidence manifest theorem. It keeps physical nature claims,
+observed particle catalog recovery claims, physical Standard Model claims,
+physical particle claims, physical matter/gauge field claims, physical
+quantum dynamics claims, continuum QFT claims, simulation-only promotion,
+fit-only calibration claims, and unified-field-theory claims false.
+
+Rust anchors:
+
+- `FinalExternalEvidenceManifestCertificate`
+- `FinalExternalEvidenceManifestCertificate::canonical_eem008`
+- `FinalExternalEvidenceManifestCertificate::closes_eem008`
+- `Paper10SkeletonCertificate::final_eem008_closed`
+- `eem008_final_conditional_certificate_marker`
+
+Lean anchors:
+
+- `EEM008FinalConditionalCertificateContract`
+- `EEM008FinalConditionalCertificateContract.closed`
+- `eem008_final_conditional_certificate_closed_from_fields`
+- `eem008_missing_eem007_audit_not_closed`
+- `eem008_physical_nature_claim_not_closed`
+- `eem008_canonical_final_conditional_certificate_closed`
+- `paper10_eem008_final_conditional_certificate_closes_external_evidence_manifest_theorem`
+
+Boundary: `EEM-008` closes only the internal conditional Paper 10 external
+evidence manifest theorem under the explicit finite hypotheses. It does not
+prove observed particle catalog recovery, physical Standard Model content,
+physical particle excitations, physical matter or gauge fields, physical
+quantum dynamics, continuum QFT, physical nature-level realization, or a
+unified field theory.

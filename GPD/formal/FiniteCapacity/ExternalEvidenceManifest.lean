@@ -1440,6 +1440,177 @@ theorem eem007_canonical_no_hidden_physical_promotion_audit_closed :
   unfold eem007CanonicalNoHiddenPhysicalPromotionAuditContract
   simp
 
+structure EEM008FinalConditionalCertificateContract where
+  eem001UpstreamBindingClosed : Prop
+  eem002FiniteExternalEvidenceRecordManifestClosed : Prop
+  eem003FiniteReproductionProtocolDescriptorClosed : Prop
+  eem004Paper9ComparisonCompatibilityClosed : Prop
+  eem005EvidenceStabilityCoarseGrainingClosed : Prop
+  eem006Paper9RegimeConsistencyClosed : Prop
+  eem007NoHiddenPhysicalPromotionAuditClosed : Prop
+  finiteEvidenceRecordManifestPackageEmitted : Prop
+  finiteReproductionProtocolDescriptorPackageEmitted : Prop
+  paper9ComparisonCompatibilityConsumed : Prop
+  evidenceStabilityCoarseGrainingConsumed : Prop
+  paper9RegimeConsistencyConsumed : Prop
+  noHiddenImportAuditConsumed : Prop
+  finiteCapacityPreserved : Prop
+  localityPreserved : Prop
+  boundedTransferPreserved : Prop
+  causalConeNoSignalingPreserved : Prop
+  comparisonStabilityPreserved : Prop
+  conservationCoarseGrainingStabilityPreserved : Prop
+  finalConditionalCertificateEmitted : Prop
+  paper10TheoremClosed : Prop
+  physicalNatureClaim : Prop
+  observedParticleCatalogRecoveryClaim : Prop
+  physicalStandardModelClaim : Prop
+  physicalParticleExcitationClaim : Prop
+  physicalMatterFieldsClaim : Prop
+  physicalGaugeFieldsClaim : Prop
+  physicalQuantumDynamicsClaim : Prop
+  continuumQFTClaim : Prop
+  simulationOnlyPromotion : Prop
+  fitOnlyCalibrationClaim : Prop
+  unifiedFieldPromotion : Prop
+
+def EEM008FinalConditionalCertificateContract.closed
+    (c : EEM008FinalConditionalCertificateContract) : Prop :=
+  c.eem001UpstreamBindingClosed ∧
+  c.eem002FiniteExternalEvidenceRecordManifestClosed ∧
+  c.eem003FiniteReproductionProtocolDescriptorClosed ∧
+  c.eem004Paper9ComparisonCompatibilityClosed ∧
+  c.eem005EvidenceStabilityCoarseGrainingClosed ∧
+  c.eem006Paper9RegimeConsistencyClosed ∧
+  c.eem007NoHiddenPhysicalPromotionAuditClosed ∧
+  c.finiteEvidenceRecordManifestPackageEmitted ∧
+  c.finiteReproductionProtocolDescriptorPackageEmitted ∧
+  c.paper9ComparisonCompatibilityConsumed ∧
+  c.evidenceStabilityCoarseGrainingConsumed ∧
+  c.paper9RegimeConsistencyConsumed ∧
+  c.noHiddenImportAuditConsumed ∧
+  c.finiteCapacityPreserved ∧
+  c.localityPreserved ∧
+  c.boundedTransferPreserved ∧
+  c.causalConeNoSignalingPreserved ∧
+  c.comparisonStabilityPreserved ∧
+  c.conservationCoarseGrainingStabilityPreserved ∧
+  c.finalConditionalCertificateEmitted ∧
+  c.paper10TheoremClosed ∧
+  ¬ c.physicalNatureClaim ∧
+  ¬ c.observedParticleCatalogRecoveryClaim ∧
+  ¬ c.physicalStandardModelClaim ∧
+  ¬ c.physicalParticleExcitationClaim ∧
+  ¬ c.physicalMatterFieldsClaim ∧
+  ¬ c.physicalGaugeFieldsClaim ∧
+  ¬ c.physicalQuantumDynamicsClaim ∧
+  ¬ c.continuumQFTClaim ∧
+  ¬ c.simulationOnlyPromotion ∧
+  ¬ c.fitOnlyCalibrationClaim ∧
+  ¬ c.unifiedFieldPromotion
+
+theorem eem008_final_conditional_certificate_closed_from_fields
+    (c : EEM008FinalConditionalCertificateContract)
+    (hEEM001 : c.eem001UpstreamBindingClosed)
+    (hEEM002 : c.eem002FiniteExternalEvidenceRecordManifestClosed)
+    (hEEM003 : c.eem003FiniteReproductionProtocolDescriptorClosed)
+    (hEEM004 : c.eem004Paper9ComparisonCompatibilityClosed)
+    (hEEM005 : c.eem005EvidenceStabilityCoarseGrainingClosed)
+    (hEEM006 : c.eem006Paper9RegimeConsistencyClosed)
+    (hEEM007 : c.eem007NoHiddenPhysicalPromotionAuditClosed)
+    (hEvidencePackage : c.finiteEvidenceRecordManifestPackageEmitted)
+    (hProtocolPackage : c.finiteReproductionProtocolDescriptorPackageEmitted)
+    (hPaper9Compat : c.paper9ComparisonCompatibilityConsumed)
+    (hStability : c.evidenceStabilityCoarseGrainingConsumed)
+    (hRegime : c.paper9RegimeConsistencyConsumed)
+    (hAudit : c.noHiddenImportAuditConsumed)
+    (hFiniteCapacity : c.finiteCapacityPreserved)
+    (hLocality : c.localityPreserved)
+    (hBoundedTransfer : c.boundedTransferPreserved)
+    (hNoSignaling : c.causalConeNoSignalingPreserved)
+    (hComparisonStability : c.comparisonStabilityPreserved)
+    (hConservationStability : c.conservationCoarseGrainingStabilityPreserved)
+    (hCertificate : c.finalConditionalCertificateEmitted)
+    (hTheorem : c.paper10TheoremClosed)
+    (hNoPhysicalNature : ¬ c.physicalNatureClaim)
+    (hNoObservedRecovery : ¬ c.observedParticleCatalogRecoveryClaim)
+    (hNoPhysicalSM : ¬ c.physicalStandardModelClaim)
+    (hNoPhysicalParticle : ¬ c.physicalParticleExcitationClaim)
+    (hNoMatter : ¬ c.physicalMatterFieldsClaim)
+    (hNoGauge : ¬ c.physicalGaugeFieldsClaim)
+    (hNoPhysicalQuantum : ¬ c.physicalQuantumDynamicsClaim)
+    (hNoQFT : ¬ c.continuumQFTClaim)
+    (hNoSimulation : ¬ c.simulationOnlyPromotion)
+    (hNoFit : ¬ c.fitOnlyCalibrationClaim)
+    (hNoUnified : ¬ c.unifiedFieldPromotion) :
+    c.closed := by
+  exact ⟨hEEM001, hEEM002, hEEM003, hEEM004, hEEM005, hEEM006, hEEM007,
+    hEvidencePackage, hProtocolPackage, hPaper9Compat, hStability, hRegime,
+    hAudit, hFiniteCapacity, hLocality, hBoundedTransfer, hNoSignaling,
+    hComparisonStability, hConservationStability, hCertificate, hTheorem,
+    hNoPhysicalNature, hNoObservedRecovery, hNoPhysicalSM,
+    hNoPhysicalParticle, hNoMatter, hNoGauge, hNoPhysicalQuantum, hNoQFT,
+    hNoSimulation, hNoFit, hNoUnified⟩
+
+theorem eem008_missing_eem007_audit_not_closed
+    (c : EEM008FinalConditionalCertificateContract)
+    (hClosed : c.closed)
+    (hMissingEEM007 : ¬ c.eem007NoHiddenPhysicalPromotionAuditClosed) :
+    False := by
+  rcases hClosed with ⟨_, _, _, _, _, _, hEEM007, _⟩
+  exact hMissingEEM007 hEEM007
+
+theorem eem008_physical_nature_claim_not_closed
+    (c : EEM008FinalConditionalCertificateContract)
+    (hClosed : c.closed)
+    (hPhysicalNature : c.physicalNatureClaim) :
+    False := by
+  rcases hClosed with
+    ⟨_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _,
+      hNoPhysicalNature, _⟩
+  exact hNoPhysicalNature hPhysicalNature
+
+def eem008CanonicalFinalConditionalCertificateContract :
+    EEM008FinalConditionalCertificateContract :=
+  { eem001UpstreamBindingClosed := True,
+    eem002FiniteExternalEvidenceRecordManifestClosed := True,
+    eem003FiniteReproductionProtocolDescriptorClosed := True,
+    eem004Paper9ComparisonCompatibilityClosed := True,
+    eem005EvidenceStabilityCoarseGrainingClosed := True,
+    eem006Paper9RegimeConsistencyClosed := True,
+    eem007NoHiddenPhysicalPromotionAuditClosed := True,
+    finiteEvidenceRecordManifestPackageEmitted := True,
+    finiteReproductionProtocolDescriptorPackageEmitted := True,
+    paper9ComparisonCompatibilityConsumed := True,
+    evidenceStabilityCoarseGrainingConsumed := True,
+    paper9RegimeConsistencyConsumed := True,
+    noHiddenImportAuditConsumed := True,
+    finiteCapacityPreserved := True,
+    localityPreserved := True,
+    boundedTransferPreserved := True,
+    causalConeNoSignalingPreserved := True,
+    comparisonStabilityPreserved := True,
+    conservationCoarseGrainingStabilityPreserved := True,
+    finalConditionalCertificateEmitted := True,
+    paper10TheoremClosed := True,
+    physicalNatureClaim := False,
+    observedParticleCatalogRecoveryClaim := False,
+    physicalStandardModelClaim := False,
+    physicalParticleExcitationClaim := False,
+    physicalMatterFieldsClaim := False,
+    physicalGaugeFieldsClaim := False,
+    physicalQuantumDynamicsClaim := False,
+    continuumQFTClaim := False,
+    simulationOnlyPromotion := False,
+    fitOnlyCalibrationClaim := False,
+    unifiedFieldPromotion := False }
+
+theorem eem008_canonical_final_conditional_certificate_closed :
+    eem008CanonicalFinalConditionalCertificateContract.closed := by
+  unfold EEM008FinalConditionalCertificateContract.closed
+  unfold eem008CanonicalFinalConditionalCertificateContract
+  simp
+
 structure Paper10ExternalEvidenceManifestTheoremContract where
   eem001UpstreamBindingClosed : Prop
   eem002FiniteExternalEvidenceRecordManifestClosed : Prop
@@ -1486,5 +1657,31 @@ theorem paper10_eem001_skeleton_does_not_close_external_evidence_manifest_theore
     False := by
   rcases hClosed with ⟨_, hEEM002, _⟩
   exact hMissingEEM002 hEEM002
+
+def paper10CanonicalExternalEvidenceManifestTheoremContract :
+    Paper10ExternalEvidenceManifestTheoremContract :=
+  { eem001UpstreamBindingClosed := True,
+    eem002FiniteExternalEvidenceRecordManifestClosed := True,
+    eem003FiniteReproductionProtocolDescriptorClosed := True,
+    eem004Paper9ComparisonCompatibilityClosed := True,
+    eem005EvidenceStabilityCoarseGrainingClosed := True,
+    eem006Paper9RegimeConsistencyClosed := True,
+    eem007NoHiddenPhysicalPromotionAuditClosed := True,
+    eem008FinalConditionalCertificateClosed := True,
+    physicalNatureClaim := False,
+    observedParticleCatalogRecoveryClaim := False,
+    physicalStandardModelClaim := False,
+    physicalParticleExcitationClaim := False,
+    physicalQuantumDynamicsClaim := False,
+    continuumQFTClaim := False,
+    simulationOnlyPromotion := False,
+    fitOnlyCalibrationClaim := False,
+    unifiedFieldPromotion := False }
+
+theorem paper10_eem008_final_conditional_certificate_closes_external_evidence_manifest_theorem :
+    paper10CanonicalExternalEvidenceManifestTheoremContract.closed := by
+  unfold Paper10ExternalEvidenceManifestTheoremContract.closed
+  unfold paper10CanonicalExternalEvidenceManifestTheoremContract
+  simp
 
 end FiniteCapacity

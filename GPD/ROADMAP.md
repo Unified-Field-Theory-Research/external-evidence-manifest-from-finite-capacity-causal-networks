@@ -44,7 +44,7 @@ scope unless a future paper-specific certificate explicitly closes them.
   particles, continuum QFT, background Hilbert bundles, external matter or
   gauge fields, simulation-only promotion, fit-only calibration, physical
   nature promotion, or unified-field promotion.
-- [ ] **Phase 8: Final Conditional External Evidence Manifest Certificate** -
+- [x] **Phase 8: Final Conditional External Evidence Manifest Certificate** -
   `EEM-008` may promote only a closed internal conditional Paper 10 theorem
   under explicit finite hypotheses and no nature-level, observed-recovery,
   physical Standard Model, physical-particle, simulation-only, fit-only, or

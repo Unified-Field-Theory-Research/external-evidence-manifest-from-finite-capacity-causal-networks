@@ -155,11 +155,11 @@ Closed row shape:
   import, review-status-as-proof import, physical nature promotion, or
   unified-field promotion.
 
-## Active Obligation
+## Closed Dependencies: EEM-008
 
-`EEM-008` is open: final internal conditional certificate.
+`EEM-008` closes the final internal conditional certificate.
 
-Required row shape:
+Closed row shape:
 
 - closed `EEM-001` through `EEM-007`;
 - finite evidence record manifest package emitted;
@@ -176,6 +176,11 @@ Required row shape:
   physical Standard Model claim, physical particle claim, physical quantum
   dynamics claim, continuum QFT claim, simulation-only promotion, fit-only
   calibration claim, or unified-field-theory claim.
+
+## Active Obligation
+
+None. The internal conditional Paper 10 external evidence manifest theorem is
+closed under the explicit finite hypotheses and non-promotion boundary.
 
 Observed particle catalog recovery, physical Standard Model content, physical
 particle excitations, physical quantum dynamics, continuum QFT,

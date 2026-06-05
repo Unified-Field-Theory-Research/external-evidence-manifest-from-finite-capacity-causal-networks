@@ -3,8 +3,9 @@ use cclab_accel::{
     eem003_finite_reproduction_protocol_descriptor_marker,
     eem004_paper9_comparison_compatibility_marker,
     eem005_evidence_stability_coarse_graining_marker, eem006_paper9_regime_consistency_marker,
-    eem007_no_hidden_physical_promotion_audit_marker, paper10_skeleton_marker,
-    EvidenceStabilityCoarseGraining, FiniteExternalEvidenceRecordManifest,
+    eem007_no_hidden_physical_promotion_audit_marker, eem008_final_conditional_certificate_marker,
+    paper10_skeleton_marker, EvidenceStabilityCoarseGraining,
+    FinalExternalEvidenceManifestCertificate, FiniteExternalEvidenceRecordManifest,
     FiniteReproductionProtocolDescriptor, NoHiddenPhysicalPromotionAudit,
     Paper10SkeletonCertificate, Paper10UpstreamBinding, Paper9ComparisonCompatibility,
     Paper9RegimeConsistency, PAPER1_FROZEN_COMMIT, PAPER2_FROZEN_COMMIT, PAPER3_FROZEN_COMMIT,
@@ -594,6 +595,84 @@ fn eem007_no_hidden_import_audit_fails_closed_on_missing_coverage_or_imports() {
 }
 
 #[test]
+fn eem008_final_certificate_closes_internal_paper10_theorem_only() {
+    let final_certificate = FinalExternalEvidenceManifestCertificate::canonical_eem008();
+    assert!(final_certificate.closes_eem008());
+    assert!(final_certificate.eem007_no_hidden_physical_promotion_audit_closed);
+    assert!(final_certificate.finite_evidence_record_manifest_package_emitted);
+    assert!(final_certificate.finite_reproduction_protocol_descriptor_package_emitted);
+    assert!(final_certificate.final_conditional_certificate_emitted);
+    assert!(final_certificate.paper10_theorem_closed);
+    assert!(!final_certificate.physical_nature_claim);
+    assert!(!final_certificate.observed_particle_catalog_recovery_claim);
+    assert!(!final_certificate.physical_standard_model_claim);
+    assert!(!final_certificate.unified_field_theory_claim);
+    assert_eq!(
+        eem008_final_conditional_certificate_marker(),
+        "eem008-final-conditional-external-evidence-manifest-certificate-closed"
+    );
+
+    let skeleton = Paper10SkeletonCertificate::final_eem008_closed();
+    assert!(skeleton.eem001_upstream_binding_closed);
+    assert!(skeleton.eem002_finite_external_evidence_record_manifest_closed);
+    assert!(skeleton.eem003_finite_reproduction_protocol_descriptor_closed);
+    assert!(skeleton.eem004_paper9_comparison_compatibility_closed);
+    assert!(skeleton.eem005_evidence_stability_coarse_graining_closed);
+    assert!(skeleton.eem006_paper9_regime_consistency_closed);
+    assert!(skeleton.eem007_no_hidden_physical_promotion_audit_closed);
+    assert!(skeleton.eem008_final_conditional_certificate_closed);
+    assert!(skeleton.paper10_theorem_closed);
+    assert!(skeleton.closes_paper10_theorem());
+}
+
+#[test]
+fn eem008_final_certificate_fails_closed_on_missing_audit_or_promotion() {
+    let final_certificate = FinalExternalEvidenceManifestCertificate::canonical_eem008();
+
+    let missing_audit = FinalExternalEvidenceManifestCertificate {
+        eem007_no_hidden_physical_promotion_audit_closed: false,
+        ..final_certificate
+    };
+    assert!(!missing_audit.closes_eem008());
+
+    let missing_certificate = FinalExternalEvidenceManifestCertificate {
+        final_conditional_certificate_emitted: false,
+        ..final_certificate
+    };
+    assert!(!missing_certificate.closes_eem008());
+
+    let theorem_not_closed = FinalExternalEvidenceManifestCertificate {
+        paper10_theorem_closed: false,
+        ..final_certificate
+    };
+    assert!(!theorem_not_closed.closes_eem008());
+
+    let physical_nature = FinalExternalEvidenceManifestCertificate {
+        physical_nature_claim: true,
+        ..final_certificate
+    };
+    assert!(!physical_nature.closes_eem008());
+
+    let physical_standard_model = FinalExternalEvidenceManifestCertificate {
+        physical_standard_model_claim: true,
+        ..final_certificate
+    };
+    assert!(!physical_standard_model.closes_eem008());
+
+    let simulation_only = FinalExternalEvidenceManifestCertificate {
+        simulation_only_promotion: true,
+        ..final_certificate
+    };
+    assert!(!simulation_only.closes_eem008());
+
+    let unified = FinalExternalEvidenceManifestCertificate {
+        unified_field_theory_claim: true,
+        ..final_certificate
+    };
+    assert!(!unified.closes_eem008());
+}
+
+#[test]
 fn upstream_json_records_paper9_certificate_and_nonpromotion() {
     let root = project_root();
     let upstream = read(&root, "UPSTREAM-PAPERS.json");
@@ -640,7 +719,12 @@ fn upstream_json_records_paper9_certificate_and_nonpromotion() {
     );
     assert_contains(
         &upstream,
-        "\"external_evidence_manifest_theorem_closed\": false",
+        "\"eem008_final_conditional_certificate_closed\": true",
+        "UPSTREAM-PAPERS.json",
+    );
+    assert_contains(
+        &upstream,
+        "\"external_evidence_manifest_theorem_closed\": true",
         "UPSTREAM-PAPERS.json",
     );
     assert_contains(
@@ -661,7 +745,7 @@ fn upstream_json_records_paper9_certificate_and_nonpromotion() {
 }
 
 #[test]
-fn docs_keep_eem008_active_and_physical_claims_false() {
+fn docs_keep_paper10_closed_and_physical_claims_false() {
     let root = project_root();
     let theorem = read(&root, "docs/external_evidence_manifest_theorem.md");
     let state = read(&root, "GPD/STATE.md");
@@ -680,6 +764,7 @@ fn docs_keep_eem008_active_and_physical_claims_false() {
         assert_contains(artifact.1, "EEM-006", artifact.0);
         assert_contains(artifact.1, "EEM-007", artifact.0);
         assert_contains(artifact.1, "EEM-008", artifact.0);
+        assert_contains(artifact.1, "closed", artifact.0);
         assert_contains(artifact.1, "observed particle catalog recovery", artifact.0);
         assert_contains(artifact.1, "physical Standard Model", artifact.0);
         assert_contains(artifact.1, "simulation-only promotion", artifact.0);

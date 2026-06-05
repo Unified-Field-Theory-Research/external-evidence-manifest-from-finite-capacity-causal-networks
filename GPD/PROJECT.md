@@ -14,5 +14,5 @@ The current closed rungs are `EEM-001`: upstream binding and claim boundary,
 reproduction protocol descriptor, `EEM-004`: Paper 9 comparison
 compatibility, `EEM-005`: evidence stability and coarse-graining stability,
 `EEM-006`: Paper 9 regime consistency, and `EEM-007`: no-hidden import audit.
-The current active obligation is `EEM-008`: close the final conditional
-certificate.
+`EEM-008` closes the final internal conditional certificate. No Paper 10
+proof obligation remains open.

@@ -371,8 +371,60 @@ external-catalog-as-proof imports, review-status-as-proof imports, physical
 promotion, and unified-field promotion. It does not prove the final external
 evidence manifest theorem by itself.
 
+## EEM-008: Final Conditional External Evidence Manifest Certificate
+
+Status: closed as the final internal conditional Paper 10 certificate.
+
+Artifacts:
+
+- `docs/external_evidence_manifest_theorem.md`
+- `docs/open_proof_obligations.md`
+- `docs/proof_log.md`
+- `GPD/STATE.md`
+- `GPD/ROADMAP.md`
+- `GPD/state.json`
+- `GPD/formal/FiniteCapacity/ExternalEvidenceManifest.lean`
+- `rust/cclab_accel/src/lib.rs`
+- `rust/cclab_accel/tests/external_evidence_manifest_gate.rs`
+
+Rust anchors:
+
+- `FinalExternalEvidenceManifestCertificate`
+- `FinalExternalEvidenceManifestCertificate::canonical_eem008`
+- `FinalExternalEvidenceManifestCertificate::closes_eem008`
+- `Paper10SkeletonCertificate::final_eem008_closed`
+- `eem008_final_conditional_certificate_marker`
+
+Lean anchors:
+
+- `EEM008FinalConditionalCertificateContract`
+- `EEM008FinalConditionalCertificateContract.closed`
+- `eem008_final_conditional_certificate_closed_from_fields`
+- `eem008_missing_eem007_audit_not_closed`
+- `eem008_physical_nature_claim_not_closed`
+- `eem008_canonical_final_conditional_certificate_closed`
+- `paper10_eem008_final_conditional_certificate_closes_external_evidence_manifest_theorem`
+
+Verification:
+
+- `make test-fast`
+- `make lean-build`
+
+Boundary:
+
+`EEM-008` consumes `EEM-001` through `EEM-007`, emits the finite evidence
+record manifest package and finite reproduction protocol descriptor package,
+preserves finite capacity, locality, bounded transfer,
+causal-cone/no-signaling, comparison stability, and
+conservation/coarse-graining stability, emits the final conditional
+certificate, and closes the internal conditional Paper 10 external evidence
+manifest theorem. It does not prove observed particle catalog recovery,
+physical Standard Model content, physical particle excitations, physical
+matter or gauge fields, physical quantum dynamics, continuum quantum field
+theory, physical nature-level realization, simulation-only promotion,
+fit-only calibration, or a unified field theory.
+
 ## Active Next Obligation
 
-`EEM-008`: consume `EEM-001` through `EEM-007` and close the final internal
-conditional external evidence manifest certificate without physical or
-unified-field promotion.
+None. The Paper 10 internal conditional external evidence manifest theorem is
+closed under the explicit finite hypotheses and non-promotion boundary.

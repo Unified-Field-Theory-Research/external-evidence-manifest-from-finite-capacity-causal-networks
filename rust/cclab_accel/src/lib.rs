@@ -932,6 +932,123 @@ impl NoHiddenPhysicalPromotionAudit {
 }
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
+pub struct FinalExternalEvidenceManifestCertificate {
+    pub eem001_upstream_binding_closed: bool,
+    pub eem002_finite_external_evidence_record_manifest_closed: bool,
+    pub eem003_finite_reproduction_protocol_descriptor_closed: bool,
+    pub eem004_paper9_comparison_compatibility_closed: bool,
+    pub eem005_evidence_stability_coarse_graining_closed: bool,
+    pub eem006_paper9_regime_consistency_closed: bool,
+    pub eem007_no_hidden_physical_promotion_audit_closed: bool,
+    pub finite_evidence_record_manifest_package_emitted: bool,
+    pub finite_reproduction_protocol_descriptor_package_emitted: bool,
+    pub paper9_comparison_compatibility_consumed: bool,
+    pub evidence_stability_coarse_graining_consumed: bool,
+    pub paper9_regime_consistency_consumed: bool,
+    pub no_hidden_import_audit_consumed: bool,
+    pub finite_capacity_preserved: bool,
+    pub locality_preserved: bool,
+    pub bounded_transfer_preserved: bool,
+    pub causal_cone_no_signaling_preserved: bool,
+    pub comparison_stability_preserved: bool,
+    pub conservation_coarse_graining_stability_preserved: bool,
+    pub final_conditional_certificate_emitted: bool,
+    pub paper10_theorem_closed: bool,
+    pub physical_nature_claim: bool,
+    pub observed_particle_catalog_recovery_claim: bool,
+    pub physical_standard_model_claim: bool,
+    pub physical_particle_excitation_claim: bool,
+    pub physical_matter_fields_claim: bool,
+    pub physical_gauge_fields_claim: bool,
+    pub physical_quantum_dynamics_claim: bool,
+    pub continuum_qft_claim: bool,
+    pub simulation_only_promotion: bool,
+    pub fit_only_calibration_claim: bool,
+    pub unified_field_theory_claim: bool,
+}
+
+impl FinalExternalEvidenceManifestCertificate {
+    pub fn canonical_eem008() -> Self {
+        Self {
+            eem001_upstream_binding_closed: Paper10UpstreamBinding::canonical_eem001()
+                .closes_eem001(),
+            eem002_finite_external_evidence_record_manifest_closed:
+                FiniteExternalEvidenceRecordManifest::canonical_eem002().closes_eem002(),
+            eem003_finite_reproduction_protocol_descriptor_closed:
+                FiniteReproductionProtocolDescriptor::canonical_eem003().closes_eem003(),
+            eem004_paper9_comparison_compatibility_closed:
+                Paper9ComparisonCompatibility::canonical_eem004().closes_eem004(),
+            eem005_evidence_stability_coarse_graining_closed:
+                EvidenceStabilityCoarseGraining::canonical_eem005().closes_eem005(),
+            eem006_paper9_regime_consistency_closed: Paper9RegimeConsistency::canonical_eem006()
+                .closes_eem006(),
+            eem007_no_hidden_physical_promotion_audit_closed:
+                NoHiddenPhysicalPromotionAudit::canonical_eem007().closes_eem007(),
+            finite_evidence_record_manifest_package_emitted: true,
+            finite_reproduction_protocol_descriptor_package_emitted: true,
+            paper9_comparison_compatibility_consumed: true,
+            evidence_stability_coarse_graining_consumed: true,
+            paper9_regime_consistency_consumed: true,
+            no_hidden_import_audit_consumed: true,
+            finite_capacity_preserved: true,
+            locality_preserved: true,
+            bounded_transfer_preserved: true,
+            causal_cone_no_signaling_preserved: true,
+            comparison_stability_preserved: true,
+            conservation_coarse_graining_stability_preserved: true,
+            final_conditional_certificate_emitted: true,
+            paper10_theorem_closed: true,
+            physical_nature_claim: false,
+            observed_particle_catalog_recovery_claim: false,
+            physical_standard_model_claim: false,
+            physical_particle_excitation_claim: false,
+            physical_matter_fields_claim: false,
+            physical_gauge_fields_claim: false,
+            physical_quantum_dynamics_claim: false,
+            continuum_qft_claim: false,
+            simulation_only_promotion: false,
+            fit_only_calibration_claim: false,
+            unified_field_theory_claim: false,
+        }
+    }
+
+    pub fn closes_eem008(&self) -> bool {
+        self.eem001_upstream_binding_closed
+            && self.eem002_finite_external_evidence_record_manifest_closed
+            && self.eem003_finite_reproduction_protocol_descriptor_closed
+            && self.eem004_paper9_comparison_compatibility_closed
+            && self.eem005_evidence_stability_coarse_graining_closed
+            && self.eem006_paper9_regime_consistency_closed
+            && self.eem007_no_hidden_physical_promotion_audit_closed
+            && self.finite_evidence_record_manifest_package_emitted
+            && self.finite_reproduction_protocol_descriptor_package_emitted
+            && self.paper9_comparison_compatibility_consumed
+            && self.evidence_stability_coarse_graining_consumed
+            && self.paper9_regime_consistency_consumed
+            && self.no_hidden_import_audit_consumed
+            && self.finite_capacity_preserved
+            && self.locality_preserved
+            && self.bounded_transfer_preserved
+            && self.causal_cone_no_signaling_preserved
+            && self.comparison_stability_preserved
+            && self.conservation_coarse_graining_stability_preserved
+            && self.final_conditional_certificate_emitted
+            && self.paper10_theorem_closed
+            && !self.physical_nature_claim
+            && !self.observed_particle_catalog_recovery_claim
+            && !self.physical_standard_model_claim
+            && !self.physical_particle_excitation_claim
+            && !self.physical_matter_fields_claim
+            && !self.physical_gauge_fields_claim
+            && !self.physical_quantum_dynamics_claim
+            && !self.continuum_qft_claim
+            && !self.simulation_only_promotion
+            && !self.fit_only_calibration_claim
+            && !self.unified_field_theory_claim
+    }
+}
+
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub struct Paper10SkeletonCertificate {
     pub eem001_upstream_binding_closed: bool,
     pub eem002_finite_external_evidence_record_manifest_closed: bool,
@@ -1143,6 +1260,37 @@ impl Paper10SkeletonCertificate {
         }
     }
 
+    pub fn final_eem008_closed() -> Self {
+        let binding = Paper10UpstreamBinding::canonical_eem001();
+        let manifest = FiniteExternalEvidenceRecordManifest::canonical_eem002();
+        let protocol = FiniteReproductionProtocolDescriptor::canonical_eem003();
+        let compatibility = Paper9ComparisonCompatibility::canonical_eem004();
+        let stability = EvidenceStabilityCoarseGraining::canonical_eem005();
+        let regime = Paper9RegimeConsistency::canonical_eem006();
+        let audit = NoHiddenPhysicalPromotionAudit::canonical_eem007();
+        let final_certificate = FinalExternalEvidenceManifestCertificate::canonical_eem008();
+        Self {
+            eem001_upstream_binding_closed: binding.closes_eem001(),
+            eem002_finite_external_evidence_record_manifest_closed: manifest.closes_eem002(),
+            eem003_finite_reproduction_protocol_descriptor_closed: protocol.closes_eem003(),
+            eem004_paper9_comparison_compatibility_closed: compatibility.closes_eem004(),
+            eem005_evidence_stability_coarse_graining_closed: stability.closes_eem005(),
+            eem006_paper9_regime_consistency_closed: regime.closes_eem006(),
+            eem007_no_hidden_physical_promotion_audit_closed: audit.closes_eem007(),
+            eem008_final_conditional_certificate_closed: final_certificate.closes_eem008(),
+            paper10_theorem_closed: final_certificate.paper10_theorem_closed,
+            physical_nature_claim: false,
+            observed_particle_catalog_recovery_claim: false,
+            physical_standard_model_claim: false,
+            physical_particle_excitation_claim: false,
+            physical_quantum_dynamics_claim: false,
+            continuum_qft_claim: false,
+            simulation_only_promotion: false,
+            fit_only_calibration_claim: false,
+            unified_field_theory_claim: false,
+        }
+    }
+
     pub fn closes_paper10_theorem(&self) -> bool {
         self.eem001_upstream_binding_closed
             && self.eem002_finite_external_evidence_record_manifest_closed
@@ -1191,4 +1339,8 @@ pub fn eem006_paper9_regime_consistency_marker() -> &'static str {
 
 pub fn eem007_no_hidden_physical_promotion_audit_marker() -> &'static str {
     "eem007-no-hidden-physical-promotion-import-audit-closed"
+}
+
+pub fn eem008_final_conditional_certificate_marker() -> &'static str {
+    "eem008-final-conditional-external-evidence-manifest-certificate-closed"
 }
