@@ -1,9 +1,10 @@
 use cclab_accel::{
-    eem002_finite_external_evidence_record_manifest_marker, paper10_skeleton_marker,
-    FiniteExternalEvidenceRecordManifest, Paper10SkeletonCertificate, Paper10UpstreamBinding,
-    PAPER1_FROZEN_COMMIT, PAPER2_FROZEN_COMMIT, PAPER3_FROZEN_COMMIT, PAPER4_FROZEN_COMMIT,
-    PAPER5_FROZEN_COMMIT, PAPER6_FROZEN_COMMIT, PAPER7_FROZEN_COMMIT, PAPER8_FROZEN_COMMIT,
-    PAPER9_FINAL_CERTIFICATE, PAPER9_FROZEN_COMMIT,
+    eem002_finite_external_evidence_record_manifest_marker,
+    eem003_finite_reproduction_protocol_descriptor_marker, paper10_skeleton_marker,
+    FiniteExternalEvidenceRecordManifest, FiniteReproductionProtocolDescriptor,
+    Paper10SkeletonCertificate, Paper10UpstreamBinding, PAPER1_FROZEN_COMMIT, PAPER2_FROZEN_COMMIT,
+    PAPER3_FROZEN_COMMIT, PAPER4_FROZEN_COMMIT, PAPER5_FROZEN_COMMIT, PAPER6_FROZEN_COMMIT,
+    PAPER7_FROZEN_COMMIT, PAPER8_FROZEN_COMMIT, PAPER9_FINAL_CERTIFICATE, PAPER9_FROZEN_COMMIT,
 };
 use std::fs;
 use std::path::{Path, PathBuf};
@@ -211,6 +212,76 @@ fn eem002_record_manifest_fails_closed_on_missing_bounds_or_hidden_imports() {
 }
 
 #[test]
+fn eem003_finite_reproduction_protocol_descriptor_closes_only_protocol_rows() {
+    let protocol = FiniteReproductionProtocolDescriptor::canonical_eem003();
+    assert!(protocol.closes_eem003());
+    assert!(protocol.eem001_upstream_binding_closed);
+    assert!(protocol.eem002_finite_external_evidence_record_manifest_closed);
+    assert!(protocol.evidence_manifest_support_preserved);
+    assert!(protocol.paper9_comparison_links_preserved);
+    assert_eq!(
+        eem003_finite_reproduction_protocol_descriptor_marker(),
+        "eem003-finite-reproduction-protocol-descriptor-closed"
+    );
+
+    let skeleton =
+        Paper10SkeletonCertificate::with_eem003_finite_reproduction_protocol_descriptor_closed();
+    assert!(skeleton.eem001_upstream_binding_closed);
+    assert!(skeleton.eem002_finite_external_evidence_record_manifest_closed);
+    assert!(skeleton.eem003_finite_reproduction_protocol_descriptor_closed);
+    assert!(!skeleton.eem004_paper9_comparison_compatibility_closed);
+    assert!(!skeleton.paper10_theorem_closed);
+    assert!(!skeleton.closes_paper10_theorem());
+}
+
+#[test]
+fn eem003_protocol_descriptor_fails_closed_on_missing_dependency_or_proof_imports() {
+    let protocol = FiniteReproductionProtocolDescriptor::canonical_eem003();
+
+    let missing_eem002 = FiniteReproductionProtocolDescriptor {
+        eem002_finite_external_evidence_record_manifest_closed: false,
+        ..protocol
+    };
+    assert!(!missing_eem002.closes_eem003());
+
+    let overfull_steps = FiniteReproductionProtocolDescriptor {
+        occupied_protocol_step_descriptor_count: protocol.protocol_step_descriptor_bound + 1,
+        ..protocol
+    };
+    assert!(!overfull_steps.closes_eem003());
+
+    let simulation_as_proof = FiniteReproductionProtocolDescriptor {
+        simulation_only_proof_import: true,
+        ..protocol
+    };
+    assert!(!simulation_as_proof.closes_eem003());
+
+    let fit_as_proof = FiniteReproductionProtocolDescriptor {
+        fit_only_proof_import: true,
+        ..protocol
+    };
+    assert!(!fit_as_proof.closes_eem003());
+
+    let generated_prose_as_proof = FiniteReproductionProtocolDescriptor {
+        generated_prose_proof_import: true,
+        ..protocol
+    };
+    assert!(!generated_prose_as_proof.closes_eem003());
+
+    let external_catalog_as_proof = FiniteReproductionProtocolDescriptor {
+        external_catalog_as_proof_import: true,
+        ..protocol
+    };
+    assert!(!external_catalog_as_proof.closes_eem003());
+
+    let review_status_as_proof = FiniteReproductionProtocolDescriptor {
+        review_status_as_proof_import: true,
+        ..protocol
+    };
+    assert!(!review_status_as_proof.closes_eem003());
+}
+
+#[test]
 fn upstream_json_records_paper9_certificate_and_nonpromotion() {
     let root = project_root();
     let upstream = read(&root, "UPSTREAM-PAPERS.json");
@@ -228,6 +299,11 @@ fn upstream_json_records_paper9_certificate_and_nonpromotion() {
     assert_contains(
         &upstream,
         "\"eem002_finite_external_evidence_record_manifest_closed\": true",
+        "UPSTREAM-PAPERS.json",
+    );
+    assert_contains(
+        &upstream,
+        "\"eem003_finite_reproduction_protocol_descriptor_closed\": true",
         "UPSTREAM-PAPERS.json",
     );
     assert_contains(
@@ -253,7 +329,7 @@ fn upstream_json_records_paper9_certificate_and_nonpromotion() {
 }
 
 #[test]
-fn docs_keep_eem003_active_and_physical_claims_false() {
+fn docs_keep_eem004_active_and_physical_claims_false() {
     let root = project_root();
     let theorem = read(&root, "docs/external_evidence_manifest_theorem.md");
     let state = read(&root, "GPD/STATE.md");
@@ -267,6 +343,7 @@ fn docs_keep_eem003_active_and_physical_claims_false() {
         assert_contains(artifact.1, "EEM-001", artifact.0);
         assert_contains(artifact.1, "EEM-002", artifact.0);
         assert_contains(artifact.1, "EEM-003", artifact.0);
+        assert_contains(artifact.1, "EEM-004", artifact.0);
         assert_contains(artifact.1, "observed particle catalog recovery", artifact.0);
         assert_contains(artifact.1, "physical Standard Model", artifact.0);
         assert_contains(artifact.1, "simulation-only promotion", artifact.0);

@@ -25,7 +25,7 @@ scope unless a future paper-specific certificate explicitly closes them.
   uncertainty/tolerance metadata, reproduction-status flags, and no observed
   recovery, physical Standard Model, simulation-only, fit-only, or
   physical-promotion imports.
-- [ ] **Phase 3: Define Finite Reproduction Protocol Descriptor** -
+- [x] **Phase 3: Define Finite Reproduction Protocol Descriptor** -
   `EEM-003` should define finite protocol rows for independent reproduction
   attempts without treating simulations, fits, generated prose, or external
   catalogs as proof.

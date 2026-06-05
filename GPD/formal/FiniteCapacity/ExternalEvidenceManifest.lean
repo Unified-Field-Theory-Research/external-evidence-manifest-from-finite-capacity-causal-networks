@@ -340,6 +340,236 @@ theorem eem002_canonical_finite_external_evidence_record_manifest_closed :
   unfold eem002CanonicalFiniteExternalEvidenceRecordManifestContract
   simp
 
+structure EEM003FiniteReproductionProtocolDescriptorContract where
+  eem001UpstreamBindingClosed : Prop
+  eem002FiniteExternalEvidenceRecordManifestClosed : Prop
+  protocolIdBound : Nat
+  occupiedProtocolIdCount : Nat
+  protocolStepDescriptorBound : Nat
+  occupiedProtocolStepDescriptorCount : Nat
+  independentReproductionAttemptBound : Nat
+  occupiedIndependentReproductionAttemptCount : Nat
+  inputArtifactDescriptorBound : Nat
+  occupiedInputArtifactDescriptorCount : Nat
+  outputArtifactDescriptorBound : Nat
+  occupiedOutputArtifactDescriptorCount : Nat
+  acceptanceToleranceGateBound : Nat
+  occupiedAcceptanceToleranceGateCount : Nat
+  localExecutionDomainSize : Nat
+  reproductionReadoutBoundarySize : Nat
+  finiteCapacityBound : Nat
+  boundedTransferBound : Nat
+  evidenceManifestSupportPreserved : Prop
+  paper9ComparisonLinksPreserved : Prop
+  finiteLocalCapacityCompatible : Prop
+  boundedTransferCompatible : Prop
+  simulationOnlyProofImport : Prop
+  fitOnlyProofImport : Prop
+  generatedProseProofImport : Prop
+  externalCatalogAsProofImport : Prop
+  reviewStatusAsProofImport : Prop
+  observedParticleCatalogRecoveryImport : Prop
+  physicalStandardModelContentImport : Prop
+  physicalParticleExcitationImport : Prop
+  physicalQuantumDynamicsImport : Prop
+  externalMatterFieldImport : Prop
+  externalGaugeFieldImport : Prop
+  continuumQFTImport : Prop
+  backgroundHilbertBundleImport : Prop
+  physicalPromotion : Prop
+  unifiedFieldPromotion : Prop
+
+def EEM003FiniteReproductionProtocolDescriptorContract.closed
+    (c : EEM003FiniteReproductionProtocolDescriptorContract) : Prop :=
+  c.eem001UpstreamBindingClosed ∧
+  c.eem002FiniteExternalEvidenceRecordManifestClosed ∧
+  0 < c.protocolIdBound ∧
+  0 < c.occupiedProtocolIdCount ∧
+  c.occupiedProtocolIdCount ≤ c.protocolIdBound ∧
+  0 < c.protocolStepDescriptorBound ∧
+  0 < c.occupiedProtocolStepDescriptorCount ∧
+  c.occupiedProtocolStepDescriptorCount ≤ c.protocolStepDescriptorBound ∧
+  0 < c.independentReproductionAttemptBound ∧
+  0 < c.occupiedIndependentReproductionAttemptCount ∧
+  c.occupiedIndependentReproductionAttemptCount ≤ c.independentReproductionAttemptBound ∧
+  0 < c.inputArtifactDescriptorBound ∧
+  0 < c.occupiedInputArtifactDescriptorCount ∧
+  c.occupiedInputArtifactDescriptorCount ≤ c.inputArtifactDescriptorBound ∧
+  0 < c.outputArtifactDescriptorBound ∧
+  0 < c.occupiedOutputArtifactDescriptorCount ∧
+  c.occupiedOutputArtifactDescriptorCount ≤ c.outputArtifactDescriptorBound ∧
+  0 < c.acceptanceToleranceGateBound ∧
+  0 < c.occupiedAcceptanceToleranceGateCount ∧
+  c.occupiedAcceptanceToleranceGateCount ≤ c.acceptanceToleranceGateBound ∧
+  0 < c.localExecutionDomainSize ∧
+  c.localExecutionDomainSize ≤ c.finiteCapacityBound ∧
+  0 < c.reproductionReadoutBoundarySize ∧
+  c.reproductionReadoutBoundarySize ≤ c.localExecutionDomainSize ∧
+  0 < c.boundedTransferBound ∧
+  c.boundedTransferBound ≤ c.finiteCapacityBound ∧
+  c.evidenceManifestSupportPreserved ∧
+  c.paper9ComparisonLinksPreserved ∧
+  c.finiteLocalCapacityCompatible ∧
+  c.boundedTransferCompatible ∧
+  ¬ c.simulationOnlyProofImport ∧
+  ¬ c.fitOnlyProofImport ∧
+  ¬ c.generatedProseProofImport ∧
+  ¬ c.externalCatalogAsProofImport ∧
+  ¬ c.reviewStatusAsProofImport ∧
+  ¬ c.observedParticleCatalogRecoveryImport ∧
+  ¬ c.physicalStandardModelContentImport ∧
+  ¬ c.physicalParticleExcitationImport ∧
+  ¬ c.physicalQuantumDynamicsImport ∧
+  ¬ c.externalMatterFieldImport ∧
+  ¬ c.externalGaugeFieldImport ∧
+  ¬ c.continuumQFTImport ∧
+  ¬ c.backgroundHilbertBundleImport ∧
+  ¬ c.physicalPromotion ∧
+  ¬ c.unifiedFieldPromotion
+
+theorem eem003_finite_reproduction_protocol_descriptor_closed_from_fields
+    (c : EEM003FiniteReproductionProtocolDescriptorContract)
+    (hEEM001 : c.eem001UpstreamBindingClosed)
+    (hEEM002 : c.eem002FiniteExternalEvidenceRecordManifestClosed)
+    (hProtocolBoundPositive : 0 < c.protocolIdBound)
+    (hProtocolCountPositive : 0 < c.occupiedProtocolIdCount)
+    (hProtocolCountLeBound : c.occupiedProtocolIdCount ≤ c.protocolIdBound)
+    (hStepBoundPositive : 0 < c.protocolStepDescriptorBound)
+    (hStepCountPositive : 0 < c.occupiedProtocolStepDescriptorCount)
+    (hStepCountLeBound :
+      c.occupiedProtocolStepDescriptorCount ≤ c.protocolStepDescriptorBound)
+    (hAttemptBoundPositive : 0 < c.independentReproductionAttemptBound)
+    (hAttemptCountPositive : 0 < c.occupiedIndependentReproductionAttemptCount)
+    (hAttemptCountLeBound :
+      c.occupiedIndependentReproductionAttemptCount ≤
+        c.independentReproductionAttemptBound)
+    (hInputBoundPositive : 0 < c.inputArtifactDescriptorBound)
+    (hInputCountPositive : 0 < c.occupiedInputArtifactDescriptorCount)
+    (hInputCountLeBound :
+      c.occupiedInputArtifactDescriptorCount ≤ c.inputArtifactDescriptorBound)
+    (hOutputBoundPositive : 0 < c.outputArtifactDescriptorBound)
+    (hOutputCountPositive : 0 < c.occupiedOutputArtifactDescriptorCount)
+    (hOutputCountLeBound :
+      c.occupiedOutputArtifactDescriptorCount ≤ c.outputArtifactDescriptorBound)
+    (hAcceptanceBoundPositive : 0 < c.acceptanceToleranceGateBound)
+    (hAcceptanceCountPositive : 0 < c.occupiedAcceptanceToleranceGateCount)
+    (hAcceptanceCountLeBound :
+      c.occupiedAcceptanceToleranceGateCount ≤ c.acceptanceToleranceGateBound)
+    (hDomainPositive : 0 < c.localExecutionDomainSize)
+    (hDomainLeCapacity : c.localExecutionDomainSize ≤ c.finiteCapacityBound)
+    (hReadoutPositive : 0 < c.reproductionReadoutBoundarySize)
+    (hReadoutLeDomain :
+      c.reproductionReadoutBoundarySize ≤ c.localExecutionDomainSize)
+    (hTransferPositive : 0 < c.boundedTransferBound)
+    (hTransferLeCapacity : c.boundedTransferBound ≤ c.finiteCapacityBound)
+    (hEvidenceSupport : c.evidenceManifestSupportPreserved)
+    (hPaper9Links : c.paper9ComparisonLinksPreserved)
+    (hFiniteCapacity : c.finiteLocalCapacityCompatible)
+    (hBoundedTransfer : c.boundedTransferCompatible)
+    (hNoSimulationProof : ¬ c.simulationOnlyProofImport)
+    (hNoFitProof : ¬ c.fitOnlyProofImport)
+    (hNoGeneratedProse : ¬ c.generatedProseProofImport)
+    (hNoExternalCatalogProof : ¬ c.externalCatalogAsProofImport)
+    (hNoReviewStatusProof : ¬ c.reviewStatusAsProofImport)
+    (hNoObservedRecovery : ¬ c.observedParticleCatalogRecoveryImport)
+    (hNoPhysicalSM : ¬ c.physicalStandardModelContentImport)
+    (hNoPhysicalParticle : ¬ c.physicalParticleExcitationImport)
+    (hNoPhysicalQuantum : ¬ c.physicalQuantumDynamicsImport)
+    (hNoMatter : ¬ c.externalMatterFieldImport)
+    (hNoGauge : ¬ c.externalGaugeFieldImport)
+    (hNoQFT : ¬ c.continuumQFTImport)
+    (hNoHilbert : ¬ c.backgroundHilbertBundleImport)
+    (hNoPhysicalPromotion : ¬ c.physicalPromotion)
+    (hNoUnified : ¬ c.unifiedFieldPromotion) :
+    c.closed := by
+  exact ⟨hEEM001, hEEM002, hProtocolBoundPositive,
+    hProtocolCountPositive, hProtocolCountLeBound, hStepBoundPositive,
+    hStepCountPositive, hStepCountLeBound, hAttemptBoundPositive,
+    hAttemptCountPositive, hAttemptCountLeBound, hInputBoundPositive,
+    hInputCountPositive, hInputCountLeBound, hOutputBoundPositive,
+    hOutputCountPositive, hOutputCountLeBound, hAcceptanceBoundPositive,
+    hAcceptanceCountPositive, hAcceptanceCountLeBound, hDomainPositive,
+    hDomainLeCapacity, hReadoutPositive, hReadoutLeDomain, hTransferPositive,
+    hTransferLeCapacity, hEvidenceSupport, hPaper9Links, hFiniteCapacity,
+    hBoundedTransfer, hNoSimulationProof, hNoFitProof, hNoGeneratedProse,
+    hNoExternalCatalogProof, hNoReviewStatusProof, hNoObservedRecovery,
+    hNoPhysicalSM, hNoPhysicalParticle, hNoPhysicalQuantum, hNoMatter,
+    hNoGauge, hNoQFT, hNoHilbert, hNoPhysicalPromotion, hNoUnified⟩
+
+theorem eem003_missing_eem002_manifest_not_closed
+    (c : EEM003FiniteReproductionProtocolDescriptorContract)
+    (hClosed : c.closed)
+    (hMissingEEM002 : ¬ c.eem002FiniteExternalEvidenceRecordManifestClosed) :
+    False := by
+  rcases hClosed with ⟨_, hEEM002, _⟩
+  exact hMissingEEM002 hEEM002
+
+theorem eem003_simulation_only_proof_import_not_closed
+    (c : EEM003FiniteReproductionProtocolDescriptorContract)
+    (hClosed : c.closed)
+    (hSimulationProof : c.simulationOnlyProofImport) :
+    False := by
+  rcases hClosed with
+    ⟨_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _,
+      _, _, _, _, _, _, _, hNoSimulationProof, _⟩
+  exact hNoSimulationProof hSimulationProof
+
+theorem eem003_fit_only_proof_import_not_closed
+    (c : EEM003FiniteReproductionProtocolDescriptorContract)
+    (hClosed : c.closed)
+    (hFitProof : c.fitOnlyProofImport) :
+    False := by
+  rcases hClosed with
+    ⟨_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _,
+      _, _, _, _, _, _, _, _, hNoFitProof, _⟩
+  exact hNoFitProof hFitProof
+
+def eem003CanonicalFiniteReproductionProtocolDescriptorContract :
+    EEM003FiniteReproductionProtocolDescriptorContract :=
+  { eem001UpstreamBindingClosed := True,
+    eem002FiniteExternalEvidenceRecordManifestClosed := True,
+    protocolIdBound := 16,
+    occupiedProtocolIdCount := 4,
+    protocolStepDescriptorBound := 24,
+    occupiedProtocolStepDescriptorCount := 8,
+    independentReproductionAttemptBound := 16,
+    occupiedIndependentReproductionAttemptCount := 4,
+    inputArtifactDescriptorBound := 16,
+    occupiedInputArtifactDescriptorCount := 5,
+    outputArtifactDescriptorBound := 16,
+    occupiedOutputArtifactDescriptorCount := 5,
+    acceptanceToleranceGateBound := 12,
+    occupiedAcceptanceToleranceGateCount := 4,
+    localExecutionDomainSize := 8,
+    reproductionReadoutBoundarySize := 2,
+    finiteCapacityBound := 24,
+    boundedTransferBound := 4,
+    evidenceManifestSupportPreserved := True,
+    paper9ComparisonLinksPreserved := True,
+    finiteLocalCapacityCompatible := True,
+    boundedTransferCompatible := True,
+    simulationOnlyProofImport := False,
+    fitOnlyProofImport := False,
+    generatedProseProofImport := False,
+    externalCatalogAsProofImport := False,
+    reviewStatusAsProofImport := False,
+    observedParticleCatalogRecoveryImport := False,
+    physicalStandardModelContentImport := False,
+    physicalParticleExcitationImport := False,
+    physicalQuantumDynamicsImport := False,
+    externalMatterFieldImport := False,
+    externalGaugeFieldImport := False,
+    continuumQFTImport := False,
+    backgroundHilbertBundleImport := False,
+    physicalPromotion := False,
+    unifiedFieldPromotion := False }
+
+theorem eem003_canonical_finite_reproduction_protocol_descriptor_closed :
+    eem003CanonicalFiniteReproductionProtocolDescriptorContract.closed := by
+  unfold EEM003FiniteReproductionProtocolDescriptorContract.closed
+  unfold eem003CanonicalFiniteReproductionProtocolDescriptorContract
+  simp
+
 structure Paper10ExternalEvidenceManifestTheoremContract where
   eem001UpstreamBindingClosed : Prop
   eem002FiniteExternalEvidenceRecordManifestClosed : Prop

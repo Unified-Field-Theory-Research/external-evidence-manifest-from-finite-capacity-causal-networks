@@ -2,11 +2,12 @@
 
 ## Current Position
 
-**Current Phase:** 3
-**Current Phase Name:** Define Finite Reproduction Protocol Descriptor
+**Current Phase:** 4
+**Current Phase Name:** Prove Paper 9 Comparison Compatibility
 **Status:** `EEM-001` upstream binding and claim-boundary scaffold closed;
 `EEM-002` finite external evidence record manifest closed; `EEM-003` finite
-reproduction protocol descriptor is open; physical promotion remains false
+reproduction protocol descriptor closed; `EEM-004` Paper 9 comparison
+compatibility is open; physical promotion remains false
 
 Closed rung summary: `EEM-001` records the upstream binding through the
 closed Paper 9 conditional observed-catalog comparison observables theorem at
@@ -49,15 +50,21 @@ links, Paper 9 comparison-map links, uncertainty/tolerance metadata,
 reproduction-status flags, review-status flags, local evidence domains,
 finite evidence readout boundaries, Paper 9 row compatibility, finite local
 capacity, bounded transfer, and explicit non-import guards.
+`EEM-003` defines finite reproduction protocol descriptor rows by finite
+protocol IDs, protocol-step descriptors, independent reproduction attempt
+descriptors, input artifact descriptors, output artifact descriptors,
+acceptance/tolerance gates, local execution domains, reproduction readout
+boundaries, evidence-manifest support preservation, Paper 9 comparison-link
+preservation, finite local capacity, bounded transfer, and explicit
+non-proof-import guards.
 
-Next stable target phrase: `EEM-003`: define a finite reproduction protocol
-descriptor without treating simulation, fit, generated prose, external
-catalogs, or review status as proof, and without importing observed particle
-catalog recovery, physical Standard Model content, physical particle
-excitations, continuum quantum field theory, external Hilbert bundles,
-physical matter fields, physical gauge fields, physical quantum dynamics,
-simulation-only promotion, fit-only calibration, physical nature promotion,
-or unified-field promotion.
+Next stable target phrase: `EEM-004`: prove compatibility with the closed
+Paper 9 observed-catalog comparison rows without importing observed-catalog
+recovery, observed particle catalog recovery, physical Standard Model
+content, physical particle excitations, continuum quantum field theory,
+external Hilbert bundles, physical matter fields, physical gauge fields,
+physical quantum dynamics, simulation-only promotion, fit-only calibration,
+physical nature promotion, or unified-field promotion.
 
 Stable nonpromotion tokens: observed particle catalog recovery; physical
 Standard Model content; physical particle excitations; physical matter fields;
@@ -79,20 +86,28 @@ promotion; unified-field promotion.
   boundaries, finite capacity, bounded transfer, Paper 9 row compatibility,
   and explicit rejection of hidden observed-recovery, physical,
   simulation-only, fit-only, nature-level, and unified-field imports.
+- `EEM-003` rows define finite reproduction protocol descriptors over closed
+  `EEM-002` evidence rows by bounded protocol IDs, protocol steps,
+  independent reproduction attempts, input/output artifacts, acceptance
+  gates, local execution domains, readout boundaries, Paper 9 link
+  preservation, finite capacity, bounded transfer, and explicit rejection of
+  simulation-only, fit-only, generated-prose, external-catalog, and
+  review-status proof imports.
 
 ## Open Questions
 
-- `EEM-003`: What finite reproduction protocol descriptor can be defined
-  over closed `EEM-002` evidence rows without treating simulations, fits,
-  generated prose, external catalogs, or review status as proof?
+- `EEM-004`: Which finite compatibility contract consumes closed Paper 9
+  descriptor rows, comparison-map rows, compatibility rows, and
+  stability/coarse-graining rows while preserving the closed `EEM-002` and
+  `EEM-003` interfaces?
 
 ## Pending Todos
 
-- Define finite protocol-ID, protocol-step, independent reproduction attempt,
-  input artifact, output artifact, acceptance/tolerance, local execution
-  domain, and reproduction readout-boundary data for `EEM-003`.
-- Add Rust and Lean fail-closed checks for `EEM-003`.
-- Update theorem docs, proof log, and publication skeleton after `EEM-003`
+- Define Paper 9 descriptor-row, comparison-map, compatibility,
+  stability/coarse-graining, finite-capacity, locality, bounded-transfer, and
+  no-signaling preservation checks for `EEM-004`.
+- Add Rust and Lean fail-closed checks for `EEM-004`.
+- Update theorem docs, proof log, and publication skeleton after `EEM-004`
   closes.
 
 ## Blockers/Concerns
@@ -102,6 +117,10 @@ promotion; unified-field promotion.
   prove reproduction protocol descriptors, Paper 9 comparison compatibility,
   evidence stability, Paper 9 regime consistency, the no-hidden import audit,
   or the final conditional theorem.
+- `EEM-003` defines finite reproduction protocol descriptors only; it does
+  not prove Paper 9 comparison compatibility, evidence stability, Paper 9
+  regime consistency, the no-hidden import audit, or the final conditional
+  theorem.
 - External evidence manifest recovery remains open.
 - Observed particle catalog recovery, physical Standard Model content,
   physical particle excitations, physical matter fields, physical gauge

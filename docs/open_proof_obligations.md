@@ -34,13 +34,13 @@ Closed row shape:
 - no physical nature promotion;
 - no unified-field promotion.
 
-## Active Obligation
+## Closed Dependencies: EEM-003
 
-`EEM-003` is open: finite reproduction protocol descriptor without treating
-simulation, fit, generated prose, external catalog, or review status as
-proof.
+`EEM-003` closes the finite reproduction protocol descriptor rung without
+treating simulation, fit, generated prose, external catalog, or review status
+as proof.
 
-Required row shape:
+Closed row shape:
 
 - closed `EEM-001` upstream binding;
 - closed `EEM-002` finite external evidence record manifest;
@@ -61,10 +61,32 @@ Required row shape:
 - no physical Standard Model, physical particle, physical quantum dynamics,
   continuum QFT, physical nature, or unified-field promotion.
 
+## Active Obligation
+
+`EEM-004` is open: compatibility with closed Paper 9 observed-catalog
+comparison rows.
+
+Required row shape:
+
+- closed `EEM-001` upstream binding;
+- closed `EEM-002` finite evidence record manifest;
+- closed `EEM-003` finite reproduction protocol descriptor;
+- Paper 9 final certificate consumed;
+- Paper 9 descriptor rows preserved;
+- Paper 9 comparison-map rows preserved;
+- Paper 9 Standard-Model-candidate compatibility rows preserved;
+- Paper 9 comparison stability/coarse-graining rows preserved;
+- finite evidence rows compatible with Paper 9 descriptor support;
+- finite reproduction protocol rows compatible with Paper 9 comparison links;
+- finite capacity, locality, bounded transfer, and causal-cone/no-signaling
+  preserved;
+- no Paper 9 bypass;
+- no observed-catalog recovery import, observed particle catalog recovery
+  import, physical Standard Model content, continuum QFT, simulation-only,
+  fit-only, physical nature, or unified-field promotion.
+
 ## Future Obligations
 
-- `EEM-004`: compatibility with closed Paper 9 observed-catalog comparison
-  rows.
 - `EEM-005`: evidence stability and intrinsic coarse-graining stability.
 - `EEM-006`: Paper 9 regime consistency and no upstream bypass.
 - `EEM-007`: no-hidden-physical-promotion/simulation-only/fit-only import

@@ -39,9 +39,10 @@ This repo is intentionally separate from the upstream theorem repositories:
 
 The current theorem package is still conditional and non-promoting. `EEM-001`
 records the upstream binding and claim boundary through the closed Paper 9
-result. `EEM-002` closes finite external evidence record manifest rows. The
-next active obligation is `EEM-003`: define a finite reproduction protocol
-descriptor. This does not prove external evidence manifest recovery, observed
+result. `EEM-002` closes finite external evidence record manifest rows.
+`EEM-003` closes finite reproduction protocol descriptor rows. The next
+active obligation is `EEM-004`: prove Paper 9 comparison compatibility. This
+does not prove external evidence manifest recovery, observed
 particle catalog recovery, physical Standard Model content, physical particle
 excitations, physical matter fields, physical gauge fields, physical quantum
 dynamics, continuum quantum field theory, simulation-only promotion, fit-only

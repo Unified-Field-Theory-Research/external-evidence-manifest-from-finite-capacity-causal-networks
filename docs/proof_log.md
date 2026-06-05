@@ -105,11 +105,66 @@ Model content, physical particle excitations, physical quantum dynamics,
 continuum quantum field theory, simulation-only promotion, fit-only
 calibration, a physical nature-level claim, or a unified field theory.
 
+## EEM-003: Finite Reproduction Protocol Descriptor
+
+Status: closed as a finite reproduction protocol descriptor contract.
+
+Artifacts:
+
+- `docs/external_evidence_manifest_theorem.md`
+- `docs/open_proof_obligations.md`
+- `docs/proof_log.md`
+- `GPD/STATE.md`
+- `GPD/ROADMAP.md`
+- `GPD/state.json`
+- `GPD/formal/FiniteCapacity/ExternalEvidenceManifest.lean`
+- `rust/cclab_accel/src/lib.rs`
+- `rust/cclab_accel/tests/external_evidence_manifest_gate.rs`
+
+Rust anchors:
+
+- `FiniteReproductionProtocolDescriptor`
+- `FiniteReproductionProtocolDescriptor::canonical_eem003`
+- `FiniteReproductionProtocolDescriptor::closes_eem003`
+- `Paper10SkeletonCertificate::with_eem003_finite_reproduction_protocol_descriptor_closed`
+- `eem003_finite_reproduction_protocol_descriptor_marker`
+
+Lean anchors:
+
+- `EEM003FiniteReproductionProtocolDescriptorContract`
+- `EEM003FiniteReproductionProtocolDescriptorContract.closed`
+- `eem003_finite_reproduction_protocol_descriptor_closed_from_fields`
+- `eem003_missing_eem002_manifest_not_closed`
+- `eem003_simulation_only_proof_import_not_closed`
+- `eem003_fit_only_proof_import_not_closed`
+- `eem003_canonical_finite_reproduction_protocol_descriptor_closed`
+
+Verification:
+
+- `make test-fast`
+- `make lean-build`
+
+Boundary:
+
+`EEM-003` defines finite reproduction protocol descriptor rows over closed
+`EEM-002` evidence rows with finite protocol IDs, protocol-step descriptors,
+independent reproduction attempt descriptors, input and output artifact
+descriptors, acceptance/tolerance gates, local execution domains,
+reproduction readout boundaries, evidence-manifest support preservation,
+Paper 9 comparison-link preservation, finite-capacity compatibility, and
+bounded-transfer compatibility. It does not prove Paper 9 comparison
+compatibility, evidence stability, Paper 9 regime consistency, no-hidden
+import audit closure, final external evidence manifest recovery, observed
+particle catalog recovery, physical Standard Model content, physical particle
+excitations, physical quantum dynamics, continuum quantum field theory,
+simulation-only promotion, fit-only calibration, a physical nature-level
+claim, or a unified field theory.
+
 ## Active Next Obligation
 
-`EEM-003`: define a finite reproduction protocol descriptor without treating
-simulation, fit, generated prose, external catalogs, or review status as
-proof, and without importing observed particle catalog recovery, physical
-Standard Model content, physical particle excitations, continuum QFT,
-external Hilbert bundles, physical quantum dynamics, physical nature
+`EEM-004`: prove compatibility with the closed Paper 9 observed-catalog
+comparison rows without importing observed-catalog recovery, observed
+particle catalog recovery, physical Standard Model content, physical particle
+excitations, continuum QFT, external Hilbert bundles, physical quantum
+dynamics, simulation-only promotion, fit-only calibration, physical nature
 promotion, or unified-field promotion.

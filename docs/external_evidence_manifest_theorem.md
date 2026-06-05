@@ -20,10 +20,11 @@ Paper 10 aims at the following internal conditional theorem:
 
 The theorem target is open. `EEM-001` closes the upstream binding and
 claim-boundary scaffold. `EEM-002` closes finite external evidence record
-manifest rows. This is not external evidence manifest recovery, not observed
-particle catalog recovery, not physical Standard Model recovery, not a
-physical particle-excitation claim, not physical quantum dynamics, not
-continuum quantum field theory, not simulation-only promotion, not fit-only
+manifest rows. `EEM-003` closes finite reproduction protocol descriptor rows.
+This is not external evidence manifest recovery, not observed particle
+catalog recovery, not physical Standard Model recovery, not a physical
+particle-excitation claim, not physical quantum dynamics, not continuum
+quantum field theory, not simulation-only promotion, not fit-only
 calibration, not physical nature promotion, and not a unified field theory.
 
 ## Upstream Binding
@@ -133,11 +134,48 @@ recovery.
 
 ### EEM-003: Finite Reproduction Protocol Descriptor
 
-Status: open.
+Status: closed.
+
+`EEM-003` defines finite reproduction protocol descriptor rows over closed
+`EEM-002` evidence rows with finite protocol IDs, finite protocol-step
+descriptors, finite independent reproduction attempt descriptors, finite
+input artifact descriptors, finite output artifact descriptors, finite
+acceptance/tolerance gates, finite local execution domains, finite
+reproduction readout boundaries, evidence-manifest support preservation,
+Paper 9 comparison-link preservation, finite-capacity compatibility, and
+bounded-transfer compatibility. It explicitly rejects simulation-only proof
+imports, fit-only proof imports, generated-prose proof imports,
+external-catalog-as-proof imports, review-status-as-proof imports, observed
+particle catalog recovery, physical Standard Model content, physical particle
+excitations, physical quantum dynamics, continuum QFT, background Hilbert
+bundles, physical promotion, and unified-field promotion.
+
+Rust anchors:
+
+- `FiniteReproductionProtocolDescriptor`
+- `FiniteReproductionProtocolDescriptor::canonical_eem003`
+- `FiniteReproductionProtocolDescriptor::closes_eem003`
+- `Paper10SkeletonCertificate::with_eem003_finite_reproduction_protocol_descriptor_closed`
+- `eem003_finite_reproduction_protocol_descriptor_marker`
+
+Lean anchors:
+
+- `EEM003FiniteReproductionProtocolDescriptorContract`
+- `EEM003FiniteReproductionProtocolDescriptorContract.closed`
+- `eem003_finite_reproduction_protocol_descriptor_closed_from_fields`
+- `eem003_missing_eem002_manifest_not_closed`
+- `eem003_simulation_only_proof_import_not_closed`
+- `eem003_fit_only_proof_import_not_closed`
+- `eem003_canonical_finite_reproduction_protocol_descriptor_closed`
+
+Boundary: `EEM-003` defines finite reproduction protocol descriptor rows
+only. It does not prove Paper 9 comparison compatibility, evidence
+stability, Paper 9 regime consistency, the no-hidden import audit, or final
+external evidence manifest recovery.
 
 ### EEM-004: Paper 9 Comparison Compatibility
 
-Status: planned.
+Status: open.
 
 ### EEM-005: Evidence Stability And Coarse-Graining Stability
 
