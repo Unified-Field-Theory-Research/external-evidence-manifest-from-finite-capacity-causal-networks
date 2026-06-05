@@ -570,6 +570,213 @@ theorem eem003_canonical_finite_reproduction_protocol_descriptor_closed :
   unfold eem003CanonicalFiniteReproductionProtocolDescriptorContract
   simp
 
+structure EEM004Paper9ComparisonCompatibilityContract where
+  eem001UpstreamBindingClosed : Prop
+  eem002FiniteExternalEvidenceRecordManifestClosed : Prop
+  eem003FiniteReproductionProtocolDescriptorClosed : Prop
+  paper9ObservedCatalogComparisonObservablesClosed : Prop
+  paper9FinalCertificateConsumed : Prop
+  paper9DescriptorRowsPreserved : Prop
+  paper9ComparisonMapRowsPreserved : Prop
+  paper9StandardModelCandidateCompatibilityRowsPreserved : Prop
+  paper9ComparisonStabilityCoarseGrainingRowsPreserved : Prop
+  finiteDescriptorObservablePackageConsumed : Prop
+  finiteComparisonMapObservablePackageConsumed : Prop
+  evidenceRowsCompatibleWithPaper9Descriptors : Prop
+  protocolRowsCompatibleWithPaper9ComparisonLinks : Prop
+  uncertaintyToleranceChannelsCompatible : Prop
+  reproductionStatusDoesNotActAsProof : Prop
+  reviewStatusDoesNotActAsProof : Prop
+  finiteCapacityPreserved : Prop
+  localityPreserved : Prop
+  boundedTransferPreserved : Prop
+  causalConeNoSignalingPreserved : Prop
+  comparisonStabilityPreserved : Prop
+  conservationCoarseGrainingStabilityPreserved : Prop
+  paper9BypassAttempt : Prop
+  observedCatalogRecoveryImport : Prop
+  observedParticleCatalogRecoveryImport : Prop
+  physicalStandardModelContentImport : Prop
+  physicalParticleExcitationImport : Prop
+  physicalQuantumDynamicsImport : Prop
+  externalMatterFieldImport : Prop
+  externalGaugeFieldImport : Prop
+  continuumQFTImport : Prop
+  backgroundHilbertBundleImport : Prop
+  simulationOnlyPromotion : Prop
+  fitOnlyCalibration : Prop
+  physicalPromotion : Prop
+  unifiedFieldPromotion : Prop
+
+def EEM004Paper9ComparisonCompatibilityContract.closed
+    (c : EEM004Paper9ComparisonCompatibilityContract) : Prop :=
+  c.eem001UpstreamBindingClosed ∧
+  c.eem002FiniteExternalEvidenceRecordManifestClosed ∧
+  c.eem003FiniteReproductionProtocolDescriptorClosed ∧
+  c.paper9ObservedCatalogComparisonObservablesClosed ∧
+  c.paper9FinalCertificateConsumed ∧
+  c.paper9DescriptorRowsPreserved ∧
+  c.paper9ComparisonMapRowsPreserved ∧
+  c.paper9StandardModelCandidateCompatibilityRowsPreserved ∧
+  c.paper9ComparisonStabilityCoarseGrainingRowsPreserved ∧
+  c.finiteDescriptorObservablePackageConsumed ∧
+  c.finiteComparisonMapObservablePackageConsumed ∧
+  c.evidenceRowsCompatibleWithPaper9Descriptors ∧
+  c.protocolRowsCompatibleWithPaper9ComparisonLinks ∧
+  c.uncertaintyToleranceChannelsCompatible ∧
+  c.reproductionStatusDoesNotActAsProof ∧
+  c.reviewStatusDoesNotActAsProof ∧
+  c.finiteCapacityPreserved ∧
+  c.localityPreserved ∧
+  c.boundedTransferPreserved ∧
+  c.causalConeNoSignalingPreserved ∧
+  c.comparisonStabilityPreserved ∧
+  c.conservationCoarseGrainingStabilityPreserved ∧
+  ¬ c.paper9BypassAttempt ∧
+  ¬ c.observedCatalogRecoveryImport ∧
+  ¬ c.observedParticleCatalogRecoveryImport ∧
+  ¬ c.physicalStandardModelContentImport ∧
+  ¬ c.physicalParticleExcitationImport ∧
+  ¬ c.physicalQuantumDynamicsImport ∧
+  ¬ c.externalMatterFieldImport ∧
+  ¬ c.externalGaugeFieldImport ∧
+  ¬ c.continuumQFTImport ∧
+  ¬ c.backgroundHilbertBundleImport ∧
+  ¬ c.simulationOnlyPromotion ∧
+  ¬ c.fitOnlyCalibration ∧
+  ¬ c.physicalPromotion ∧
+  ¬ c.unifiedFieldPromotion
+
+theorem eem004_paper9_comparison_compatibility_closed_from_fields
+    (c : EEM004Paper9ComparisonCompatibilityContract)
+    (hEEM001 : c.eem001UpstreamBindingClosed)
+    (hEEM002 : c.eem002FiniteExternalEvidenceRecordManifestClosed)
+    (hEEM003 : c.eem003FiniteReproductionProtocolDescriptorClosed)
+    (hPaper9 : c.paper9ObservedCatalogComparisonObservablesClosed)
+    (hPaper9Cert : c.paper9FinalCertificateConsumed)
+    (hDescriptorRows : c.paper9DescriptorRowsPreserved)
+    (hComparisonMapRows : c.paper9ComparisonMapRowsPreserved)
+    (hSMCCompat : c.paper9StandardModelCandidateCompatibilityRowsPreserved)
+    (hStabilityRows : c.paper9ComparisonStabilityCoarseGrainingRowsPreserved)
+    (hDescriptorPackage : c.finiteDescriptorObservablePackageConsumed)
+    (hComparisonPackage : c.finiteComparisonMapObservablePackageConsumed)
+    (hEvidenceCompat : c.evidenceRowsCompatibleWithPaper9Descriptors)
+    (hProtocolCompat : c.protocolRowsCompatibleWithPaper9ComparisonLinks)
+    (hToleranceCompat : c.uncertaintyToleranceChannelsCompatible)
+    (hReproductionNotProof : c.reproductionStatusDoesNotActAsProof)
+    (hReviewNotProof : c.reviewStatusDoesNotActAsProof)
+    (hFiniteCapacity : c.finiteCapacityPreserved)
+    (hLocality : c.localityPreserved)
+    (hBoundedTransfer : c.boundedTransferPreserved)
+    (hNoSignaling : c.causalConeNoSignalingPreserved)
+    (hComparisonStability : c.comparisonStabilityPreserved)
+    (hConservationStability : c.conservationCoarseGrainingStabilityPreserved)
+    (hNoPaper9Bypass : ¬ c.paper9BypassAttempt)
+    (hNoObservedCatalogRecovery : ¬ c.observedCatalogRecoveryImport)
+    (hNoObservedParticleRecovery : ¬ c.observedParticleCatalogRecoveryImport)
+    (hNoPhysicalSM : ¬ c.physicalStandardModelContentImport)
+    (hNoPhysicalParticle : ¬ c.physicalParticleExcitationImport)
+    (hNoPhysicalQuantum : ¬ c.physicalQuantumDynamicsImport)
+    (hNoMatter : ¬ c.externalMatterFieldImport)
+    (hNoGauge : ¬ c.externalGaugeFieldImport)
+    (hNoQFT : ¬ c.continuumQFTImport)
+    (hNoHilbert : ¬ c.backgroundHilbertBundleImport)
+    (hNoSimulation : ¬ c.simulationOnlyPromotion)
+    (hNoFit : ¬ c.fitOnlyCalibration)
+    (hNoPhysicalPromotion : ¬ c.physicalPromotion)
+    (hNoUnified : ¬ c.unifiedFieldPromotion) :
+    c.closed := by
+  exact ⟨hEEM001, hEEM002, hEEM003, hPaper9, hPaper9Cert,
+    hDescriptorRows, hComparisonMapRows, hSMCCompat, hStabilityRows,
+    hDescriptorPackage, hComparisonPackage, hEvidenceCompat, hProtocolCompat,
+    hToleranceCompat, hReproductionNotProof, hReviewNotProof,
+    hFiniteCapacity, hLocality, hBoundedTransfer, hNoSignaling,
+    hComparisonStability, hConservationStability, hNoPaper9Bypass,
+    hNoObservedCatalogRecovery, hNoObservedParticleRecovery, hNoPhysicalSM,
+    hNoPhysicalParticle, hNoPhysicalQuantum, hNoMatter, hNoGauge, hNoQFT,
+    hNoHilbert, hNoSimulation, hNoFit, hNoPhysicalPromotion, hNoUnified⟩
+
+theorem eem004_missing_eem003_protocol_not_closed
+    (c : EEM004Paper9ComparisonCompatibilityContract)
+    (hClosed : c.closed)
+    (hMissingEEM003 : ¬ c.eem003FiniteReproductionProtocolDescriptorClosed) :
+    False := by
+  rcases hClosed with ⟨_, _, hEEM003, _⟩
+  exact hMissingEEM003 hEEM003
+
+theorem eem004_missing_paper9_final_certificate_not_closed
+    (c : EEM004Paper9ComparisonCompatibilityContract)
+    (hClosed : c.closed)
+    (hMissingPaper9Certificate : ¬ c.paper9FinalCertificateConsumed) :
+    False := by
+  rcases hClosed with ⟨_, _, _, _, hPaper9Cert, _⟩
+  exact hMissingPaper9Certificate hPaper9Cert
+
+theorem eem004_missing_no_signaling_not_closed
+    (c : EEM004Paper9ComparisonCompatibilityContract)
+    (hClosed : c.closed)
+    (hMissingNoSignaling : ¬ c.causalConeNoSignalingPreserved) :
+    False := by
+  rcases hClosed with
+    ⟨_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _,
+      hNoSignaling, _⟩
+  exact hMissingNoSignaling hNoSignaling
+
+theorem eem004_physical_standard_model_content_import_not_closed
+    (c : EEM004Paper9ComparisonCompatibilityContract)
+    (hClosed : c.closed)
+    (hPhysicalSM : c.physicalStandardModelContentImport) :
+    False := by
+  rcases hClosed with
+    ⟨_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _,
+      _, _, hNoPhysicalSM, _⟩
+  exact hNoPhysicalSM hPhysicalSM
+
+def eem004CanonicalPaper9ComparisonCompatibilityContract :
+    EEM004Paper9ComparisonCompatibilityContract :=
+  { eem001UpstreamBindingClosed := True,
+    eem002FiniteExternalEvidenceRecordManifestClosed := True,
+    eem003FiniteReproductionProtocolDescriptorClosed := True,
+    paper9ObservedCatalogComparisonObservablesClosed := True,
+    paper9FinalCertificateConsumed := True,
+    paper9DescriptorRowsPreserved := True,
+    paper9ComparisonMapRowsPreserved := True,
+    paper9StandardModelCandidateCompatibilityRowsPreserved := True,
+    paper9ComparisonStabilityCoarseGrainingRowsPreserved := True,
+    finiteDescriptorObservablePackageConsumed := True,
+    finiteComparisonMapObservablePackageConsumed := True,
+    evidenceRowsCompatibleWithPaper9Descriptors := True,
+    protocolRowsCompatibleWithPaper9ComparisonLinks := True,
+    uncertaintyToleranceChannelsCompatible := True,
+    reproductionStatusDoesNotActAsProof := True,
+    reviewStatusDoesNotActAsProof := True,
+    finiteCapacityPreserved := True,
+    localityPreserved := True,
+    boundedTransferPreserved := True,
+    causalConeNoSignalingPreserved := True,
+    comparisonStabilityPreserved := True,
+    conservationCoarseGrainingStabilityPreserved := True,
+    paper9BypassAttempt := False,
+    observedCatalogRecoveryImport := False,
+    observedParticleCatalogRecoveryImport := False,
+    physicalStandardModelContentImport := False,
+    physicalParticleExcitationImport := False,
+    physicalQuantumDynamicsImport := False,
+    externalMatterFieldImport := False,
+    externalGaugeFieldImport := False,
+    continuumQFTImport := False,
+    backgroundHilbertBundleImport := False,
+    simulationOnlyPromotion := False,
+    fitOnlyCalibration := False,
+    physicalPromotion := False,
+    unifiedFieldPromotion := False }
+
+theorem eem004_canonical_paper9_comparison_compatibility_closed :
+    eem004CanonicalPaper9ComparisonCompatibilityContract.closed := by
+  unfold EEM004Paper9ComparisonCompatibilityContract.closed
+  unfold eem004CanonicalPaper9ComparisonCompatibilityContract
+  simp
+
 structure Paper10ExternalEvidenceManifestTheoremContract where
   eem001UpstreamBindingClosed : Prop
   eem002FiniteExternalEvidenceRecordManifestClosed : Prop

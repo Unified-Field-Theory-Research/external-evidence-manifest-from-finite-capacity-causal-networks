@@ -61,12 +61,12 @@ Closed row shape:
 - no physical Standard Model, physical particle, physical quantum dynamics,
   continuum QFT, physical nature, or unified-field promotion.
 
-## Active Obligation
+## Closed Dependencies: EEM-004
 
-`EEM-004` is open: compatibility with closed Paper 9 observed-catalog
+`EEM-004` closes compatibility with closed Paper 9 observed-catalog
 comparison rows.
 
-Required row shape:
+Closed row shape:
 
 - closed `EEM-001` upstream binding;
 - closed `EEM-002` finite evidence record manifest;
@@ -85,9 +85,32 @@ Required row shape:
   import, physical Standard Model content, continuum QFT, simulation-only,
   fit-only, physical nature, or unified-field promotion.
 
+## Active Obligation
+
+`EEM-005` is open: evidence stability and intrinsic coarse-graining
+stability.
+
+Required row shape:
+
+- closed `EEM-001` upstream binding;
+- closed `EEM-002` finite evidence record manifest;
+- closed `EEM-003` finite reproduction protocol descriptor;
+- closed `EEM-004` Paper 9 comparison compatibility;
+- finite evidence-row stability witnesses;
+- finite reproduction-protocol stability witnesses;
+- intrinsic coarse-graining map;
+- non-growing evidence-ID, provenance, Paper 9 link, local-domain, and
+  transfer bounds under coarse-graining;
+- Paper 9 comparison stability/coarse-graining compatibility preserved;
+- finite capacity, locality, bounded transfer, and causal-cone/no-signaling
+  stability preserved;
+- no external conservation-law import, continuum current import,
+  continuum-limit oracle import, observed recovery import, simulation-only
+  promotion, fit-only calibration, physical nature promotion, or
+  unified-field promotion.
+
 ## Future Obligations
 
-- `EEM-005`: evidence stability and intrinsic coarse-graining stability.
 - `EEM-006`: Paper 9 regime consistency and no upstream bypass.
 - `EEM-007`: no-hidden-physical-promotion/simulation-only/fit-only import
   audit.

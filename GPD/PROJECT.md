@@ -10,6 +10,7 @@ dynamics, simulation-only promotion, fit-only calibration, physical nature
 promotion, or unified-field promotion.
 
 The current closed rungs are `EEM-001`: upstream binding and claim boundary,
-`EEM-002`: finite external evidence record manifest, and `EEM-003`: finite
-reproduction protocol descriptor. The current active obligation is `EEM-004`:
-prove Paper 9 comparison compatibility.
+`EEM-002`: finite external evidence record manifest, `EEM-003`: finite
+reproduction protocol descriptor, and `EEM-004`: Paper 9 comparison
+compatibility. The current active obligation is `EEM-005`: prove evidence
+stability and coarse-graining stability.

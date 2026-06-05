@@ -160,11 +160,64 @@ excitations, physical quantum dynamics, continuum quantum field theory,
 simulation-only promotion, fit-only calibration, a physical nature-level
 claim, or a unified field theory.
 
+## EEM-004: Paper 9 Comparison Compatibility
+
+Status: closed as a Paper 9 comparison-compatibility contract.
+
+Artifacts:
+
+- `docs/external_evidence_manifest_theorem.md`
+- `docs/open_proof_obligations.md`
+- `docs/proof_log.md`
+- `GPD/STATE.md`
+- `GPD/ROADMAP.md`
+- `GPD/state.json`
+- `GPD/formal/FiniteCapacity/ExternalEvidenceManifest.lean`
+- `rust/cclab_accel/src/lib.rs`
+- `rust/cclab_accel/tests/external_evidence_manifest_gate.rs`
+
+Rust anchors:
+
+- `Paper9ComparisonCompatibility`
+- `Paper9ComparisonCompatibility::canonical_eem004`
+- `Paper9ComparisonCompatibility::closes_eem004`
+- `Paper10SkeletonCertificate::with_eem004_paper9_comparison_compatibility_closed`
+- `eem004_paper9_comparison_compatibility_marker`
+
+Lean anchors:
+
+- `EEM004Paper9ComparisonCompatibilityContract`
+- `EEM004Paper9ComparisonCompatibilityContract.closed`
+- `eem004_paper9_comparison_compatibility_closed_from_fields`
+- `eem004_missing_eem003_protocol_not_closed`
+- `eem004_missing_paper9_final_certificate_not_closed`
+- `eem004_missing_no_signaling_not_closed`
+- `eem004_physical_standard_model_content_import_not_closed`
+- `eem004_canonical_paper9_comparison_compatibility_closed`
+
+Verification:
+
+- `make test-fast`
+- `make lean-build`
+
+Boundary:
+
+`EEM-004` consumes closed `EEM-002`, closed `EEM-003`, and the closed Paper 9
+observed-catalog comparison package. It preserves Paper 9 descriptor rows,
+comparison-map rows, Standard-Model-candidate compatibility rows, comparison
+stability/coarse-graining rows, finite capacity, locality, bounded transfer,
+causal-cone/no-signaling, comparison stability, and
+conservation/coarse-graining stability. It does not prove evidence stability,
+Paper 9 regime consistency, no-hidden import audit closure, final external
+evidence manifest recovery, observed particle catalog recovery, physical
+Standard Model content, physical particle excitations, physical quantum
+dynamics, continuum quantum field theory, simulation-only promotion,
+fit-only calibration, a physical nature-level claim, or a unified field
+theory.
+
 ## Active Next Obligation
 
-`EEM-004`: prove compatibility with the closed Paper 9 observed-catalog
-comparison rows without importing observed-catalog recovery, observed
-particle catalog recovery, physical Standard Model content, physical particle
-excitations, continuum QFT, external Hilbert bundles, physical quantum
-dynamics, simulation-only promotion, fit-only calibration, physical nature
-promotion, or unified-field promotion.
+`EEM-005`: prove finite evidence stability and intrinsic coarse-graining
+stability without importing external conservation laws, continuum currents,
+continuum-limit oracles, observed recovery, simulation-only promotion,
+fit-only calibration, physical nature promotion, or unified-field promotion.

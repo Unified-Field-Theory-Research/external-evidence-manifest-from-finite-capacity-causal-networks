@@ -2,12 +2,13 @@
 
 ## Current Position
 
-**Current Phase:** 4
-**Current Phase Name:** Prove Paper 9 Comparison Compatibility
+**Current Phase:** 5
+**Current Phase Name:** Prove Evidence Stability And Coarse-Graining Stability
 **Status:** `EEM-001` upstream binding and claim-boundary scaffold closed;
 `EEM-002` finite external evidence record manifest closed; `EEM-003` finite
 reproduction protocol descriptor closed; `EEM-004` Paper 9 comparison
-compatibility is open; physical promotion remains false
+compatibility closed; `EEM-005` evidence stability and coarse-graining
+stability is open; physical promotion remains false
 
 Closed rung summary: `EEM-001` records the upstream binding through the
 closed Paper 9 conditional observed-catalog comparison observables theorem at
@@ -57,14 +58,19 @@ acceptance/tolerance gates, local execution domains, reproduction readout
 boundaries, evidence-manifest support preservation, Paper 9 comparison-link
 preservation, finite local capacity, bounded transfer, and explicit
 non-proof-import guards.
+`EEM-004` proves Paper 9 comparison compatibility by consuming the closed
+Paper 9 final certificate and preserving descriptor rows, comparison-map
+rows, Standard-Model-candidate compatibility rows,
+stability/coarse-graining rows, finite capacity, locality, bounded transfer,
+causal-cone/no-signaling, comparison stability, and
+conservation/coarse-graining stability across the closed `EEM-002` and
+`EEM-003` interfaces.
 
-Next stable target phrase: `EEM-004`: prove compatibility with the closed
-Paper 9 observed-catalog comparison rows without importing observed-catalog
-recovery, observed particle catalog recovery, physical Standard Model
-content, physical particle excitations, continuum quantum field theory,
-external Hilbert bundles, physical matter fields, physical gauge fields,
-physical quantum dynamics, simulation-only promotion, fit-only calibration,
-physical nature promotion, or unified-field promotion.
+Next stable target phrase: `EEM-005`: prove finite evidence stability and
+intrinsic coarse-graining stability without importing external conservation
+laws, continuum currents, continuum-limit oracles, observed recovery,
+simulation-only promotion, fit-only calibration, physical nature promotion,
+or unified-field promotion.
 
 Stable nonpromotion tokens: observed particle catalog recovery; physical
 Standard Model content; physical particle excitations; physical matter fields;
@@ -93,21 +99,24 @@ promotion; unified-field promotion.
   preservation, finite capacity, bounded transfer, and explicit rejection of
   simulation-only, fit-only, generated-prose, external-catalog, and
   review-status proof imports.
+- `EEM-004` rows consume the closed Paper 9 observed-catalog comparison
+  package and prove the `EEM-002` evidence rows and `EEM-003` reproduction
+  protocol rows remain compatible with Paper 9 descriptor, comparison-map,
+  compatibility, stability, and coarse-graining rows while preserving finite
+  capacity, locality, bounded transfer, and causal-cone/no-signaling.
 
 ## Open Questions
 
-- `EEM-004`: Which finite compatibility contract consumes closed Paper 9
-  descriptor rows, comparison-map rows, compatibility rows, and
-  stability/coarse-graining rows while preserving the closed `EEM-002` and
-  `EEM-003` interfaces?
+- `EEM-005`: Which finite stability and intrinsic coarse-graining contract
+  keeps evidence, provenance, Paper 9 links, reproduction protocols, local
+  domains, and transfer bounds non-growing under coarse-graining?
 
 ## Pending Todos
 
-- Define Paper 9 descriptor-row, comparison-map, compatibility,
-  stability/coarse-graining, finite-capacity, locality, bounded-transfer, and
-  no-signaling preservation checks for `EEM-004`.
-- Add Rust and Lean fail-closed checks for `EEM-004`.
-- Update theorem docs, proof log, and publication skeleton after `EEM-004`
+- Define evidence-row, provenance, Paper 9 link, reproduction protocol,
+  local-domain, and transfer stability/coarse-graining checks for `EEM-005`.
+- Add Rust and Lean fail-closed checks for `EEM-005`.
+- Update theorem docs, proof log, and publication skeleton after `EEM-005`
   closes.
 
 ## Blockers/Concerns
@@ -121,6 +130,9 @@ promotion; unified-field promotion.
   not prove Paper 9 comparison compatibility, evidence stability, Paper 9
   regime consistency, the no-hidden import audit, or the final conditional
   theorem.
+- `EEM-004` proves Paper 9 comparison compatibility only; it does not prove
+  evidence stability, Paper 9 regime consistency, the no-hidden import audit,
+  or the final conditional theorem.
 - External evidence manifest recovery remains open.
 - Observed particle catalog recovery, physical Standard Model content,
   physical particle excitations, physical matter fields, physical gauge

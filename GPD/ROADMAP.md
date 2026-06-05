@@ -29,7 +29,7 @@ scope unless a future paper-specific certificate explicitly closes them.
   `EEM-003` should define finite protocol rows for independent reproduction
   attempts without treating simulations, fits, generated prose, or external
   catalogs as proof.
-- [ ] **Phase 4: Prove Paper 9 Comparison Compatibility** - `EEM-004` should
+- [x] **Phase 4: Prove Paper 9 Comparison Compatibility** - `EEM-004` should
   show compatibility with the closed Paper 9 descriptor, comparison-map,
   Paper 8 compatibility, stability, and coarse-graining rows.
 - [ ] **Phase 5: Prove Evidence Stability And Coarse-Graining Stability** -

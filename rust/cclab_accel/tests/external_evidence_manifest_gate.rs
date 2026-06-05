@@ -1,10 +1,12 @@
 use cclab_accel::{
     eem002_finite_external_evidence_record_manifest_marker,
-    eem003_finite_reproduction_protocol_descriptor_marker, paper10_skeleton_marker,
+    eem003_finite_reproduction_protocol_descriptor_marker,
+    eem004_paper9_comparison_compatibility_marker, paper10_skeleton_marker,
     FiniteExternalEvidenceRecordManifest, FiniteReproductionProtocolDescriptor,
-    Paper10SkeletonCertificate, Paper10UpstreamBinding, PAPER1_FROZEN_COMMIT, PAPER2_FROZEN_COMMIT,
-    PAPER3_FROZEN_COMMIT, PAPER4_FROZEN_COMMIT, PAPER5_FROZEN_COMMIT, PAPER6_FROZEN_COMMIT,
-    PAPER7_FROZEN_COMMIT, PAPER8_FROZEN_COMMIT, PAPER9_FINAL_CERTIFICATE, PAPER9_FROZEN_COMMIT,
+    Paper10SkeletonCertificate, Paper10UpstreamBinding, Paper9ComparisonCompatibility,
+    PAPER1_FROZEN_COMMIT, PAPER2_FROZEN_COMMIT, PAPER3_FROZEN_COMMIT, PAPER4_FROZEN_COMMIT,
+    PAPER5_FROZEN_COMMIT, PAPER6_FROZEN_COMMIT, PAPER7_FROZEN_COMMIT, PAPER8_FROZEN_COMMIT,
+    PAPER9_FINAL_CERTIFICATE, PAPER9_FROZEN_COMMIT,
 };
 use std::fs;
 use std::path::{Path, PathBuf};
@@ -282,6 +284,79 @@ fn eem003_protocol_descriptor_fails_closed_on_missing_dependency_or_proof_import
 }
 
 #[test]
+fn eem004_paper9_comparison_compatibility_closes_only_compatibility_rows() {
+    let compatibility = Paper9ComparisonCompatibility::canonical_eem004();
+    assert!(compatibility.closes_eem004());
+    assert!(compatibility.eem001_upstream_binding_closed);
+    assert!(compatibility.eem002_finite_external_evidence_record_manifest_closed);
+    assert!(compatibility.eem003_finite_reproduction_protocol_descriptor_closed);
+    assert!(compatibility.paper9_final_certificate_consumed);
+    assert!(compatibility.paper9_descriptor_rows_preserved);
+    assert!(compatibility.paper9_comparison_map_rows_preserved);
+    assert!(compatibility.causal_cone_no_signaling_preserved);
+    assert_eq!(
+        eem004_paper9_comparison_compatibility_marker(),
+        "eem004-paper9-comparison-compatibility-closed"
+    );
+
+    let skeleton = Paper10SkeletonCertificate::with_eem004_paper9_comparison_compatibility_closed();
+    assert!(skeleton.eem001_upstream_binding_closed);
+    assert!(skeleton.eem002_finite_external_evidence_record_manifest_closed);
+    assert!(skeleton.eem003_finite_reproduction_protocol_descriptor_closed);
+    assert!(skeleton.eem004_paper9_comparison_compatibility_closed);
+    assert!(!skeleton.eem005_evidence_stability_coarse_graining_closed);
+    assert!(!skeleton.paper10_theorem_closed);
+    assert!(!skeleton.closes_paper10_theorem());
+}
+
+#[test]
+fn eem004_paper9_compatibility_fails_closed_on_bypass_or_hidden_imports() {
+    let compatibility = Paper9ComparisonCompatibility::canonical_eem004();
+
+    let missing_eem003 = Paper9ComparisonCompatibility {
+        eem003_finite_reproduction_protocol_descriptor_closed: false,
+        ..compatibility
+    };
+    assert!(!missing_eem003.closes_eem004());
+
+    let missing_paper9_certificate = Paper9ComparisonCompatibility {
+        paper9_final_certificate_consumed: false,
+        ..compatibility
+    };
+    assert!(!missing_paper9_certificate.closes_eem004());
+
+    let missing_no_signaling = Paper9ComparisonCompatibility {
+        causal_cone_no_signaling_preserved: false,
+        ..compatibility
+    };
+    assert!(!missing_no_signaling.closes_eem004());
+
+    let bypass = Paper9ComparisonCompatibility {
+        paper9_bypass_attempt: true,
+        ..compatibility
+    };
+    assert!(!bypass.closes_eem004());
+
+    let observed_catalog_recovery = Paper9ComparisonCompatibility {
+        observed_catalog_recovery_import: true,
+        ..compatibility
+    };
+    assert!(!observed_catalog_recovery.closes_eem004());
+
+    let physical_standard_model_import = Paper9ComparisonCompatibility {
+        physical_standard_model_content_import: true,
+        ..compatibility
+    };
+    assert!(!physical_standard_model_import.closes_eem004());
+
+    let fit_only = Paper9ComparisonCompatibility {
+        fit_only_calibration: true,
+        ..compatibility
+    };
+    assert!(!fit_only.closes_eem004());
+}
+
+#[test]
 fn upstream_json_records_paper9_certificate_and_nonpromotion() {
     let root = project_root();
     let upstream = read(&root, "UPSTREAM-PAPERS.json");
@@ -308,6 +383,11 @@ fn upstream_json_records_paper9_certificate_and_nonpromotion() {
     );
     assert_contains(
         &upstream,
+        "\"eem004_paper9_comparison_compatibility_closed\": true",
+        "UPSTREAM-PAPERS.json",
+    );
+    assert_contains(
+        &upstream,
         "\"external_evidence_manifest_theorem_closed\": false",
         "UPSTREAM-PAPERS.json",
     );
@@ -329,7 +409,7 @@ fn upstream_json_records_paper9_certificate_and_nonpromotion() {
 }
 
 #[test]
-fn docs_keep_eem004_active_and_physical_claims_false() {
+fn docs_keep_eem005_active_and_physical_claims_false() {
     let root = project_root();
     let theorem = read(&root, "docs/external_evidence_manifest_theorem.md");
     let state = read(&root, "GPD/STATE.md");
@@ -344,6 +424,7 @@ fn docs_keep_eem004_active_and_physical_claims_false() {
         assert_contains(artifact.1, "EEM-002", artifact.0);
         assert_contains(artifact.1, "EEM-003", artifact.0);
         assert_contains(artifact.1, "EEM-004", artifact.0);
+        assert_contains(artifact.1, "EEM-005", artifact.0);
         assert_contains(artifact.1, "observed particle catalog recovery", artifact.0);
         assert_contains(artifact.1, "physical Standard Model", artifact.0);
         assert_contains(artifact.1, "simulation-only promotion", artifact.0);

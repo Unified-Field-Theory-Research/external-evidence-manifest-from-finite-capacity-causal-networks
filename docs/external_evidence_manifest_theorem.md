@@ -21,11 +21,12 @@ Paper 10 aims at the following internal conditional theorem:
 The theorem target is open. `EEM-001` closes the upstream binding and
 claim-boundary scaffold. `EEM-002` closes finite external evidence record
 manifest rows. `EEM-003` closes finite reproduction protocol descriptor rows.
-This is not external evidence manifest recovery, not observed particle
-catalog recovery, not physical Standard Model recovery, not a physical
-particle-excitation claim, not physical quantum dynamics, not continuum
-quantum field theory, not simulation-only promotion, not fit-only
-calibration, not physical nature promotion, and not a unified field theory.
+`EEM-004` closes Paper 9 comparison compatibility. This is not external
+evidence manifest recovery, not observed particle catalog recovery, not
+physical Standard Model recovery, not a physical particle-excitation claim,
+not physical quantum dynamics, not continuum quantum field theory, not
+simulation-only promotion, not fit-only calibration, not physical nature
+promotion, and not a unified field theory.
 
 ## Upstream Binding
 
@@ -175,11 +176,48 @@ external evidence manifest recovery.
 
 ### EEM-004: Paper 9 Comparison Compatibility
 
-Status: open.
+Status: closed.
+
+`EEM-004` proves compatibility with the closed Paper 9 observed-catalog
+comparison package by consuming closed `EEM-002` evidence rows, closed
+`EEM-003` reproduction protocol rows, the Paper 9 final certificate, Paper 9
+descriptor rows, Paper 9 comparison-map rows, Paper 9
+Standard-Model-candidate compatibility rows, and Paper 9 comparison
+stability/coarse-graining rows. It preserves finite capacity, locality,
+bounded transfer, causal-cone/no-signaling, comparison stability, and
+conservation/coarse-graining stability while rejecting Paper 9 bypass,
+observed-catalog recovery imports, observed particle catalog recovery,
+physical Standard Model content, physical particle excitations, physical
+quantum dynamics, continuum QFT, background Hilbert bundles,
+simulation-only promotion, fit-only calibration, physical promotion, and
+unified-field promotion.
+
+Rust anchors:
+
+- `Paper9ComparisonCompatibility`
+- `Paper9ComparisonCompatibility::canonical_eem004`
+- `Paper9ComparisonCompatibility::closes_eem004`
+- `Paper10SkeletonCertificate::with_eem004_paper9_comparison_compatibility_closed`
+- `eem004_paper9_comparison_compatibility_marker`
+
+Lean anchors:
+
+- `EEM004Paper9ComparisonCompatibilityContract`
+- `EEM004Paper9ComparisonCompatibilityContract.closed`
+- `eem004_paper9_comparison_compatibility_closed_from_fields`
+- `eem004_missing_eem003_protocol_not_closed`
+- `eem004_missing_paper9_final_certificate_not_closed`
+- `eem004_missing_no_signaling_not_closed`
+- `eem004_physical_standard_model_content_import_not_closed`
+- `eem004_canonical_paper9_comparison_compatibility_closed`
+
+Boundary: `EEM-004` proves Paper 9 comparison compatibility only. It does
+not prove evidence stability, Paper 9 regime consistency, the no-hidden
+import audit, or final external evidence manifest recovery.
 
 ### EEM-005: Evidence Stability And Coarse-Graining Stability
 
-Status: planned.
+Status: open.
 
 ### EEM-006: Paper 9 Regime Consistency
 
